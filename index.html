@@ -8,17 +8,24 @@
     <style>
         :root {
             --bg: #0f172a;
-            --card: #1e293b;
-            --primary: #3b82f6;
-            --text: #f1f5f9;
-            --accent: #22c55e;
-            --wrong: #ef4444;
-            --done: #eab308;
+            --card: rgba(30, 41, 59, 0.7);
+            /* Áttetszőbb kék */
+            --primary: #60a5fa;
+            /* Világosabb kék a sötét háttérhez */
+            --text: #f8fafc;
+            --accent: #4ade80;
+            /* Vibrálóbb zöld */
+            --wrong: #fb7185;
+            --done: #fbbf24;
         }
 
         body {
+            /* Sötétítő réteg + a kép beállítása */
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+                url('hatter.jpg') no-repeat center center fixed;
+            background-size: cover;
+            /* Kitölti a teljes képernyőt torzítás nélkül */
             font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg);
             color: var(--text);
             margin: 0;
             padding: 0;
@@ -26,6 +33,16 @@
             flex-direction: column;
             height: 100vh;
             overflow: hidden;
+        }
+
+        /* Egy kis extra: tegyük a kártyákat kicsit áttetszőbbé, hogy látszódjon a háttér */
+        .main-card,
+        .pattern-btn {
+            background: rgba(30, 41, 59, 0.25);
+            /* 85%-os átlátszóság */
+            backdrop-filter: blur(12px);
+            /* Üveghatás - elhomályosítja a mögötte lévő képet */
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         header {
@@ -69,7 +86,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 1px solid #334155;
+            border-bottom: 2px solid #334155;
         }
 
         select {
@@ -82,7 +99,7 @@
         }
 
         .pattern-btn {
-            background: var(--card);
+            background: rgba(77, 116, 180, 0.2);
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 12px;
@@ -94,12 +111,18 @@
         }
 
         .main-card {
-            background: var(--card);
+            background: rgba(205, 217, 236, 0.2);
+            /*var(--card);*/
             border-radius: 20px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             margin-top: 10px;
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            /* Elhomályosítja a hátteret a kártya mögött */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
 
         .quiz-active-card {
@@ -157,6 +180,27 @@
             pointer-events: none;
             border-radius: 2px;
             animation: fall linear forwards;
+        }
+
+        .word-item {
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .word-item:active {
+            transform: scale(0.95);
+            /* Kicsit összemegy kattintáskor */
+            filter: brightness(1.2);
+        }
+
+        .pattern-btn {
+            transition: transform 0.2s;
+        }
+
+        .pattern-btn:hover {
+            transform: translateX(5px);
+            /* Kicsit elmozdul jobbra, ha fölé mész */
+            background: rgba(51, 65, 85, 0.8);
         }
 
         @keyframes fall {

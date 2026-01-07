@@ -793,13 +793,121 @@
             window.speechSynthesis.speak(taskMsg);
         }
 
+        // --- JAVÍTOTT HANG LEJÁTSZÁS ---
         function playCurrent() {
+            // Ha nincs mit mondani, kilépünk
             if (!lastSentence) return;
+
+            // Leállítjuk az éppen folyamatban lévő beszédet (fontos!)
             window.speechSynthesis.cancel();
+
+            // Létrehozzuk az új mondatot
             let m = new SpeechSynthesisUtterance(lastSentence);
-            m.lang = currentCat.lang;
+
+            // Nyelv beállítása: Ha a kategóriának nincs nyelve, használja az app nyelvét
+            m.lang = (currentCat && currentCat.lang) ? currentCat.lang : appLang;
+
+            // Sebesség beállítása
             m.rate = speechRate;
+
+            // Hibakezelés (ha a böngésző nem tudná kimondani)
+            m.onerror = function (e) {
+                console.error("Beszéd hiba:", e);
+            };
+
+            // Beszéd indítása
             window.speechSynthesis.speak(m);
+        }
+
+        // --- JAVÍTOTT HANDLE INPUT (Tanuló + Kvíz + Builder mód) ---
+        function handleInput(word, element) {
+            // 1. Szó tisztítása
+            let cleanWord = word.w.replace(/<[^>]*>/g, "");
+
+            // 2. Mondat kiválasztása (Egyedi "s" vagy Sablon "pattern")
+            let sentence;
+            if (word.s) {
+                sentence = word.s;
+            } else {
+                sentence = currentCat.pattern.replace("[X]", cleanWord);
+            }
+
+            // Tisztítás (dupla szóközök, stb.)
+            sentence = sentence.replace(/\s+/g, ' ').replace(/' /g, "'").trim();
+
+            // A) KVÍZ MÓD
+            if (isQuiz) {
+                if (element.classList.contains('animate-correct') || element.classList.contains('animate-wrong')) return;
+
+                if (word.w === quizTarget.w) {
+                    element.classList.add('animate-correct');
+                    audioCorrect.currentTime = 0; audioCorrect.play();
+
+                    document.getElementById('sentence-preview').innerHTML = sentence;
+
+                    let fullHu = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
+                    document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent); font-weight:bold;">HELYES!</span> ${fullHu}`;
+
+                    window.speechSynthesis.cancel();
+                    let targetMsg = new SpeechSynthesisUtterance(sentence);
+                    targetMsg.lang = (currentCat && currentCat.lang) ? currentCat.lang : appLang;
+                    targetMsg.rate = speechRate;
+
+                    targetMsg.onend = () => {
+                        setTimeout(() => {
+                            element.classList.remove('animate-correct');
+                            if (quizQueue.length === 0) showFinalCongratulation();
+                            else nextQuizStep();
+                        }, 500);
+                    };
+                    window.speechSynthesis.speak(targetMsg);
+
+                    if (!stats.quizPoints[currentCat.index]) stats.quizPoints[currentCat.index] = 0;
+                    stats.quizPoints[currentCat.index]++;
+                    save();
+                } else {
+                    element.classList.add('animate-wrong');
+                    audioWrong.currentTime = 0; audioWrong.play();
+                    if (navigator.vibrate) navigator.vibrate(200);
+                    setTimeout(() => element.classList.remove('animate-wrong'), 600);
+                }
+                return;
+            }
+
+            // B) MONDATÉPÍTŐ MÓD
+            if (builderMode) {
+                startBuilderGame(sentence, word);
+                return;
+            }
+
+            // C) NORMÁL TANULÓ MÓD (Itt volt a hiba korábban)
+
+            // UI frissítése
+            document.getElementById('sentence-preview').innerHTML = sentence;
+            document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
+
+            // Fonetika kezelése
+            if (currentCat.p_v && currentCat.p_v.includes("...")) {
+                document.getElementById('phonetic-preview').innerText = "[ " + currentCat.p_v.replace("...", word.p) + " ]";
+            } else {
+                document.getElementById('phonetic-preview').innerText = "[ " + word.p + " ]";
+            }
+
+            // Hangszóró gomb megjelenítése
+            document.getElementById('speak-btn').style.visibility = "visible";
+
+            // FONTOS: Elmentjük a mondatot a globális változóba
+            lastSentence = sentence;
+
+            // ÉS AZONNAL LE IS JÁTSSZUK
+            playCurrent();
+
+            // Statisztika mentése
+            if (!stats.learned[currentCat.index]) stats.learned[currentCat.index] = [];
+            if (!stats.learned[currentCat.index].includes(word.w)) {
+                stats.learned[currentCat.index].push(word.w);
+                save();
+            }
         }
 
         function goBack() {

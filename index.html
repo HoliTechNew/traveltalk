@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 7.5</title>
+    <title>TravelTalk Pro 7.6</title>
 
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e40af">
@@ -467,7 +467,7 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 7.5</h2>
+        <h2 style="margin:0">TravelTalk Pro 7.6</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
             <div class="spinner"></div> Betöltés...
         </div>
@@ -977,16 +977,18 @@
                 let trans = "";
                 if (showWordHints) {
                     const clean = word.toLowerCase().replace(/[^a-zà-ú]/g, "");
-                    // 1. Saját szótár
-                    let found = dictionaryData.find(d => d.w.toLowerCase().includes(clean));
-                    if (found) trans = found.h.replace(/<[^>]*>/g, "");
+                    // JAVÍTÁS: Fordított sorrend (Mini szótár -> Fő szótár)
 
-                    // 2. Fallback mini szótár
+                    // 1. Mini szótár (PRIORITÁS)
+                    const langCode = currentFile.substring(0, 2);
+                    if (commonWords[langCode] && commonWords[langCode][clean]) {
+                        trans = commonWords[langCode][clean];
+                    }
+
+                    // 2. Fő szótár (Fallback)
                     if (!trans) {
-                        const langCode = currentFile.substring(0, 2);
-                        if (commonWords[langCode] && commonWords[langCode][clean]) {
-                            trans = commonWords[langCode][clean];
-                        }
+                        let found = dictionaryData.find(d => d.w.toLowerCase().includes(clean));
+                        if (found) trans = found.h.replace(/<[^>]*>/g, "");
                     }
                 }
 

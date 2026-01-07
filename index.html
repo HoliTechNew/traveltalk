@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 6.2</title>
-    
-    <!-- PWA MANIFEST (Ezt a fájlt hozd létre a gyökérkönyvtárban manifest.json néven!) -->
+    <title>TravelTalk Pro 6.3</title>
+
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e40af">
 
@@ -33,12 +32,12 @@
             flex-direction: column;
             height: 100vh;
             overflow: hidden;
-            user-select: none; /* Szövegkijelölés tiltása mobilon */
+            user-select: none;
         }
 
-        .main-card,
-        .pattern-btn {
-            background: rgba(30, 41, 59, 0.45); /* Kicsit sötétebb az olvashatóságért */
+        /* Közös üveg-hatás stílus */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.45);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -73,8 +72,7 @@
             flex-direction: column;
             padding: 15px;
             overflow-y: auto;
-            /* Simább görgetés mobilon */
-            -webkit-overflow-scrolling: touch; 
+            -webkit-overflow-scrolling: touch;
         }
 
         .hidden {
@@ -82,13 +80,20 @@
         }
 
         .header-controls {
-            padding: 10px 15px;
+            padding: 15px;
             background: rgba(30, 41, 59, 0.8);
+            border-bottom: 2px solid #334155;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .control-row {
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 2px solid #334155;
-            border-radius: 0 0 15px 15px;
+            width: 100%;
         }
 
         select {
@@ -101,6 +106,7 @@
             font-size: 1rem;
         }
 
+        /* Gombok és Kártyák */
         .pattern-btn {
             padding: 15px;
             margin-bottom: 10px;
@@ -118,6 +124,10 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        .pattern-btn.glass-panel {
+            background: rgba(30, 41, 59, 0.45);
+        }
+
         .main-card {
             border-radius: 20px;
             padding: 20px;
@@ -129,11 +139,78 @@
             justify-content: center;
         }
 
+        .main-card.glass-panel {
+            background: var(--card);
+        }
+
         .quiz-active-card {
             border: 3px solid var(--done);
             box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
         }
 
+        /* Szótár specifikus stílusok */
+        .dict-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .dict-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            border-left: 3px solid var(--accent);
+            transition: background 0.2s;
+        }
+
+        .dict-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dict-word-main {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .dict-word-sub {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .dict-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* Egyéb UI elemek */
         #sentence-preview {
             font-size: 1.4rem;
             margin: 15px 0;
@@ -172,7 +249,7 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             min-height: 80px;
         }
-        
+
         .word-item:active {
             transform: scale(0.95);
             background: rgba(255, 255, 255, 0.1);
@@ -192,9 +269,19 @@
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
         }
 
         .confetti-global {
@@ -211,9 +298,8 @@
             }
         }
 
-        /* Betöltés animáció */
         .spinner {
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 3px solid rgba(255, 255, 255, 0.3);
             border-top: 3px solid var(--text);
             border-radius: 50%;
             width: 14px;
@@ -222,12 +308,31 @@
             display: inline-block;
             margin-right: 8px;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Csúszka stílus */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         input[type=range] {
             accent-color: var(--primary);
             width: 100px;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
         }
     </style>
 </head>
@@ -235,7 +340,7 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 6.2</h2>
+        <h2 style="margin:0">TravelTalk Pro 6.3</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
             <div class="spinner"></div> Betöltés...
         </div>
@@ -245,42 +350,61 @@
         <div id="progress-text" style="font-size: 0.75rem; margin-top: 4px;">0%</div>
     </header>
 
+    <!-- FŐKÉPERNYŐ -->
     <div id="selector-screen" class="screen">
         <div class="header-controls">
-            <label for="lang-select">Nyelv:</label>
-            <select id="lang-select" onchange="changeLanguage(this.value)">
-                <option value="en.json">Angol 🇬🇧</option>
-                <option value="it.json">Olasz 🇮🇹</option>
-                <option value="fr.json">Francia 🇫🇷</option>
-            </select>
+            <div class="control-row">
+                <label for="lang-select">Nyelv:</label>
+                <select id="lang-select" onchange="changeLanguage(this.value)">
+                    <option value="en.json">Angol 🇬🇧</option>
+                    <option value="it.json">Olasz 🇮🇹</option>
+                    <option value="fr.json">Francia 🇫🇷</option>
+                </select>
+            </div>
+            <!-- ÚJ: Szótár gomb -->
+            <button onclick="openDictionary()" class="dict-btn">
+                📖 Teljes Szótár (ABC)
+            </button>
         </div>
         <div id="pattern-list" style="margin-top:15px; padding-bottom: 20px;"></div>
     </div>
 
+    <!-- SZÓTÁR KÉPERNYŐ (ÚJ) -->
+    <div id="dictionary-screen" class="screen hidden">
+        <div style="margin-bottom: 15px;">
+            <button onclick="closeDictionary()" class="back-btn">← VISSZA</button>
+        </div>
+
+        <input type="text" id="dict-search" class="search-box" placeholder="🔍 Keresés (magyar vagy idegen szó)..."
+            onkeyup="filterDictionary()">
+
+        <div id="dictionary-list" style="padding-bottom: 20px;">
+            <!-- Itt lesznek a szavak -->
+        </div>
+    </div>
+
+    <!-- TANULÓ/KVÍZ KÉPERNYŐ -->
     <div id="builder-screen" class="screen hidden">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <button onclick="goBack()"
-                style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:var(--text); padding:8px 16px; border-radius:10px; cursor:pointer; font-weight:bold; backdrop-filter: blur(5px);">
-                ← VISSZA
-            </button>
-            
-            <!-- ÚJ: Sebességállító -->
-            <div style="display:flex; align-items:center; font-size:0.8rem; background:rgba(0,0,0,0.3); padding:5px 10px; border-radius:20px;">
+            <button onclick="goBack()" class="back-btn">← VISSZA</button>
+
+            <div
+                style="display:flex; align-items:center; font-size:0.8rem; background:rgba(0,0,0,0.3); padding:5px 10px; border-radius:20px;">
                 <span style="margin-right:5px">🐢</span>
                 <input type="range" id="speech-rate" min="0.5" max="1.1" step="0.1" value="0.9">
                 <span style="margin-left:5px">🐇</span>
             </div>
         </div>
 
-        <div id="main-card" class="main-card">
+        <div id="main-card" class="main-card glass-panel">
             <div id="quiz-status"
                 style="font-weight:bold; color:var(--primary); margin-bottom:10px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">
                 TANULÓ MÓD</div>
-            
+
             <div id="phonetic-preview" style="color:var(--primary); font-family: monospace; font-size: 0.9rem;">
                 [ válassz... ]
             </div>
-            
+
             <div id="sentence-preview">Válassz egy szót!</div>
             <div id="translation-preview">Fordítás...</div>
 
@@ -289,7 +413,7 @@
             <div style="margin-top:25px; display:flex; gap:15px; justify-content: center; align-items: center;">
                 <button id="speak-btn" onclick="playCurrent()"
                     style="width:50px; height:50px; border-radius:50%; border:none; background:var(--primary); color:white; font-size:1.5rem; visibility:hidden; cursor:pointer; box-shadow: 0 4px 15px rgba(96, 165, 250, 0.4); display:flex; align-items:center; justify-content:center;">🔊</button>
-                
+
                 <button id="quiz-toggle-btn" onclick="startQuiz()"
                     style="padding:12px 25px; border-radius:25px; border:none; background:var(--done); color:black; font-weight:bold; cursor:pointer; box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4); text-transform: uppercase; letter-spacing: 0.5px;">
                     Kvíz Indítása
@@ -299,8 +423,9 @@
     </div>
 
     <script>
-        // --- KONFIGURÁCIÓ & HANGOK ---
+        // --- KONFIGURÁCIÓ & VÁLTOZÓK ---
         let categories = [];
+        let dictionaryData = []; // Az összes szó egyben
         let stats = JSON.parse(localStorage.getItem('tt_stats')) || { learned: {}, quizPoints: {} };
         let currentCat = null;
         let isQuiz = false;
@@ -309,34 +434,27 @@
         let lastSentence = "";
         let appLang = 'en-GB';
         let currentFile = 'en.json';
-        
-        // Alapértelmezett sebesség
         let speechRate = 0.9;
 
-        // Hanghatások (Google Actions hangtár)
         const audioCorrect = new Audio('https://actions.google.com/sounds/v1/cartoon/pop.ogg');
         const audioWrong = new Audio('https://actions.google.com/sounds/v1/cartoon/clank_car_crash.ogg');
 
-        // Sebesség csúszka figyelése
         document.getElementById('speech-rate').addEventListener('input', (e) => {
             speechRate = parseFloat(e.target.value);
         });
 
-        // --- iOS HANG FELOLDÁS ---
-        // Az első kattintásnál feloldja a hangszórót, hogy később menjen az automata beszéd
+        // iOS hang feloldás
         document.body.addEventListener('click', function unlockAudio() {
             const u = new SpeechSynthesisUtterance("");
             window.speechSynthesis.speak(u);
-            audioCorrect.play().catch(() => {});
+            audioCorrect.play().catch(() => { });
             audioCorrect.pause();
             document.body.removeEventListener('click', unlockAudio);
         }, { once: true });
 
-        // --- SERVICE WORKER REGISZTRÁCIÓ (PWA) ---
+        // SW regisztráció
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log('Service Worker kész'))
-                .catch(err => console.log('SW hiba:', err));
+            navigator.serviceWorker.register('sw.js').catch(() => { });
         }
 
         async function changeLanguage(fileName) {
@@ -350,16 +468,15 @@
         }
 
         async function loadData() {
-            // Betöltés jelző
             const dirDiv = document.getElementById('lang-direction');
             dirDiv.innerHTML = '<div class="spinner"></div> Betöltés...';
-            
+
             try {
-                // Időbélyeg a cache elkerülése miatt fejlesztéskor
                 const res = await fetch(currentFile + '?v=' + new Date().getTime());
                 if (!res.ok) throw new Error("Hiba");
                 categories = await res.json();
                 renderList();
+                buildDictionaryData(); // Szótár adatbázis frissítése
             } catch (err) {
                 console.error("Betöltési hiba:", err);
                 dirDiv.innerHTML = "⚠️ Hiba a betöltéskor!";
@@ -381,16 +498,14 @@
                 const learnedCount = (stats.learned[idx] || []).length;
                 const totalCount = cat.words.length;
                 const percent = Math.round((learnedCount / totalCount) * 100);
-                
+
                 const item = document.createElement('div');
-                item.className = "pattern-btn";
+                item.className = "pattern-btn glass-panel";
                 item.onclick = () => openCat(idx);
 
                 const icon = (cat.words && cat.words[0]) ? cat.words[0].i : "📚";
-                
-                // Progress sáv a gombon belül
                 let progressColor = percent === 100 ? 'var(--done)' : 'var(--primary)';
-                
+
                 item.innerHTML = `
                     <div style="font-size:1.8rem; width: 40px; text-align: center;">${icon}</div>
                     <div style="flex:1">
@@ -408,6 +523,88 @@
             });
             updateProgress();
         }
+
+        // --- SZÓTÁR FUNKCIÓK ---
+
+        function buildDictionaryData() {
+            dictionaryData = [];
+            categories.forEach(cat => {
+                cat.words.forEach(word => {
+                    // Elkerüljük a duplikációkat (ha ugyanaz a szó többször szerepelne)
+                    if (!dictionaryData.some(item => item.w === word.w)) {
+                        dictionaryData.push(word);
+                    }
+                });
+            });
+
+            // ABC sorrendbe rendezés a tiszta szöveg alapján (HTML tegek nélkül)
+            dictionaryData.sort((a, b) => {
+                const textA = a.w.replace(/<[^>]*>/g, "").toLowerCase();
+                const textB = b.w.replace(/<[^>]*>/g, "").toLowerCase();
+                return textA.localeCompare(textB);
+            });
+        }
+
+        function openDictionary() {
+            document.getElementById('selector-screen').classList.add('hidden');
+            document.getElementById('dictionary-screen').classList.remove('hidden');
+            renderDictionary(dictionaryData);
+        }
+
+        function closeDictionary() {
+            document.getElementById('dictionary-screen').classList.add('hidden');
+            document.getElementById('selector-screen').classList.remove('hidden');
+        }
+
+        function renderDictionary(data) {
+            const list = document.getElementById('dictionary-list');
+            list.innerHTML = "";
+
+            if (data.length === 0) {
+                list.innerHTML = "<div style='text-align:center; padding:20px; opacity:0.6'>Nincs találat.</div>";
+                return;
+            }
+
+            data.forEach(word => {
+                const item = document.createElement('div');
+                item.className = "dict-item glass-panel";
+
+                // HTML tegek eltávolítása a megjelenítéshez
+                const cleanW = word.w.replace(/<[^>]*>/g, "");
+                const cleanH = word.h.replace(/<[^>]*>/g, "");
+
+                item.onclick = () => playWord(cleanW);
+                item.innerHTML = `
+                    <div class="dict-icon">${word.i}</div>
+                    <div style="flex:1">
+                        <div class="dict-word-main">${cleanW}</div>
+                        <div class="dict-word-sub">${cleanH} <span style="opacity:0.5; font-size:0.75rem">(${word.p})</span></div>
+                    </div>
+                    <div style="opacity:0.6">🔊</div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function filterDictionary() {
+            const query = document.getElementById('dict-search').value.toLowerCase();
+            const filtered = dictionaryData.filter(item => {
+                const cleanW = item.w.replace(/<[^>]*>/g, "").toLowerCase();
+                const cleanH = item.h.replace(/<[^>]*>/g, "").toLowerCase();
+                return cleanW.includes(query) || cleanH.includes(query);
+            });
+            renderDictionary(filtered);
+        }
+
+        function playWord(text) {
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = appLang;
+            u.rate = speechRate;
+            window.speechSynthesis.speak(u);
+        }
+
+        // --- TANULÓ MÓD ÉS KVÍZ ---
 
         function openCat(idx) {
             currentCat = categories[idx];
@@ -457,20 +654,14 @@
                 if (element.classList.contains('animate-correct') || element.classList.contains('animate-wrong')) return;
 
                 if (word.w === quizTarget.w) {
-                    // HELYES VÁLASZ
                     element.classList.add('animate-correct');
-                    
-                    // Hang effekt
-                    audioCorrect.currentTime = 0;
-                    audioCorrect.play();
+                    audioCorrect.currentTime = 0; audioCorrect.play();
 
                     document.getElementById('sentence-preview').innerHTML = sentence;
                     let fullHu = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
                     document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent); font-weight:bold;">HELYES!</span> ${fullHu}`;
 
                     window.speechSynthesis.cancel();
-                    
-                    // Csak a célmondatot mondja, visszajelzést nem (gyorsabb)
                     let targetMsg = new SpeechSynthesisUtterance(sentence);
                     targetMsg.lang = currentCat.lang;
                     targetMsg.rate = speechRate;
@@ -480,7 +671,7 @@
                             element.classList.remove('animate-correct');
                             if (quizQueue.length === 0) showFinalCongratulation();
                             else nextQuizStep();
-                        }, 500); // Kicsit várunk, hogy lássa a sikert
+                        }, 500);
                     };
                     window.speechSynthesis.speak(targetMsg);
 
@@ -488,21 +679,14 @@
                     stats.quizPoints[currentCat.index]++;
                     save();
                 } else {
-                    // ROSSZ VÁLASZ
                     element.classList.add('animate-wrong');
-                    
-                    // Hang effekt
-                    audioWrong.currentTime = 0;
-                    audioWrong.play();
-
-                    if(navigator.vibrate) navigator.vibrate(200); // Rezgés mobilon
-
+                    audioWrong.currentTime = 0; audioWrong.play();
+                    if (navigator.vibrate) navigator.vibrate(200);
                     setTimeout(() => element.classList.remove('animate-wrong'), 600);
                 }
                 return;
             }
 
-            // TANULÓ MÓD
             document.getElementById('sentence-preview').innerHTML = sentence;
             document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
             document.getElementById('phonetic-preview').innerText = "[ " + currentCat.p_v.replace("...", word.p) + " ]";
@@ -524,7 +708,7 @@
             document.getElementById('quiz-toggle-btn').style.display = "none";
             document.getElementById('main-card').classList.add('quiz-active-card');
             document.getElementById('quiz-status').style.color = "var(--done)";
-            
+
             window.speechSynthesis.cancel();
             let startMsg = new SpeechSynthesisUtterance("Kezdjük!");
             startMsg.lang = "hu-HU";
@@ -540,7 +724,7 @@
             document.getElementById('sentence-preview').innerHTML = currentCat.pattern.replace("[X]", "<u>[ ??? ]</u>");
             document.getElementById('phonetic-preview').innerText = "❓";
 
-            const hTask = quizTarget.h.replace(/<[^>]*>/g, ""); 
+            const hTask = quizTarget.h.replace(/<[^>]*>/g, "");
             document.getElementById('translation-preview').innerHTML = `KERESD: <b style="color:var(--text); font-size:1.4rem; border-bottom:2px solid var(--accent);">${hTask}</b>`;
 
             window.speechSynthesis.cancel();
@@ -554,7 +738,7 @@
             window.speechSynthesis.cancel();
             let m = new SpeechSynthesisUtterance(lastSentence);
             m.lang = currentCat.lang;
-            m.rate = speechRate; // SEBESSÉG BEÁLLÍTÁSA
+            m.rate = speechRate;
             window.speechSynthesis.speak(m);
         }
 
@@ -585,8 +769,7 @@
             isQuiz = false;
             document.getElementById('quiz-status').innerText = "KÉSZ!";
             showCelebration();
-            
-            // Ünneplő hang
+
             const audioWin = new Audio('https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg');
             audioWin.play();
 

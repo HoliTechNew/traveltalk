@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 6.1</title>
+    <title>TravelTalk Pro 6.2</title>
+    
+    <!-- PWA MANIFEST (Ezt a fájlt hozd létre a gyökérkönyvtárban manifest.json néven!) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e40af">
+
     <style>
         :root {
             --bg: #0f172a;
             --card: rgba(30, 41, 59, 0.7);
-            /* Áttetszőbb kék */
             --primary: #60a5fa;
-            /* Világosabb kék a sötét háttérhez */
             --text: #f8fafc;
             --accent: #4ade80;
-            /* Vibrálóbb zöld */
             --wrong: #fb7185;
             --done: #fbbf24;
         }
 
         body {
-            /* Sötétítő réteg + a kép beállítása */
             background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
                 url('hatter.jpg') no-repeat center center fixed;
             background-size: cover;
-            /* Kitölti a teljes képernyőt torzítás nélkül */
             font-family: 'Segoe UI', sans-serif;
             color: var(--text);
             margin: 0;
@@ -33,15 +33,13 @@
             flex-direction: column;
             height: 100vh;
             overflow: hidden;
+            user-select: none; /* Szövegkijelölés tiltása mobilon */
         }
 
-        /* Egy kis extra: tegyük a kártyákat kicsit áttetszőbbé, hogy látszódjon a háttér */
         .main-card,
         .pattern-btn {
-            background: rgba(30, 41, 59, 0.25);
-            /* 85%-os átlátszóság */
+            background: rgba(30, 41, 59, 0.45); /* Kicsit sötétebb az olvashatóságért */
             backdrop-filter: blur(12px);
-            /* Üveghatás - elhomályosítja a mögötte lévő képet */
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -50,6 +48,7 @@
             padding: 15px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 10;
         }
 
         #progress-container {
@@ -65,7 +64,7 @@
             width: 0%;
             background: var(--accent);
             border-radius: 4px;
-            transition: width 0.3s;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .screen {
@@ -74,6 +73,8 @@
             flex-direction: column;
             padding: 15px;
             overflow-y: auto;
+            /* Simább görgetés mobilon */
+            -webkit-overflow-scrolling: touch; 
         }
 
         .hidden {
@@ -82,24 +83,25 @@
 
         .header-controls {
             padding: 10px 15px;
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.8);
             display: flex;
             align-items: center;
             gap: 10px;
             border-bottom: 2px solid #334155;
+            border-radius: 0 0 15px 15px;
         }
 
         select {
-            padding: 8px;
+            padding: 10px;
             border-radius: 8px;
             background: #334155;
             color: white;
             border: 1px solid var(--primary);
             flex: 1;
+            font-size: 1rem;
         }
 
         .pattern-btn {
-            background: rgba(77, 116, 180, 0.2);
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 12px;
@@ -108,48 +110,52 @@
             gap: 15px;
             cursor: pointer;
             border-left: 5px solid var(--primary);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .pattern-btn:active {
+            transform: scale(0.98);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .main-card {
-            background: rgba(205, 217, 236, 0.2);
-            /*var(--card);*/
             border-radius: 20px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            margin-top: 10px;
-            background: var(--card);
-            backdrop-filter: blur(10px);
-            /* Elhomályosítja a hátteret a kártya mögött */
-            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .quiz-active-card {
             border: 3px solid var(--done);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
         }
 
         #sentence-preview {
             font-size: 1.4rem;
-            margin: 20px 0;
+            margin: 15px 0;
             min-height: 3.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            line-height: 1.4;
         }
 
         #translation-preview {
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 1.1rem;
             min-height: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .word-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .word-item {
@@ -162,16 +168,33 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-height: 80px;
+        }
+        
+        .word-item:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .animate-correct {
             background: var(--accent) !important;
-            color: white;
+            color: #064e3b;
+            transform: scale(1.05);
+            font-weight: bold;
         }
 
         .animate-wrong {
             background: var(--wrong) !important;
             color: white;
+            animation: shake 0.4s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
 
         .confetti-global {
@@ -182,31 +205,29 @@
             animation: fall linear forwards;
         }
 
-        .word-item {
-            transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .word-item:active {
-            transform: scale(0.95);
-            /* Kicsit összemegy kattintáskor */
-            filter: brightness(1.2);
-        }
-
-        .pattern-btn {
-            transition: transform 0.2s;
-        }
-
-        .pattern-btn:hover {
-            transform: translateX(5px);
-            /* Kicsit elmozdul jobbra, ha fölé mész */
-            background: rgba(51, 65, 85, 0.8);
-        }
-
         @keyframes fall {
             to {
                 transform: translateY(100vh) rotate(360deg);
             }
+        }
+
+        /* Betöltés animáció */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid var(--text);
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Csúszka stílus */
+        input[type=range] {
+            accent-color: var(--primary);
+            width: 100px;
         }
     </style>
 </head>
@@ -214,9 +235,10 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 6.1</h2>
+        <h2 style="margin:0">TravelTalk Pro 6.2</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
-            Betöltés...</div>
+            <div class="spinner"></div> Betöltés...
+        </div>
         <div id="progress-container">
             <div id="progress-bar"></div>
         </div>
@@ -225,27 +247,40 @@
 
     <div id="selector-screen" class="screen">
         <div class="header-controls">
-            <label for="lang-select">Tanulni kívánt nyelv:</label>
+            <label for="lang-select">Nyelv:</label>
             <select id="lang-select" onchange="changeLanguage(this.value)">
-                <option value="en.json">Angol (English)</option>
-                <option value="it.json">Olasz (Italiano)</option>
-                <option value="fr.json">Francia (Français)</option>
+                <option value="en.json">Angol 🇬🇧</option>
+                <option value="it.json">Olasz 🇮🇹</option>
+                <option value="fr.json">Francia 🇫🇷</option>
             </select>
         </div>
-        <div id="pattern-list" style="margin-top:15px;"></div>
+        <div id="pattern-list" style="margin-top:15px; padding-bottom: 20px;"></div>
     </div>
 
     <div id="builder-screen" class="screen hidden">
-        <button onclick="goBack()"
-            style="background:var(--card); border:none; color:var(--text); padding:10px 20px; border-radius:10px; cursor:pointer; font-weight:bold; margin-bottom:10px; align-self: flex-start;">←
-            VISSZA</button>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <button onclick="goBack()"
+                style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:var(--text); padding:8px 16px; border-radius:10px; cursor:pointer; font-weight:bold; backdrop-filter: blur(5px);">
+                ← VISSZA
+            </button>
+            
+            <!-- ÚJ: Sebességállító -->
+            <div style="display:flex; align-items:center; font-size:0.8rem; background:rgba(0,0,0,0.3); padding:5px 10px; border-radius:20px;">
+                <span style="margin-right:5px">🐢</span>
+                <input type="range" id="speech-rate" min="0.5" max="1.1" step="0.1" value="0.9">
+                <span style="margin-left:5px">🐇</span>
+            </div>
+        </div>
 
         <div id="main-card" class="main-card">
             <div id="quiz-status"
-                style="font-weight:bold; color:var(--primary); margin-bottom:10px; text-transform: uppercase; letter-spacing: 1px;">
+                style="font-weight:bold; color:var(--primary); margin-bottom:10px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">
                 TANULÓ MÓD</div>
-            <div id="phonetic-preview" style="color:var(--primary); font-family: monospace; font-size: 0.9rem;">[
-                kiejtés ]</div>
+            
+            <div id="phonetic-preview" style="color:var(--primary); font-family: monospace; font-size: 0.9rem;">
+                [ válassz... ]
+            </div>
+            
             <div id="sentence-preview">Válassz egy szót!</div>
             <div id="translation-preview">Fordítás...</div>
 
@@ -253,15 +288,18 @@
 
             <div style="margin-top:25px; display:flex; gap:15px; justify-content: center; align-items: center;">
                 <button id="speak-btn" onclick="playCurrent()"
-                    style="padding:15px; border-radius:50%; border:none; background:var(--primary); color:white; font-size:1.5rem; visibility:hidden; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">🔊</button>
+                    style="width:50px; height:50px; border-radius:50%; border:none; background:var(--primary); color:white; font-size:1.5rem; visibility:hidden; cursor:pointer; box-shadow: 0 4px 15px rgba(96, 165, 250, 0.4); display:flex; align-items:center; justify-content:center;">🔊</button>
+                
                 <button id="quiz-toggle-btn" onclick="startQuiz()"
-                    style="padding:12px 25px; border-radius:25px; border:none; background:var(--done); color:black; font-weight:bold; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">KVÍZ
-                    INDÍTÁSA</button>
+                    style="padding:12px 25px; border-radius:25px; border:none; background:var(--done); color:black; font-weight:bold; cursor:pointer; box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4); text-transform: uppercase; letter-spacing: 0.5px;">
+                    Kvíz Indítása
+                </button>
             </div>
         </div>
     </div>
 
     <script>
+        // --- KONFIGURÁCIÓ & HANGOK ---
         let categories = [];
         let stats = JSON.parse(localStorage.getItem('tt_stats')) || { learned: {}, quizPoints: {} };
         let currentCat = null;
@@ -271,6 +309,35 @@
         let lastSentence = "";
         let appLang = 'en-GB';
         let currentFile = 'en.json';
+        
+        // Alapértelmezett sebesség
+        let speechRate = 0.9;
+
+        // Hanghatások (Google Actions hangtár)
+        const audioCorrect = new Audio('https://actions.google.com/sounds/v1/cartoon/pop.ogg');
+        const audioWrong = new Audio('https://actions.google.com/sounds/v1/cartoon/clank_car_crash.ogg');
+
+        // Sebesség csúszka figyelése
+        document.getElementById('speech-rate').addEventListener('input', (e) => {
+            speechRate = parseFloat(e.target.value);
+        });
+
+        // --- iOS HANG FELOLDÁS ---
+        // Az első kattintásnál feloldja a hangszórót, hogy később menjen az automata beszéd
+        document.body.addEventListener('click', function unlockAudio() {
+            const u = new SpeechSynthesisUtterance("");
+            window.speechSynthesis.speak(u);
+            audioCorrect.play().catch(() => {});
+            audioCorrect.pause();
+            document.body.removeEventListener('click', unlockAudio);
+        }, { once: true });
+
+        // --- SERVICE WORKER REGISZTRÁCIÓ (PWA) ---
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('Service Worker kész'))
+                .catch(err => console.log('SW hiba:', err));
+        }
 
         async function changeLanguage(fileName) {
             currentFile = fileName;
@@ -283,13 +350,19 @@
         }
 
         async function loadData() {
+            // Betöltés jelző
+            const dirDiv = document.getElementById('lang-direction');
+            dirDiv.innerHTML = '<div class="spinner"></div> Betöltés...';
+            
             try {
+                // Időbélyeg a cache elkerülése miatt fejlesztéskor
                 const res = await fetch(currentFile + '?v=' + new Date().getTime());
                 if (!res.ok) throw new Error("Hiba");
                 categories = await res.json();
                 renderList();
             } catch (err) {
                 console.error("Betöltési hiba:", err);
+                dirDiv.innerHTML = "⚠️ Hiba a betöltéskor!";
             }
         }
 
@@ -300,22 +373,35 @@
 
             const directionEl = document.getElementById('lang-direction');
             if (directionEl) {
-                const langName = appLang === 'en-GB' ? 'Angol' : (appLang === 'it-IT' ? 'Olasz' : 'Francia');
-                directionEl.innerText = `Magyar ➔ ${langName}`;
+                const langName = appLang === 'en-GB' ? 'Angol 🇬🇧' : (appLang === 'it-IT' ? 'Olasz 🇮🇹' : 'Francia 🇫🇷');
+                directionEl.innerText = `Magyar 🇭🇺 ➔ ${langName}`;
             }
 
             categories.forEach((cat, idx) => {
                 const learnedCount = (stats.learned[idx] || []).length;
+                const totalCount = cat.words.length;
+                const percent = Math.round((learnedCount / totalCount) * 100);
+                
                 const item = document.createElement('div');
                 item.className = "pattern-btn";
                 item.onclick = () => openCat(idx);
 
                 const icon = (cat.words && cat.words[0]) ? cat.words[0].i : "📚";
+                
+                // Progress sáv a gombon belül
+                let progressColor = percent === 100 ? 'var(--done)' : 'var(--primary)';
+                
                 item.innerHTML = `
-                    <div style="font-size:1.5rem">${icon}</div>
+                    <div style="font-size:1.8rem; width: 40px; text-align: center;">${icon}</div>
                     <div style="flex:1">
-                        <div style="font-weight:bold">${cat.name || cat.title}</div>
-                        <small style="opacity:0.7">${learnedCount}/${cat.words.length} szó megtanulva</small>
+                        <div style="font-weight:bold; font-size:1.05rem;">${cat.name || cat.title}</div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; opacity:0.8; margin-top:2px;">
+                            <span>${cat.pattern}</span>
+                            <span>${learnedCount}/${totalCount}</span>
+                        </div>
+                        <div style="width:100%; height:4px; background:rgba(255,255,255,0.1); margin-top:5px; border-radius:2px;">
+                            <div style="width:${percent}%; height:100%; background:${progressColor}; border-radius:2px;"></div>
+                        </div>
                     </div>
                 `;
                 list.appendChild(item);
@@ -349,7 +435,7 @@
         function resetUI() {
             document.getElementById('sentence-preview').innerHTML = currentCat.pattern.replace("[X]", "<u>___</u>");
             document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", "...");
-            document.getElementById('phonetic-preview').innerText = "[ várj a választásra ]";
+            document.getElementById('phonetic-preview').innerText = "[ válassz ]";
 
             const grid = document.getElementById('word-options');
             grid.innerHTML = "";
@@ -357,7 +443,7 @@
                 const div = document.createElement('div');
                 div.className = "word-item";
                 div.onclick = () => handleInput(w, div);
-                div.innerHTML = `<span style="font-size:1.5rem; margin-bottom:5px;">${w.i}</span><b>${w.w}</b>`;
+                div.innerHTML = `<span style="font-size:1.8rem; margin-bottom:5px;">${w.i}</span><b style="font-size:0.95rem">${w.w}</b>`;
                 grid.appendChild(div);
             });
         }
@@ -371,39 +457,47 @@
                 if (element.classList.contains('animate-correct') || element.classList.contains('animate-wrong')) return;
 
                 if (word.w === quizTarget.w) {
+                    // HELYES VÁLASZ
                     element.classList.add('animate-correct');
+                    
+                    // Hang effekt
+                    audioCorrect.currentTime = 0;
+                    audioCorrect.play();
+
                     document.getElementById('sentence-preview').innerHTML = sentence;
-                    // Megmutatjuk a teljes magyar mondatot is a sikeres választás után
                     let fullHu = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
-                    document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent)">Helyes!</span> ${fullHu}`;
+                    document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent); font-weight:bold;">HELYES!</span> ${fullHu}`;
 
                     window.speechSynthesis.cancel();
-                    let feedback = new SpeechSynthesisUtterance("Rendben van");
-                    feedback.lang = "hu-HU";
-
+                    
+                    // Csak a célmondatot mondja, visszajelzést nem (gyorsabb)
                     let targetMsg = new SpeechSynthesisUtterance(sentence);
                     targetMsg.lang = currentCat.lang;
+                    targetMsg.rate = speechRate;
 
-                    feedback.onend = () => { if (isQuiz) window.speechSynthesis.speak(targetMsg); };
                     targetMsg.onend = () => {
                         setTimeout(() => {
                             element.classList.remove('animate-correct');
                             if (quizQueue.length === 0) showFinalCongratulation();
                             else nextQuizStep();
-                        }, 400);
+                        }, 500); // Kicsit várunk, hogy lássa a sikert
                     };
-                    window.speechSynthesis.speak(feedback);
+                    window.speechSynthesis.speak(targetMsg);
 
                     if (!stats.quizPoints[currentCat.index]) stats.quizPoints[currentCat.index] = 0;
                     stats.quizPoints[currentCat.index]++;
                     save();
                 } else {
+                    // ROSSZ VÁLASZ
                     element.classList.add('animate-wrong');
-                    window.speechSynthesis.cancel();
-                    let wrong = new SpeechSynthesisUtterance("Nem, nem.");
-                    wrong.lang = "hu-HU";
-                    window.speechSynthesis.speak(wrong);
-                    setTimeout(() => element.classList.remove('animate-wrong'), 800);
+                    
+                    // Hang effekt
+                    audioWrong.currentTime = 0;
+                    audioWrong.play();
+
+                    if(navigator.vibrate) navigator.vibrate(200); // Rezgés mobilon
+
+                    setTimeout(() => element.classList.remove('animate-wrong'), 600);
                 }
                 return;
             }
@@ -430,8 +524,9 @@
             document.getElementById('quiz-toggle-btn').style.display = "none";
             document.getElementById('main-card').classList.add('quiz-active-card');
             document.getElementById('quiz-status').style.color = "var(--done)";
+            
             window.speechSynthesis.cancel();
-            let startMsg = new SpeechSynthesisUtterance("Kezdődik a kvíz!");
+            let startMsg = new SpeechSynthesisUtterance("Kezdjük!");
             startMsg.lang = "hu-HU";
             startMsg.onend = () => nextQuizStep();
             window.speechSynthesis.speak(startMsg);
@@ -441,19 +536,15 @@
             if (quizQueue.length === 0) return;
             quizTarget = quizQueue.pop();
 
-            // Frissítjük a kvíz állapotjelzőt
             document.getElementById('quiz-status').innerText = `KVÍZ: ${quizQueue.length + 1} HÁTRA`;
-
-            // A mondat előnézete üres hellyel
             document.getElementById('sentence-preview').innerHTML = currentCat.pattern.replace("[X]", "<u>[ ??? ]</u>");
+            document.getElementById('phonetic-preview').innerText = "❓";
 
-            // --- ITT A JAVÍTÁS: A MAGYAR SZÖVEG MEGJELENÍTÉSE ---
-            const hTask = quizTarget.h.replace(/<[^>]*>/g, ""); // HTML mentesítés
-            document.getElementById('translation-preview').innerHTML = `KERESD: <b style="color:var(--text); font-size:1.4rem;">${hTask}</b>`;
+            const hTask = quizTarget.h.replace(/<[^>]*>/g, ""); 
+            document.getElementById('translation-preview').innerHTML = `KERESD: <b style="color:var(--text); font-size:1.4rem; border-bottom:2px solid var(--accent);">${hTask}</b>`;
 
-            // Hangos utasítás
             window.speechSynthesis.cancel();
-            let taskMsg = new SpeechSynthesisUtterance("Keresd azt, hogy: " + hTask);
+            let taskMsg = new SpeechSynthesisUtterance(hTask);
             taskMsg.lang = "hu-HU";
             window.speechSynthesis.speak(taskMsg);
         }
@@ -463,6 +554,7 @@
             window.speechSynthesis.cancel();
             let m = new SpeechSynthesisUtterance(lastSentence);
             m.lang = currentCat.lang;
+            m.rate = speechRate; // SEBESSÉG BEÁLLÍTÁSA
             window.speechSynthesis.speak(m);
         }
 
@@ -493,20 +585,26 @@
             isQuiz = false;
             document.getElementById('quiz-status').innerText = "KÉSZ!";
             showCelebration();
+            
+            // Ünneplő hang
+            const audioWin = new Audio('https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg');
+            audioWin.play();
+
             let fin = new SpeechSynthesisUtterance("Szép munka!");
             fin.lang = "hu-HU";
             window.speechSynthesis.speak(fin);
-            setTimeout(goBack, 3000);
+            setTimeout(goBack, 3500);
         }
 
         function showCelebration() {
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 40; i++) {
                 const c = document.createElement('div');
                 c.className = 'confetti-global';
                 c.style.left = Math.random() * 100 + 'vw';
                 c.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                c.style.width = c.style.height = '8px';
-                c.style.top = '-10px';
+                c.style.width = (Math.random() * 10 + 5) + 'px';
+                c.style.height = c.style.width;
+                c.style.top = '-20px';
                 c.style.animationDuration = (Math.random() * 2 + 1) + 's';
                 document.body.appendChild(c);
                 setTimeout(() => c.remove(), 3000);

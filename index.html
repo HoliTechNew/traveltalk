@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 7.4</title>
+    <title>TravelTalk Pro 7.5</title>
 
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e40af">
@@ -304,7 +304,6 @@
             margin-top: 20px;
         }
 
-        /* ÚJ: TÖBBSOROS WORD CHIP (A fordításokhoz) */
         .word-chip {
             background: #334155;
             padding: 8px 14px;
@@ -468,7 +467,7 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 7.4</h2>
+        <h2 style="margin:0">TravelTalk Pro 7.5</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
             <div class="spinner"></div> Betöltés...
         </div>
@@ -561,7 +560,7 @@
                         style="background:var(--primary); border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:1.2rem; box-shadow:0 2px 5px black;">👂</button>
                 </div>
 
-                <!-- ÚJ: SZÓFORDÍTÁS KAPCSOLÓ -->
+                <!-- SZÓFORDÍTÁS KAPCSOLÓ -->
                 <div style="display:flex; justify-content:center; margin-bottom:15px;">
                     <div class="toggle-container" style="background:rgba(255,255,255,0.1);">
                         <span style="font-size:0.85rem; margin-right:10px;">👁️ Szófordítás</span>
@@ -603,9 +602,8 @@
         let currentCat = null;
         let isQuiz = false;
         let builderMode = false;
-        let showWordHints = false; // Szófordítás kapcsoló
+        let showWordHints = false;
 
-        // Builder változók
         let currentBuilderSentence = [];
         let currentBuilderIndex = 0;
         let builderTargetAudioText = "";
@@ -617,11 +615,47 @@
         let currentFile = 'en.json';
         let speechRate = 0.9;
 
-        // Gyakori szavak mini szótára (Fallback)
+        // BŐVÍTETT MINI SZÓTÁR (GYAKORI SZAVAK + KIFEJEZÉSEK)
         const commonWords = {
-            'en': { 'i': 'én', 'you': 'te', 'he': 'ő', 'she': 'ő', 'it': 'ez/az', 'we': 'mi', 'they': 'ők', 'is': 'van', 'are': 'vannak', 'am': 'vagyok', 'the': 'a/az', 'a': 'egy', 'an': 'egy', 'to': 'hoz/hez', 'in': '-ban', 'on': 'on', 'at': '-nál', 'my': 'enyém', 'your': 'tiéd', 'very': 'nagyon', 'so': 'olyan', 'not': 'nem', 'no': 'nem', 'yes': 'igen', 'please': 'kérem', 'thanks': 'köszi', 'hello': 'szia', 'good': 'jó', 'bad': 'rossz', 'where': 'hol', 'what': 'mi', 'who': 'ki', 'how': 'hogy', 'can': 'tud', 'do': 'csinál', 'go': 'megy', 'want': 'akar', 'need': 'kell', 'have': 'van neki' },
-            'it': { 'io': 'én', 'tu': 'te', 'lui': 'ő', 'lei': 'ő', 'noi': 'mi', 'voi': 'ti', 'loro': 'ők', 'è': 'van', 'sono': 'vagyok/vannak', 'sei': 'vagy', 'il': 'a(z)', 'lo': 'a(z)', 'la': 'a(z)', 'i': 'a(z)', 'gli': 'a(z)', 'le': 'a(z)', 'un': 'egy', 'uno': 'egy', 'una': 'egy', 'di': 'birtok', 'a': '-ba/-be', 'da': '-tól', 'in': '-ban', 'con': '-val', 'su': '-on', 'per': '-ért', 'tra': 'között', 'fra': 'között', 'mio': 'enyém', 'tuo': 'tiéd', 'suo': 'övé', 'nostro': 'miénk', 'vostro': 'tiétek', 'loro': 'övék', 'ciao': 'szia', 'grazie': 'köszi', 'prego': 'szívesen', 'si': 'igen', 'no': 'nem', 'non': 'nem', 'dove': 'hol', 'chi': 'ki', 'che': 'mi', 'come': 'hogy', 'quando': 'mikor', 'perché': 'miért', 'posso': 'tudok', 'voglio': 'akarok', 'devo': 'kell', 'ho': 'van nekem' },
-            'fr': { 'je': 'én', 'tu': 'te', 'il': 'ő', 'elle': 'ő', 'nous': 'mi', 'vous': 'ti', 'ils': 'ők', 'elles': 'ők', 'suis': 'vagyok', 'es': 'vagy', 'est': 'van', 'sommes': 'vagyunk', 'êtes': 'vagytok', 'sont': 'vannak', 'le': 'a(z)', 'la': 'a(z)', 'les': 'a(z)', 'un': 'egy', 'une': 'egy', 'de': 'birtok', 'à': '-ba/-be', 'en': '-ban', 'dans': '-ban', 'sur': '-on', 'pour': '-ért', 'avec': '-val', 'mon': 'enyém', 'ton': 'tiéd', 'son': 'övé', 'notre': 'miénk', 'votre': 'tiétek', 'leur': 'övék', 'bonjour': 'jó napot', 'merci': 'köszi', 'oui': 'igen', 'non': 'nem', 'ou': 'hol', 'qui': 'ki', 'quoi': 'mi', 'comment': 'hogy', 'quand': 'mikor', 'pourquoi': 'miért', 'peux': 'tudok', 'veux': 'akarok', 'dois': 'kell', 'ai': 'van nekem' }
+            'en': {
+                'i': 'én', 'you': 'te', 'he': 'ő', 'she': 'ő', 'it': 'ez/az', 'we': 'mi', 'they': 'ők',
+                'is': 'van', 'are': 'vannak', 'am': 'vagyok', 'was': 'volt', 'were': 'voltak',
+                'the': 'a/az', 'a': 'egy', 'an': 'egy', 'my': 'enyém', 'your': 'tiéd',
+                'to': 'hoz/hez', 'in': '-ban', 'on': 'on', 'at': '-nál', 'of': 'birtok',
+                'very': 'nagyon', 'so': 'olyan', 'totally': 'teljesen', 'absolutely': 'teljesen',
+                'please': 'kérem', 'thanks': 'köszi', 'excuse': 'elnézést', 'me': 'engem',
+                'hello': 'szia', 'good': 'jó', 'bad': 'rossz', 'free': 'ingyen', 'freezing': 'fagyos',
+                'outside': 'kint', 'inside': 'bent', 'right': 'jobb/igaz', 'now': 'most',
+                'entrance': 'bejárat', 'exit': 'kijárat', 'far': 'messze', 'near': 'közel',
+                'could': 'tudna', 'would': 'szeretne', 'can': 'tud', 'have': 'van neki', 'bring': 'hozni',
+                'looking': 'keresem', 'for': '-ért/nak', 'how': 'hogy', 'get': 'eljut', 'feeling': 'érzem'
+            },
+            'it': {
+                'io': 'én', 'tu': 'te', 'lui': 'ő', 'lei': 'ő', 'noi': 'mi', 'voi': 'ti', 'loro': 'ők',
+                'è': 'van', 'sono': 'vagyok/vannak', 'sei': 'vagy', 'siamo': 'vagyunk', 'siete': 'vagytok',
+                'il': 'a(z)', 'lo': 'a(z)', 'la': 'a(z)', 'i': 'a(z)', 'gli': 'a(z)', 'le': 'a(z)',
+                'un': 'egy', 'uno': 'egy', 'una': 'egy', 'del': 'a', 'della': 'a',
+                'di': 'birtok', 'a': '-ba/-be', 'da': '-tól', 'in': '-ban', 'con': '-val', 'su': '-on', 'per': '-ért',
+                'mio': 'enyém', 'tuo': 'tiéd', 'suo': 'övé', 'nostro': 'miénk',
+                'ciao': 'szia', 'grazie': 'köszi', 'prego': 'szívesen', 'scusi': 'elnézést',
+                'vorrei': 'szeretnék', 'prendo': 'veszek/kérek', 'cerco': 'keresem', 'voglio': 'akarok',
+                'molto': 'nagyon', 'adesso': 'most', 'oggi': 'ma', 'domani': 'holnap',
+                'macchiato': 'foltos', 'margherita': 'margaréta', 'favore': 'szívesség',
+                'dove': 'hol', 'chi': 'ki', 'che': 'mi', 'come': 'hogy', 'quando': 'mikor', 'perché': 'miért',
+                'lavoro': 'munka', 'pronti': 'kész', 'partire': 'indulni', 'centrale': 'központi'
+            },
+            'fr': {
+                'je': 'én', 'tu': 'te', 'il': 'ő', 'elle': 'ő', 'nous': 'mi', 'vous': 'ti', 'ils': 'ők', 'elles': 'ők',
+                'suis': 'vagyok', 'es': 'vagy', 'est': 'van', 'sommes': 'vagyunk', 'êtes': 'vagytok', 'sont': 'vannak',
+                'le': 'a(z)', 'la': 'a(z)', 'les': 'a(z)', 'un': 'egy', 'une': 'egy', 'du': 'a', 'des': 'a',
+                'de': 'birtok', 'à': '-ba/-be', 'en': '-ban', 'dans': '-ban', 'sur': '-on', 'pour': '-ért', 'avec': '-val',
+                'mon': 'enyém', 'ton': 'tiéd', 'son': 'övé', 'notre': 'miénk', 'votre': 'tiétek',
+                'bonjour': 'jó napot', 'merci': 'köszi', 'oui': 'igen', 'non': 'nem', 'pardon': 'bocsánat',
+                'voudrais': 'szeretnék', 'appelle': 'hívnak', 'présente': 'bemutatom', 'ami': 'barát',
+                'petit': 'kicsi', 'grand': 'nagy', 'noir': 'fekete', 'oignon': 'hagyma', 'addition': 'számla',
+                'ou': 'hol', 'qui': 'ki', 'quoi': 'mi', 'comment': 'hogy', 'quand': 'mikor', 'pourquoi': 'miért',
+                'plaît': 'kérlek', 'et': 'és', 'toi': 'te'
+            }
         };
 
         // HANGOK
@@ -629,7 +663,7 @@
         const audioWrong = new Audio('https://upload.wikimedia.org/wikipedia/commons/5/5f/Wrong_answer_sound_effect.ogg');
         const audioWin = new Audio('https://upload.wikimedia.org/wikipedia/commons/c/c2/Ta-da_sound.ogg');
 
-        // BIZTONSÁGOS ESEMÉNYKEZELŐK
+        // ESEMÉNYKEZELŐK
         const rateSlider = document.getElementById('speech-rate');
         if (rateSlider) rateSlider.addEventListener('input', (e) => speechRate = parseFloat(e.target.value));
 
@@ -645,10 +679,7 @@
         if (hintToggle) {
             hintToggle.addEventListener('change', (e) => {
                 showWordHints = e.target.checked;
-                // Ha fut a játék, frissítjük a nézetet (újrarendereljük a gombokat)
                 if (builderMode && lastSentence) {
-                    const wordObj = { h: document.getElementById('builder-target-hu').innerText }; // Hack a paraméterhez
-                    // Csak a keverést frissítjük, nem indítjuk újra teljesen
                     renderBuilderChips();
                 }
             });
@@ -923,10 +954,7 @@
             let cleanSentence = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
             currentBuilderSentence = cleanSentence.split(/\s+/);
 
-            // Keverés
             let shuffled = [...currentBuilderSentence].sort(() => Math.random() - 0.5);
-
-            // Mentjük globálisba, hogy a toggle tudja frissíteni
             window.currentShuffled = shuffled;
 
             renderBuilderChips();
@@ -937,34 +965,23 @@
             const scrambleZone = document.getElementById('builder-scramble-zone');
             const dropZone = document.getElementById('builder-drop-zone');
 
-            // Ha épp most indulunk (üres a drop zóna)
             if (currentBuilderIndex === 0) {
                 dropZone.innerHTML = "";
             }
             scrambleZone.innerHTML = "";
 
-            // Csak azokat rajzoljuk ki, amik még nincsenek felhasználva
             window.currentShuffled.forEach((word, idx) => {
-                // Ha ez a szó már fel lett használva (index alapján nehéz követni a keverés miatt, 
-                // egyszerűsítünk: újrarenderelésnél csak a gombok tartalmát frissítjük)
-                // A legegyszerűbb: mindig újrarendereljük az egészet, és a `checkBuilderWord` kezeli az állapotot.
-
-                // DE: A `checkBuilderWord` manipulálja a DOM-ot.
-                // A legegyszerűbb, ha a toggle csak a class-t kapcsolgatja.
-                // Viszont itt dinamikusan kell keresni a fordítást.
-
                 const chip = document.createElement('div');
                 chip.className = "word-chip";
 
-                // Fordítás keresése
                 let trans = "";
                 if (showWordHints) {
                     const clean = word.toLowerCase().replace(/[^a-zà-ú]/g, "");
                     // 1. Saját szótár
                     let found = dictionaryData.find(d => d.w.toLowerCase().includes(clean));
-                    if (found) trans = found.h.replace(/<[^>]*>/g, ""); // HTML tisztítás
+                    if (found) trans = found.h.replace(/<[^>]*>/g, "");
 
-                    // 2. Fallback mini szótár (ha nincs találat)
+                    // 2. Fallback mini szótár
                     if (!trans) {
                         const langCode = currentFile.substring(0, 2);
                         if (commonWords[langCode] && commonWords[langCode][clean]) {
@@ -974,12 +991,6 @@
                 }
 
                 chip.innerHTML = `${word} ${trans ? '<div class="chip-trans">' + trans + '</div>' : ''}`;
-
-                // Ha már felhasználták ezt a konkrét elemet, jelöljük meg
-                // (Ez komplex, mert a keverés miatt nem tudjuk melyik melyik.
-                // Egyszerűbb: A toggle csak a jövőbeli gombokra hat, vagy újraindítja a kört.
-                // Jelenleg: Ha átkapcsolod, csak a lenti (még nem használt) gombok frissülnek).
-
                 chip.onclick = (e) => checkBuilderWord(word, e.currentTarget);
                 scrambleZone.appendChild(chip);
             });
@@ -994,7 +1005,6 @@
         }
 
         function checkBuilderWord(clickedWord, chipElement) {
-            // Ha már használt, ne csináljon semmit
             if (chipElement.classList.contains('used')) return;
 
             const correctWord = currentBuilderSentence[currentBuilderIndex];
@@ -1003,7 +1013,6 @@
             if (clickedWord.toLowerCase() === correctWord.toLowerCase()) {
                 audioCorrect.currentTime = 0; audioCorrect.play();
 
-                // Eltüntetjük lentről (vizuálisan)
                 chipElement.classList.add('used');
                 chipElement.style.opacity = "0";
                 chipElement.style.pointerEvents = "none";
@@ -1029,7 +1038,6 @@
                             document.getElementById('standard-mode-elements').classList.remove('hidden');
                             document.getElementById('word-options').classList.remove('hidden');
                             document.getElementById('quiz-toggle-btn').style.display = "block";
-                            // Visszaállítás
                             currentBuilderIndex = 0;
                         }, 2500);
                     }, 500);

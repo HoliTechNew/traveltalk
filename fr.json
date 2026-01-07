@@ -1,0 +1,777 @@
+[
+    {
+        "index": 0,
+        "name": "Bemutatkozás",
+        "lang": "fr-FR",
+        "pattern": "Je m'[X].",
+        "hu": "Az én nevem [X].",
+        "p_v": "zsö m...",
+        "words": [
+            {
+                "w": "appelle Pierre",
+                "h": "Pierre",
+                "p": "apell pier"
+            },
+            {
+                "w": "appelle Marie",
+                "h": "Marie",
+                "p": "apell mari"
+            }
+        ]
+    },
+    {
+        "index": 1,
+        "name": "Rendelés",
+        "lang": "fr-FR",
+        "pattern": "Je voudrais [X], s'il vous plaît.",
+        "hu": "Szeretnék [X], legyen szíves.",
+        "p_v": "zsö vudre ..., szil vu ple",
+        "words": [
+            {
+                "w": "un café",
+                "h": "egy kávét",
+                "p": "ön kafe"
+            },
+            {
+                "w": "un croissant",
+                "h": "egy croissant-t",
+                "p": "ön kroásszan"
+            },
+            {
+                "w": "un thé",
+                "h": "egy teát",
+                "p": "ön té"
+            },
+            {
+                "w": "une salade",
+                "h": "egy salátát",
+                "p": "ün szalad"
+            }
+        ]
+    },
+    {
+        "index": 2,
+        "name": "Szeretet",
+        "lang": "fr-FR",
+        "pattern": "J'aime [X].",
+        "hu": "Szeretem [X].",
+        "p_v": "zsem ...",
+        "words": [
+            {
+                "w": "le chocolat",
+                "h": "a csokoládét",
+                "p": "lö sokoalá"
+            },
+            {
+                "w": "le café",
+                "h": "a kávét",
+                "p": "lö kafe"
+            },
+            {
+                "w": "la musique",
+                "h": "a zenét",
+                "p": "la müzik"
+            },
+            {
+                "w": "l'été",
+                "h": "a nyarat",
+                "p": "leté"
+            }
+        ]
+    },
+    {
+        "index": 3,
+        "name": "Helyszínek",
+        "lang": "fr-FR",
+        "pattern": "Je suis à [X].",
+        "hu": "[X]-ban/ben vagyok.",
+        "p_v": "zsö szüi a ...",
+        "words": [
+            {
+                "w": "Paris",
+                "h": "Párizs",
+                "p": "pari"
+            },
+            {
+                "w": "la gare",
+                "h": "a vasútállomás",
+                "p": "la gar"
+            },
+            {
+                "w": "l'hôtel",
+                "h": "a hotel",
+                "p": "lotel"
+            }
+        ]
+    },
+    {
+        "index": 0,
+        "name": "Bemutatkozás (Présentation)",
+        "lang": "fr-FR",
+        "pattern": "Je m'[X].",
+        "hu": "Az én nevem [X].",
+        "p_v": "zsö m...",
+        "words": [
+            {
+                "w": "appelle Pierre",
+                "h": "Pierre",
+                "p": "apell pier"
+            },
+            {
+                "w": "appelle Marie",
+                "h": "Marie",
+                "p": "apell mari"
+            },
+            {
+                "w": "présente",
+                "h": "bemutatkozom",
+                "p": "prézant"
+            }
+        ]
+    },
+    {
+        "index": 1,
+        "name": "Számok (Les Nombres)",
+        "lang": "fr-FR",
+        "pattern": "Il y a [X] personnes.",
+        "hu": "[X] ember van itt.",
+        "p_v": "il i a ... perszon",
+        "words": [
+            {
+                "w": "un",
+                "h": "egy",
+                "p": "ön"
+            },
+            {
+                "w": "deux",
+                "h": "kettő",
+                "p": "dő"
+            },
+            {
+                "w": "trois",
+                "h": "három",
+                "p": "troá"
+            },
+            {
+                "w": "dix",
+                "h": "tíz",
+                "p": "dis"
+            },
+            {
+                "w": "vingt",
+                "h": "húsz",
+                "p": "ven"
+            }
+        ]
+    },
+    {
+        "index": 2,
+        "name": "Színek (Les Couleurs)",
+        "lang": "fr-FR",
+        "pattern": "C'est un sac [X].",
+        "hu": "Ez egy [X] táska.",
+        "p_v": "szé ön szak ...",
+        "words": [
+            {
+                "w": "bleu",
+                "h": "kék",
+                "p": "blő"
+            },
+            {
+                "w": "rouge",
+                "h": "piros",
+                "p": "ruzzs"
+            },
+            {
+                "w": "vert",
+                "h": "zöld",
+                "p": "ver"
+            },
+            {
+                "w": "noir",
+                "h": "fekete",
+                "p": "noár"
+            },
+            {
+                "w": "blanc",
+                "h": "fehér",
+                "p": "blan"
+            }
+        ]
+    },
+    {
+        "index": 3,
+        "name": "Család (La Famille)",
+        "lang": "fr-FR",
+        "pattern": "C'est mon [X].",
+        "hu": "Ő az én [X].",
+        "p_v": "szé mon ...",
+        "words": [
+            {
+                "w": "père",
+                "h": "apám",
+                "p": "per"
+            },
+            {
+                "w": "frère",
+                "h": "fivérem",
+                "p": "frer"
+            },
+            {
+                "w": "grand-père",
+                "h": "nagyapám",
+                "p": "granper"
+            },
+            {
+                "w": "oncle",
+                "h": "nagybátyám",
+                "p": "onkl"
+            }
+        ]
+    },
+    {
+        "index": 4,
+        "name": "Időjárás (La Météo)",
+        "lang": "fr-FR",
+        "pattern": "Il fait [X].",
+        "hu": "[X] idő van.",
+        "p_v": "il fe ...",
+        "words": [
+            {
+                "w": "beau",
+                "h": "szép",
+                "p": "bo"
+            },
+            {
+                "w": "froid",
+                "h": "hideg",
+                "p": "froá"
+            },
+            {
+                "w": "chaud",
+                "h": "meleg",
+                "p": "só"
+            },
+            {
+                "w": "du vent",
+                "h": "szeles",
+                "p": "dü van"
+            }
+        ]
+    },
+    {
+        "index": 5,
+        "name": "Napi rutin (Ma Routine)",
+        "lang": "fr-FR",
+        "pattern": "Je [X] tôt.",
+        "hu": "Korán [X].",
+        "p_v": "zsö ... tó",
+        "words": [
+            {
+                "w": "me lève",
+                "h": "kelek fel",
+                "p": "mö lev"
+            },
+            {
+                "w": "mange",
+                "h": "eszem",
+                "p": "manzs"
+            },
+            {
+                "w": "travaille",
+                "h": "dolgozom",
+                "p": "travaj"
+            },
+            {
+                "w": "dors",
+                "h": "alszom",
+                "p": "dor"
+            }
+        ]
+    },
+    {
+        "index": 6,
+        "name": "Étterem (Au Restaurant)",
+        "lang": "fr-FR",
+        "pattern": "Je voudrais [X].",
+        "hu": "[X]-t szeretnék.",
+        "p_v": "zsö vudre ...",
+        "words": [
+            {
+                "w": "une soupe",
+                "h": "egy levest",
+                "p": "ün szup"
+            },
+            {
+                "w": "un verre d'eau",
+                "h": "egy pohár vizet",
+                "p": "ön ver do"
+            },
+            {
+                "w": "l'addition",
+                "h": "a számlát",
+                "p": "ladiszion"
+            }
+        ]
+    },
+    {
+        "index": 7,
+        "name": "Vásárlás (Les Courses)",
+        "lang": "fr-FR",
+        "pattern": "Où est [X] ?",
+        "hu": "Hol van a/az [X]?",
+        "p_v": "u e ...",
+        "words": [
+            {
+                "w": "le pain",
+                "h": "kenyér",
+                "p": "lö pen"
+            },
+            {
+                "w": "le lait",
+                "h": "tej",
+                "p": "lö le"
+            },
+            {
+                "w": "le fromage",
+                "h": "sajt",
+                "p": "lö fromazzs"
+            },
+            {
+                "w": "la viande",
+                "h": "hús",
+                "p": "la viand"
+            }
+        ]
+    },
+    {
+        "index": 8,
+        "name": "Ruházat (Les Vêtements)",
+        "lang": "fr-FR",
+        "pattern": "Je porte [X].",
+        "hu": "[X]-t hordok.",
+        "p_v": "zsö port ...",
+        "words": [
+            {
+                "w": "un pantalon",
+                "h": "egy nadrágot",
+                "p": "ön pantalon"
+            },
+            {
+                "w": "une chemise",
+                "h": "egy inget",
+                "p": "ün sömiz"
+            },
+            {
+                "w": "des chaussures",
+                "h": "cipőket",
+                "p": "dé sosszűr"
+            }
+        ]
+    },
+    {
+        "index": 9,
+        "name": "Turisztika (Le Tourisme)",
+        "lang": "fr-FR",
+        "pattern": "Je cherche [X].",
+        "hu": "A/Az [X]-t keresem.",
+        "p_v": "zsö sers ...",
+        "words": [
+            {
+                "w": "le musée",
+                "h": "múzeumot",
+                "p": "lö müzé"
+            },
+            {
+                "w": "la tour Eiffel",
+                "h": "Eiffel-tornyot",
+                "p": "la tur efel"
+            },
+            {
+                "w": "l'office de tourisme",
+                "h": "turista irodát",
+                "p": "lofisz dö turizm"
+            },
+            {
+                "w": "la place",
+                "h": "teret",
+                "p": "la plas"
+            },
+            {
+                "w": "un guide",
+                "h": "idegenvezetőt",
+                "p": "ön gid"
+            }
+        ]
+    },
+    {
+        "index": 10,
+        "name": "Közlekedés (Transport)",
+        "lang": "fr-FR",
+        "pattern": "Je prends [X].",
+        "hu": "A/Az [X]-val/vel megyek.",
+        "p_v": "zsö pran ...",
+        "words": [
+            {
+                "w": "le métro",
+                "h": "metró",
+                "p": "lö métro"
+            },
+            {
+                "w": "le train",
+                "h": "vonat",
+                "p": "lö tren"
+            },
+            {
+                "w": "l'avion",
+                "h": "repülő",
+                "p": "lavion"
+            },
+            {
+                "w": "le vélo",
+                "h": "bicikli",
+                "p": "lö vélo"
+            }
+        ]
+    },
+    {
+        "index": 11,
+        "name": "Egészség (Santé)",
+        "lang": "fr-FR",
+        "pattern": "J'ai mal [X].",
+        "hu": "Fáj a [X].",
+        "p_v": "zsé mal ...",
+        "words": [
+            {
+                "w": "à la tête",
+                "h": "fejem",
+                "p": "a la tet"
+            },
+            {
+                "w": "au ventre",
+                "h": "hasam",
+                "p": "o vantr"
+            },
+            {
+                "w": "au dos",
+                "h": "hátam",
+                "p": "o do"
+            }
+        ]
+    },
+    {
+        "index": 12,
+        "name": "Munka (Travail)",
+        "lang": "fr-FR",
+        "pattern": "Je suis [X].",
+        "hu": "[X] vagyok (foglalkozás).",
+        "p_v": "zsö szüi ...",
+        "words": [
+            {
+                "w": "professeur",
+                "h": "tanár",
+                "p": "profesször"
+            },
+            {
+                "w": "étudiant",
+                "h": "diák",
+                "p": "etüdián"
+            },
+            {
+                "w": "médecin",
+                "h": "orvos",
+                "p": "medszen"
+            }
+        ]
+    },
+    {
+        "index": 13,
+        "name": "Szabadidő (Loisirs)",
+        "lang": "fr-FR",
+        "pattern": "Je fais [X].",
+        "hu": "[X]-t csinálok / sportolok.",
+        "p_v": "zsö fe ...",
+        "words": [
+            {
+                "w": "du sport",
+                "h": "sportot",
+                "p": "dü szpor"
+            },
+            {
+                "w": "de la photo",
+                "h": "fotózást",
+                "p": "dö la fotó"
+            },
+            {
+                "w": "du piano",
+                "h": "zongorázást",
+                "p": "dü piáno"
+            }
+        ]
+    },
+    {
+        "index": 14,
+        "name": "Érzelmek (Émotions)",
+        "lang": "fr-FR",
+        "pattern": "Je suis [X].",
+        "hu": "[X] vagyok.",
+        "p_v": "zsö szüi ...",
+        "words": [
+            {
+                "w": "heureux",
+                "h": "boldog",
+                "p": "őrő"
+            },
+            {
+                "w": "fatigué",
+                "h": "fáradt",
+                "p": "fatigé"
+            },
+            {
+                "w": "triste",
+                "h": "szomorú",
+                "p": "triszt"
+            }
+        ]
+    },
+    {
+        "index": 15,
+        "name": "A lakásban (À la maison)",
+        "lang": "fr-FR",
+        "pattern": "Il y a [X] dans la chambre.",
+        "hu": "Van egy [X] a szobában.",
+        "p_v": "il i a ... dan la sambr",
+        "words": [
+            {
+                "w": "un lit",
+                "h": "ágy",
+                "p": "ön li"
+            },
+            {
+                "w": "une table",
+                "h": "asztal",
+                "p": "ün tabl"
+            },
+            {
+                "w": "une armoire",
+                "h": "szekrény",
+                "p": "ün ármoár"
+            }
+        ]
+    },
+    {
+        "index": 16,
+        "name": "Városban (En ville)",
+        "lang": "fr-FR",
+        "pattern": "Je cherche [X].",
+        "hu": "Keresem a/az [X]-t.",
+        "p_v": "zsö sers ...",
+        "words": [
+            {
+                "w": "la banque",
+                "h": "bankot",
+                "p": "la bank"
+            },
+            {
+                "w": "la poste",
+                "h": "postát",
+                "p": "la poszt"
+            },
+            {
+                "w": "l'hôpital",
+                "h": "kórházat",
+                "p": "lopitál"
+            }
+        ]
+    },
+    {
+        "index": 17,
+        "name": "Vásárlás - Ruhák (Shopping)",
+        "lang": "fr-FR",
+        "pattern": "Je voudrais essayer [X].",
+        "hu": "Szeretném felpróbálni a/az [X]-t.",
+        "p_v": "zsö vudre eszejé ...",
+        "words": [
+            {
+                "w": "ce pull",
+                "h": "ezt a pulóvert",
+                "p": "szö pül"
+            },
+            {
+                "w": "cette jupe",
+                "h": "ezt a szoknyát",
+                "p": "szet zsüp"
+            },
+            {
+                "w": "ces chaussures",
+                "h": "ezeket a cipőket",
+                "p": "szé sosszűr"
+            }
+        ]
+    },
+    {
+        "index": 18,
+        "name": "Természet (Nature)",
+        "lang": "fr-FR",
+        "pattern": "Je vois [X].",
+        "hu": "Látok egy [X]-t.",
+        "p_v": "zsö voá ...",
+        "words": [
+            {
+                "w": "une fleur",
+                "h": "virágot",
+                "p": "ün flőr"
+            },
+            {
+                "w": "un arbre",
+                "h": "fát",
+                "p": "ön árbr"
+            },
+            {
+                "w": "la mer",
+                "h": "tengert",
+                "p": "la mer"
+            }
+        ]
+    },
+    {
+        "index": 19,
+        "name": "Technika (Technologie)",
+        "lang": "fr-FR",
+        "pattern": "J'utilise [X].",
+        "hu": "Használom a/az [X]-t.",
+        "p_v": "zsütiliz ...",
+        "words": [
+            {
+                "w": "mon portable",
+                "h": "mobilomat",
+                "p": "mon portábl"
+            },
+            {
+                "w": "l'ordinateur",
+                "h": "számítógépet",
+                "p": "lordinatőr"
+            },
+            {
+                "w": "Internet",
+                "h": "Internetet",
+                "p": "internet"
+            }
+        ]
+    },
+    {
+        "index": 20,
+        "name": "Iskola (École)",
+        "lang": "fr-FR",
+        "pattern": "J'écris avec [X].",
+        "hu": "[X]-val/vel írok.",
+        "p_v": "zsékri avek ...",
+        "words": [
+            {
+                "w": "un stylo",
+                "h": "toll",
+                "p": "ön sztiló"
+            },
+            {
+                "w": "un crayon",
+                "h": "ceruza",
+                "p": "ön krejon"
+            }
+        ]
+    },
+    {
+        "index": 21,
+        "name": "Zene/Mozi (Culture)",
+        "lang": "fr-FR",
+        "pattern": "Je regarde [X].",
+        "hu": "Nézek egy [X]-t.",
+        "p_v": "zsö rögárd ...",
+        "words": [
+            {
+                "w": "un film",
+                "h": "filmet",
+                "p": "ön film"
+            },
+            {
+                "w": "la télé",
+                "h": "tévét",
+                "p": "la télé"
+            }
+        ]
+    },
+    {
+        "index": 22,
+        "name": "Helyhatározók (Position)",
+        "lang": "fr-FR",
+        "pattern": "Le chat est [X] la table.",
+        "hu": "A macska az asztal [X] van.",
+        "p_v": "lö sa é ... la tabl",
+        "words": [
+            {
+                "w": "sur",
+                "h": "rajta",
+                "p": "szür"
+            },
+            {
+                "w": "sous",
+                "h": "alatt",
+                "p": "szu"
+            },
+            {
+                "w": "devant",
+                "h": "előtt",
+                "p": "dövan"
+            }
+        ]
+    },
+    {
+        "index": 23,
+        "name": "Gyakori igék (Verbes)",
+        "lang": "fr-FR",
+        "pattern": "Je veux [X].",
+        "hu": "[X] akarok.",
+        "p_v": "zsö vő ...",
+        "words": [
+            {
+                "w": "partir",
+                "h": "elmenni",
+                "p": "pártir"
+            },
+            {
+                "w": "parler",
+                "h": "beszélni",
+                "p": "párlé"
+            },
+            {
+                "w": "boire",
+                "h": "inni",
+                "p": "boár"
+            }
+        ]
+    },
+    {
+        "index": 24,
+        "name": "Kérdések (Questions)",
+        "lang": "fr-FR",
+        "pattern": "[X] vas-tu ?",
+        "hu": "[X] mész?",
+        "p_v": "... va tü",
+        "words": [
+            {
+                "w": "Où",
+                "h": "Hová",
+                "p": "u"
+            },
+            {
+                "w": "Quand",
+                "h": "Mikor",
+                "p": "kan"
+            },
+            {
+                "w": "Comment",
+                "h": "Hogyan",
+                "p": "komman"
+            }
+        ]
+    }
+]

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TravelTalk Pro 6.1</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #3b82f6;
+            --text: #f1f5f9;
+            --accent: #22c55e;
+            --wrong: #ef4444;
+            --done: #eab308;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #progress-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .header-controls {
+            padding: 10px 15px;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #334155;
+        }
+
+        select {
+            padding: 8px;
+            border-radius: 8px;
+            background: #334155;
+            color: white;
+            border: 1px solid var(--primary);
+            flex: 1;
+        }
+
+        .pattern-btn {
+            background: var(--card);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            border-left: 5px solid var(--primary);
+        }
+
+        .main-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
+        }
+
+        .quiz-active-card {
+            border: 3px solid var(--done);
+        }
+
+        #sentence-preview {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            min-height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #translation-preview {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            min-height: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .word-item {
+            background: #334155;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .animate-correct {
+            background: var(--accent) !important;
+            color: white;
+        }
+
+        .animate-wrong {
+            background: var(--wrong) !important;
+            color: white;
+        }
+
+        .confetti-global {
+            position: fixed;
+            z-index: 999;
+            pointer-events: none;
+            border-radius: 2px;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2 style="margin:0">TravelTalk Pro 6.1</h2>
+        <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
+            Betöltés...</div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="progress-text" style="font-size: 0.75rem; margin-top: 4px;">0%</div>
+    </header>
+
+    <div id="selector-screen" class="screen">
+        <div class="header-controls">
+            <label for="lang-select">Tanulni kívánt nyelv:</label>
+            <select id="lang-select" onchange="changeLanguage(this.value)">
+                <option value="en.json">Angol (English)</option>
+                <option value="it.json">Olasz (Italiano)</option>
+                <option value="fr.json">Francia (Français)</option>
+            </select>
+        </div>
+        <div id="pattern-list" style="margin-top:15px;"></div>
+    </div>
+
+    <div id="builder-screen" class="screen hidden">
+        <button onclick="goBack()"
+            style="background:var(--card); border:none; color:var(--text); padding:10px 20px; border-radius:10px; cursor:pointer; font-weight:bold; margin-bottom:10px; align-self: flex-start;">←
+            VISSZA</button>
+
+        <div id="main-card" class="main-card">
+            <div id="quiz-status"
+                style="font-weight:bold; color:var(--primary); margin-bottom:10px; text-transform: uppercase; letter-spacing: 1px;">
+                TANULÓ MÓD</div>
+            <div id="phonetic-preview" style="color:var(--primary); font-family: monospace; font-size: 0.9rem;">[
+                kiejtés ]</div>
+            <div id="sentence-preview">Válassz egy szót!</div>
+            <div id="translation-preview">Fordítás...</div>
+
+            <div class="word-grid" id="word-options"></div>
+
+            <div style="margin-top:25px; display:flex; gap:15px; justify-content: center; align-items: center;">
+                <button id="speak-btn" onclick="playCurrent()"
+                    style="padding:15px; border-radius:50%; border:none; background:var(--primary); color:white; font-size:1.5rem; visibility:hidden; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">🔊</button>
+                <button id="quiz-toggle-btn" onclick="startQuiz()"
+                    style="padding:12px 25px; border-radius:25px; border:none; background:var(--done); color:black; font-weight:bold; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">KVÍZ
+                    INDÍTÁSA</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let categories = [];
+        let stats = JSON.parse(localStorage.getItem('tt_stats')) || { learned: {}, quizPoints: {} };
+        let currentCat = null;
+        let isQuiz = false;
+        let quizQueue = [];
+        let quizTarget = null;
+        let lastSentence = "";
+        let appLang = 'en-GB';
+        let currentFile = 'en.json';
+
+        async function changeLanguage(fileName) {
+            currentFile = fileName;
+            if (fileName === 'en.json') appLang = 'en-GB';
+            else if (fileName === 'it.json') appLang = 'it-IT';
+            else if (fileName === 'fr.json') appLang = 'fr-FR';
+
+            localStorage.setItem('tt_lang', appLang);
+            await loadData();
+        }
+
+        async function loadData() {
+            try {
+                const res = await fetch(currentFile + '?v=' + new Date().getTime());
+                if (!res.ok) throw new Error("Hiba");
+                categories = await res.json();
+                renderList();
+            } catch (err) {
+                console.error("Betöltési hiba:", err);
+            }
+        }
+
+        function renderList() {
+            const list = document.getElementById('pattern-list');
+            if (!list) return;
+            list.innerHTML = "";
+
+            const directionEl = document.getElementById('lang-direction');
+            if (directionEl) {
+                const langName = appLang === 'en-GB' ? 'Angol' : (appLang === 'it-IT' ? 'Olasz' : 'Francia');
+                directionEl.innerText = `Magyar ➔ ${langName}`;
+            }
+
+            categories.forEach((cat, idx) => {
+                const learnedCount = (stats.learned[idx] || []).length;
+                const item = document.createElement('div');
+                item.className = "pattern-btn";
+                item.onclick = () => openCat(idx);
+
+                const icon = (cat.words && cat.words[0]) ? cat.words[0].i : "📚";
+                item.innerHTML = `
+                    <div style="font-size:1.5rem">${icon}</div>
+                    <div style="flex:1">
+                        <div style="font-weight:bold">${cat.name || cat.title}</div>
+                        <small style="opacity:0.7">${learnedCount}/${cat.words.length} szó megtanulva</small>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+            updateProgress();
+        }
+
+        function openCat(idx) {
+            currentCat = categories[idx];
+            currentCat.index = idx;
+            isQuiz = false;
+
+            document.getElementById('selector-screen').classList.add('hidden');
+            document.getElementById('builder-screen').classList.remove('hidden');
+
+            const qBtn = document.getElementById('quiz-toggle-btn');
+            if (qBtn) qBtn.style.display = "block";
+
+            const qStat = document.getElementById('quiz-status');
+            if (qStat) {
+                qStat.innerText = "TANULÓ MÓD";
+                qStat.style.color = "var(--primary)";
+            }
+
+            document.getElementById('main-card').classList.remove('quiz-active-card');
+            document.getElementById('speak-btn').style.visibility = "hidden";
+
+            resetUI();
+        }
+
+        function resetUI() {
+            document.getElementById('sentence-preview').innerHTML = currentCat.pattern.replace("[X]", "<u>___</u>");
+            document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", "...");
+            document.getElementById('phonetic-preview').innerText = "[ várj a választásra ]";
+
+            const grid = document.getElementById('word-options');
+            grid.innerHTML = "";
+            currentCat.words.forEach(w => {
+                const div = document.createElement('div');
+                div.className = "word-item";
+                div.onclick = () => handleInput(w, div);
+                div.innerHTML = `<span style="font-size:1.5rem; margin-bottom:5px;">${w.i}</span><b>${w.w}</b>`;
+                grid.appendChild(div);
+            });
+        }
+
+        function handleInput(word, element) {
+            let cleanWord = word.w.replace(/<[^>]*>/g, "");
+            let sentence = currentCat.pattern.replace("[X]", cleanWord);
+            sentence = sentence.replace(/\s+/g, ' ').replace(/' /g, "'").trim();
+
+            if (isQuiz) {
+                if (element.classList.contains('animate-correct') || element.classList.contains('animate-wrong')) return;
+
+                if (word.w === quizTarget.w) {
+                    element.classList.add('animate-correct');
+                    document.getElementById('sentence-preview').innerHTML = sentence;
+                    // Megmutatjuk a teljes magyar mondatot is a sikeres választás után
+                    let fullHu = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
+                    document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent)">Helyes!</span> ${fullHu}`;
+
+                    window.speechSynthesis.cancel();
+                    let feedback = new SpeechSynthesisUtterance("Rendben van");
+                    feedback.lang = "hu-HU";
+
+                    let targetMsg = new SpeechSynthesisUtterance(sentence);
+                    targetMsg.lang = currentCat.lang;
+
+                    feedback.onend = () => { if (isQuiz) window.speechSynthesis.speak(targetMsg); };
+                    targetMsg.onend = () => {
+                        setTimeout(() => {
+                            element.classList.remove('animate-correct');
+                            if (quizQueue.length === 0) showFinalCongratulation();
+                            else nextQuizStep();
+                        }, 400);
+                    };
+                    window.speechSynthesis.speak(feedback);
+
+                    if (!stats.quizPoints[currentCat.index]) stats.quizPoints[currentCat.index] = 0;
+                    stats.quizPoints[currentCat.index]++;
+                    save();
+                } else {
+                    element.classList.add('animate-wrong');
+                    window.speechSynthesis.cancel();
+                    let wrong = new SpeechSynthesisUtterance("Nem, nem.");
+                    wrong.lang = "hu-HU";
+                    window.speechSynthesis.speak(wrong);
+                    setTimeout(() => element.classList.remove('animate-wrong'), 800);
+                }
+                return;
+            }
+
+            // TANULÓ MÓD
+            document.getElementById('sentence-preview').innerHTML = sentence;
+            document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
+            document.getElementById('phonetic-preview').innerText = "[ " + currentCat.p_v.replace("...", word.p) + " ]";
+            document.getElementById('speak-btn').style.visibility = "visible";
+
+            lastSentence = sentence;
+            playCurrent();
+
+            if (!stats.learned[currentCat.index]) stats.learned[currentCat.index] = [];
+            if (!stats.learned[currentCat.index].includes(word.w)) {
+                stats.learned[currentCat.index].push(word.w);
+                save();
+            }
+        }
+
+        function startQuiz() {
+            isQuiz = true;
+            quizQueue = [...currentCat.words].sort(() => Math.random() - 0.5);
+            document.getElementById('quiz-toggle-btn').style.display = "none";
+            document.getElementById('main-card').classList.add('quiz-active-card');
+            document.getElementById('quiz-status').style.color = "var(--done)";
+            window.speechSynthesis.cancel();
+            let startMsg = new SpeechSynthesisUtterance("Kezdődik a kvíz!");
+            startMsg.lang = "hu-HU";
+            startMsg.onend = () => nextQuizStep();
+            window.speechSynthesis.speak(startMsg);
+        }
+
+        function nextQuizStep() {
+            if (quizQueue.length === 0) return;
+            quizTarget = quizQueue.pop();
+
+            // Frissítjük a kvíz állapotjelzőt
+            document.getElementById('quiz-status').innerText = `KVÍZ: ${quizQueue.length + 1} HÁTRA`;
+
+            // A mondat előnézete üres hellyel
+            document.getElementById('sentence-preview').innerHTML = currentCat.pattern.replace("[X]", "<u>[ ??? ]</u>");
+
+            // --- ITT A JAVÍTÁS: A MAGYAR SZÖVEG MEGJELENÍTÉSE ---
+            const hTask = quizTarget.h.replace(/<[^>]*>/g, ""); // HTML mentesítés
+            document.getElementById('translation-preview').innerHTML = `KERESD: <b style="color:var(--text); font-size:1.4rem;">${hTask}</b>`;
+
+            // Hangos utasítás
+            window.speechSynthesis.cancel();
+            let taskMsg = new SpeechSynthesisUtterance("Keresd azt, hogy: " + hTask);
+            taskMsg.lang = "hu-HU";
+            window.speechSynthesis.speak(taskMsg);
+        }
+
+        function playCurrent() {
+            if (!lastSentence) return;
+            window.speechSynthesis.cancel();
+            let m = new SpeechSynthesisUtterance(lastSentence);
+            m.lang = currentCat.lang;
+            window.speechSynthesis.speak(m);
+        }
+
+        function goBack() {
+            isQuiz = false;
+            window.speechSynthesis.cancel();
+            document.getElementById('selector-screen').classList.remove('hidden');
+            document.getElementById('builder-screen').classList.add('hidden');
+            renderList();
+        }
+
+        function save() { localStorage.setItem('tt_stats', JSON.stringify(stats)); updateProgress(); }
+
+        function updateProgress() {
+            let total = 0, learned = 0;
+            categories.forEach((c, i) => {
+                total += c.words.length;
+                learned += (stats.learned[i] || []).length;
+            });
+            const prg = total > 0 ? (learned / total) * 100 : 0;
+            const pb = document.getElementById('progress-bar');
+            const pt = document.getElementById('progress-text');
+            if (pb) pb.style.width = prg + "%";
+            if (pt) pt.innerText = `${Math.round(prg)}% Teljesítve`;
+        }
+
+        function showFinalCongratulation() {
+            isQuiz = false;
+            document.getElementById('quiz-status').innerText = "KÉSZ!";
+            showCelebration();
+            let fin = new SpeechSynthesisUtterance("Szép munka!");
+            fin.lang = "hu-HU";
+            window.speechSynthesis.speak(fin);
+            setTimeout(goBack, 3000);
+        }
+
+        function showCelebration() {
+            for (let i = 0; i < 30; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti-global';
+                c.style.left = Math.random() * 100 + 'vw';
+                c.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                c.style.width = c.style.height = '8px';
+                c.style.top = '-10px';
+                c.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 3000);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+
+</html>

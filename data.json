@@ -1,0 +1,5000 @@
+[
+  {
+    "category": "1. Alapok",
+    "title": "Lenni (Állapotok)",
+    "lang": "en-GB",
+    "pattern": "[X] today.",
+    "hu": "[X] ma.",
+    "p_v": "... tudéj",
+    "words": [
+      {
+        "w": "<u>I am</u> hungry",
+        "h": "<u>Éhes vagyok</u>",
+        "i": "😋",
+        "p": "áj em hángri"
+      },
+      {
+        "w": "<u>I am</u> tired",
+        "h": "<u>Fáradt vagyok</u>",
+        "i": "😴",
+        "p": "áj em tájörd"
+      },
+      {
+        "w": "<u>It is</u> cold",
+        "h": "<u>Hideg van</u>",
+        "i": "❄️",
+        "p": "it iz kóld"
+      },
+      {
+        "w": "<u>You are</u> right",
+        "h": "<u>Igazad van</u>",
+        "i": "✅",
+        "p": "jú ár rájt"
+      },
+      {
+        "w": "<u>We are</u> late",
+        "h": "<u>Késtünk</u>",
+        "i": "⏰",
+        "p": "ví ár léjt"
+      },
+      {
+        "w": "<u>It is</u> free",
+        "h": "<u>Ingyenes</u>",
+        "i": "🎁",
+        "p": "it iz frí"
+      },
+      {
+        "w": "<u>They are</u> ready",
+        "h": "<u>Készen vannak</u>",
+        "i": "🆗",
+        "p": "déj ár redi"
+      },
+      {
+        "w": "<u>I am</u> lost",
+        "h": "<u>Eltévedtem</u>",
+        "i": "📍",
+        "p": "áj em loszt"
+      },
+      {
+        "w": "<u>It is</u> broken",
+        "h": "<u>Elromlott</u>",
+        "i": "🛠️",
+        "p": "it iz bróken"
+      },
+      {
+        "w": "<u>You are</u> kind",
+        "h": "<u>Kedves vagy</u>",
+        "i": "😇",
+        "p": "jú ár kájnd"
+      }
+    ]
+  },
+  {
+    "category": "2. Túlélés",
+    "title": "Kérések (Udvarias)",
+    "lang": "en-GB",
+    "pattern": "I'd like [X], please.",
+    "hu": "Szeretnék [X], kérem.",
+    "p_v": "ájd lájk ... plíz",
+    "words": [
+      {
+        "w": "<u>a coffee</u>",
+        "h": "<u>egy kávét</u>",
+        "i": "☕",
+        "p": "ö kofi"
+      },
+      {
+        "w": "<u>the bill</u>",
+        "h": "<u>a számlát</u>",
+        "i": "🧾",
+        "p": "dö bil"
+      },
+      {
+        "w": "<u>a taxi</u>",
+        "h": "<u>egy taxit</u>",
+        "i": "🚕",
+        "p": "ö takszi"
+      },
+      {
+        "w": "<u>some water</u>",
+        "h": "<u>vizet</u>",
+        "i": "💧",
+        "p": "szám vótör"
+      },
+      {
+        "w": "<u>a room</u>",
+        "h": "<u>egy szobát</u>",
+        "i": "🛌",
+        "p": "ö rúm"
+      },
+      {
+        "w": "<u>help</u>",
+        "h": "<u>segítséget</u>",
+        "i": "🆘",
+        "p": "help"
+      },
+      {
+        "w": "<u>a map</u>",
+        "h": "<u>egy térképet</u>",
+        "i": "🗺️",
+        "p": "ö mep"
+      },
+      {
+        "w": "<u>the menu</u>",
+        "h": "<u>az étlapot</u>",
+        "i": "🍴",
+        "p": "dö menyú"
+      }
+    ]
+  },
+  {
+    "category": "3. Közlekedés",
+    "title": "Hol van...?",
+    "lang": "en-GB",
+    "pattern": "Where is [X]?",
+    "hu": "Hol van [X]?",
+    "p_v": "ver iz ...",
+    "words": [
+      {
+        "w": "<u>the toilet</u>",
+        "h": "<u>a mosdó</u>",
+        "i": "🚽",
+        "p": "dö tojlet"
+      },
+      {
+        "w": "<u>the airport</u>",
+        "h": "<u>a reptér</u>",
+        "i": "✈️",
+        "p": "di erport"
+      },
+      {
+        "w": "<u>the bus stop</u>",
+        "h": "<u>a buszmegálló</u>",
+        "i": "🚏",
+        "p": "dö bász sztop"
+      },
+      {
+        "w": "<u>the station</u>",
+        "h": "<u>az állomás</u>",
+        "i": "🚉",
+        "p": "dö sztéjsön"
+      },
+      {
+        "w": "<u>the exit</u>",
+        "h": "<u>a kijárat</u>",
+        "i": "🚪",
+        "p": "di egzitt"
+      },
+      {
+        "w": "<u>the pharmacy</u>",
+        "h": "<u>a gyógyszertár</u>",
+        "i": "➕",
+        "p": "dö fármászi"
+      }
+    ]
+  },
+  {
+    "category": "4. Vásárlás",
+    "title": "Árak és Fizetés",
+    "lang": "en-GB",
+    "pattern": "Is [X] expensive?",
+    "hu": "[X] drága?",
+    "p_v": "iz ... ekszpenzív",
+    "words": [
+      {
+        "w": "<u>this</u>",
+        "h": "<u>ez</u>",
+        "i": "👉",
+        "p": "disz"
+      },
+      {
+        "w": "<u>the ticket</u>",
+        "h": "<u>a jegy</u>",
+        "i": "🎫",
+        "p": "dö tikit"
+      },
+      {
+        "w": "<u>the hotel</u>",
+        "h": "<u>a hotel</u>",
+        "i": "🏨",
+        "p": "dö hotel"
+      },
+      {
+        "w": "<u>everything</u>",
+        "h": "<u>minden</u>",
+        "i": "🌍",
+        "p": "evriding"
+      }
+    ]
+  },
+  {
+    "category": "5. Idő",
+    "title": "Mikor?",
+    "lang": "en-GB",
+    "pattern": "When is [X]?",
+    "hu": "Mikor van [X]?",
+    "p_v": "ven iz ...",
+    "words": [
+      {
+        "w": "<u>the flight</u>",
+        "h": "<u>a repülő</u>",
+        "i": "🛫",
+        "p": "dö flájt"
+      },
+      {
+        "w": "<u>breakfast</u>",
+        "h": "<u>a reggeli</u>",
+        "i": "🍳",
+        "p": "brekfászt"
+      },
+      {
+        "w": "<u>dinner</u>",
+        "h": "<u>a vacsora</u>",
+        "i": "🍲",
+        "p": "dinör"
+      },
+      {
+        "w": "<u>the meeting</u>",
+        "h": "<u>a találkozó</u>",
+        "i": "🤝",
+        "p": "dö míting"
+      },
+      {
+        "w": "<u>check-out</u>",
+        "h": "<u>a kijelentkezés</u>",
+        "i": "🔑",
+        "p": "csekk-áut"
+      }
+    ]
+  },
+  {
+    "category": "6. Étterem",
+    "title": "Rendelés és panasz",
+    "lang": "en-GB",
+    "pattern": "This [X] is not good.",
+    "hu": "Ez a(z) [X] nem jó.",
+    "p_v": "disz ... iz not gud",
+    "words": [
+      {
+        "w": "<u>soup</u>",
+        "h": "<u>leves</u>",
+        "i": "🥣",
+        "p": "szúp"
+      },
+      {
+        "w": "<u>meat</u>",
+        "h": "<u>hús</u>",
+        "i": "🥩",
+        "p": "mít"
+      },
+      {
+        "w": "<u>fish</u>",
+        "h": "<u>hal</u>",
+        "i": "🐟",
+        "p": "fis"
+      },
+      {
+        "w": "<u>wine</u>",
+        "h": "<u>bor</u>",
+        "i": "🍷",
+        "p": "vájn"
+      },
+      {
+        "w": "<u>beer</u>",
+        "h": "<u>sör</u>",
+        "i": "🍺",
+        "p": "bír"
+      },
+      {
+        "w": "<u>coffee</u>",
+        "h": "<u>kávé</u>",
+        "i": "☕",
+        "p": "kofi"
+      },
+      {
+        "w": "<u>tea</u>",
+        "h": "<u>tea</u>",
+        "i": "🍵",
+        "p": "tí"
+      },
+      {
+        "w": "<u>glass</u>",
+        "h": "<u>pohár</u>",
+        "i": "🥛",
+        "p": "glász"
+      },
+      {
+        "w": "<u>fork</u>",
+        "h": "<u>villa</u>",
+        "i": "🍴",
+        "p": "fork"
+      },
+      {
+        "w": "<u>knife</u>",
+        "h": "<u>kés</u>",
+        "i": "🔪",
+        "p": "nájf"
+      },
+      {
+        "w": "<u>spoon</u>",
+        "h": "<u>kanál</u>",
+        "i": "🥄",
+        "p": "szpún"
+      },
+      {
+        "w": "<u>plate</u>",
+        "h": "<u>tányér</u>",
+        "i": "🍽️",
+        "p": "pléjt"
+      },
+      {
+        "w": "<u>table</u>",
+        "h": "<u>asztal</u>",
+        "i": "🪑",
+        "p": "téjbel"
+      },
+      {
+        "w": "<u>bread</u>",
+        "h": "<u>kenyér</u>",
+        "i": "🍞",
+        "p": "bred"
+      },
+      {
+        "w": "<u>salad</u>",
+        "h": "<u>saláta</u>",
+        "i": "🥗",
+        "p": "szalad"
+      },
+      {
+        "w": "<u>fruit</u>",
+        "h": "<u>gyümölcs</u>",
+        "i": "🍎",
+        "p": "frút"
+      },
+      {
+        "w": "<u>dessert</u>",
+        "h": "<u>desszert</u>",
+        "i": "🍰",
+        "p": "dizőrt"
+      },
+      {
+        "w": "<u>bill</u>",
+        "h": "<u>számla</u>",
+        "i": "🧾",
+        "p": "bil"
+      },
+      {
+        "w": "<u>salt</u>",
+        "h": "<u>só</u>",
+        "i": "🧂",
+        "p": "szolt"
+      },
+      {
+        "w": "<u>sugar</u>",
+        "h": "<u>cukor</u>",
+        "i": "🍬",
+        "p": "sugör"
+      },
+      {
+        "w": "<u>napkin</u>",
+        "h": "<u>szalvéta</u>",
+        "i": "🧻",
+        "p": "nepkin"
+      },
+      {
+        "w": "<u>water</u>",
+        "h": "<u>víz</u>",
+        "i": "💧",
+        "p": "vótör"
+      },
+      {
+        "w": "<u>juice</u>",
+        "h": "<u>gyümölcslé</u>",
+        "i": "🥤",
+        "p": "dzsúsz"
+      },
+      {
+        "w": "<u>chicken</u>",
+        "h": "<u>csirke</u>",
+        "i": "🍗",
+        "p": "csikin"
+      },
+      {
+        "w": "<u>pasta</u>",
+        "h": "<u>tészta</u>",
+        "i": "🍝",
+        "p": "pászta"
+      },
+      {
+        "w": "<u>pizza</u>",
+        "h": "<u>pizza</u>",
+        "i": "🍕",
+        "p": "pizca"
+      },
+      {
+        "w": "<u>cheese</u>",
+        "h": "<u>sajt</u>",
+        "i": "🧀",
+        "p": "csíz"
+      },
+      {
+        "w": "<u>milk</u>",
+        "h": "<u>tej</u>",
+        "i": "🥛",
+        "p": "milk"
+      },
+      {
+        "w": "<u>egg</u>",
+        "h": "<u>tojás</u>",
+        "i": "🥚",
+        "p": "eg"
+      },
+      {
+        "w": "<u>butter</u>",
+        "h": "<u>vaj</u>",
+        "i": "🧈",
+        "p": "batör"
+      }
+    ]
+  },
+  {
+    "category": "7. Szálloda",
+    "title": "Szoba és kényelem",
+    "lang": "en-GB",
+    "pattern": "Does the room have [X]?",
+    "hu": "Van a szobában [X]?",
+    "p_v": "dáz dö rúm hev ...",
+    "words": [
+      {
+        "w": "<u>Wi-Fi</u>",
+        "h": "<u>Wi-Fi</u>",
+        "i": "📶",
+        "p": "vájfáj"
+      },
+      {
+        "w": "<u>AC</u>",
+        "h": "<u>klíma</u>",
+        "i": "❄️",
+        "p": "éjszí"
+      },
+      {
+        "w": "<u>TV</u>",
+        "h": "<u>tévé</u>",
+        "i": "📺",
+        "p": "tíví"
+      },
+      {
+        "w": "<u>a balcony</u>",
+        "h": "<u>erkély</u>",
+        "i": "🌅",
+        "p": "ö belkoni"
+      },
+      {
+        "w": "<u>a shower</u>",
+        "h": "<u>zuhany</u>",
+        "i": "🚿",
+        "p": "ö sáuör"
+      },
+      {
+        "w": "<u>a bath</u>",
+        "h": "<u>fürdőkád</u>",
+        "i": "🛀",
+        "p": "ö bász"
+      },
+      {
+        "w": "<u>a fridge</u>",
+        "h": "<u>hűtő</u>",
+        "i": "🧊",
+        "p": "ö fridzs"
+      },
+      {
+        "w": "<u>towels</u>",
+        "h": "<u>törölközők</u>",
+        "i": "🛀",
+        "p": "táuelsz"
+      },
+      {
+        "w": "<u>soap</u>",
+        "h": "<u>szappan</u>",
+        "i": "🧼",
+        "p": "szóp"
+      },
+      {
+        "w": "<u>a safe</u>",
+        "h": "<u>széf</u>",
+        "i": "🔒",
+        "p": "ö széjf"
+      },
+      {
+        "w": "<u>a phone</u>",
+        "h": "<u>telefon</u>",
+        "i": "☎️",
+        "p": "ö fón"
+      },
+      {
+        "w": "<u>a mirror</u>",
+        "h": "<u>tükör</u>",
+        "i": "🪞",
+        "p": "ö mirör"
+      },
+      {
+        "w": "<u>blankets</u>",
+        "h": "<u>takarók</u>",
+        "i": "🛌",
+        "p": "blenkitsz"
+      },
+      {
+        "w": "<u>pillows</u>",
+        "h": "<u>párnák</u>",
+        "i": "☁️",
+        "p": "pilósz"
+      },
+      {
+        "w": "<u>a desk</u>",
+        "h": "<u>íróasztal</u>",
+        "i": "📖",
+        "p": "ö deszk"
+      },
+      {
+        "w": "<u>a chair</u>",
+        "h": "<u>szék</u>",
+        "i": "🪑",
+        "p": "ö cser"
+      },
+      {
+        "w": "<u>heating</u>",
+        "h": "<u>fűtés</u>",
+        "i": "♨️",
+        "p": "híting"
+      },
+      {
+        "w": "<u>a window</u>",
+        "h": "<u>ablak</u>",
+        "i": "🪟",
+        "p": "ö vindó"
+      },
+      {
+        "w": "<u>a lamp</u>",
+        "h": "<u>lámpa</u>",
+        "i": "💡",
+        "p": "ö lemp"
+      },
+      {
+        "w": "<u>closet</u>",
+        "h": "<u>szekrény</u>",
+        "i": "👗",
+        "p": "klozit"
+      },
+      {
+        "w": "<u>iron</u>",
+        "h": "<u>vasaló</u>",
+        "i": "💨",
+        "p": "ájron"
+      },
+      {
+        "w": "<u>hairdryer</u>",
+        "h": "<u>hajszárító</u>",
+        "i": "💨",
+        "p": "herdrájör"
+      },
+      {
+        "w": "<u>kettle</u>",
+        "h": "<u>vízforraló</u>",
+        "i": "🫖",
+        "p": "ketel"
+      },
+      {
+        "w": "<u>coffee machine</u>",
+        "h": "<u>kávéfőző</u>",
+        "i": "☕",
+        "p": "kofi masín"
+      },
+      {
+        "w": "<u>extra bed</u>",
+        "h": "<u>pótágy</u>",
+        "i": "🛏️",
+        "p": "eksztrá bed"
+      },
+      {
+        "w": "<u>toilet paper</u>",
+        "h": "<u>vécépapír</u>",
+        "i": "🧻",
+        "p": "tojlet péjpör"
+      },
+      {
+        "w": "<u>shampoo</u>",
+        "h": "<u>sampon</u>",
+        "i": "🧴",
+        "p": "sempú"
+      },
+      {
+        "w": "<u>slippers</u>",
+        "h": "<u>papucs</u>",
+        "i": "🩴",
+        "p": "szlipörsz"
+      },
+      {
+        "w": "<u>view</u>",
+        "h": "<u>kilátás</u>",
+        "i": "🏙️",
+        "p": "vjú"
+      },
+      {
+        "w": "<u>curtains</u>",
+        "h": "<u>függöny</u>",
+        "i": "🏁",
+        "p": "körtinsz"
+      }
+    ]
+  },
+  {
+    "category": "8. Egészség",
+    "title": "Fájdalom és tünetek",
+    "lang": "en-GB",
+    "pattern": "My [X] hurts.",
+    "hu": "Fáj a(z) [X]-(e)m.",
+    "p_v": "máj ... hörtsz",
+    "words": [
+      {
+        "w": "<u>head</u>",
+        "h": "<u>fejem</u>",
+        "i": "💆",
+        "p": "hed"
+      },
+      {
+        "w": "<u>stomach</u>",
+        "h": "<u>gyomrom</u>",
+        "i": "🤢",
+        "p": "sztámák"
+      },
+      {
+        "w": "<u>back</u>",
+        "h": "<u>hátam</u>",
+        "i": "🦴",
+        "p": "bek"
+      },
+      {
+        "w": "<u>throat</u>",
+        "h": "<u>torkom</u>",
+        "i": "😫",
+        "p": "szrót"
+      },
+      {
+        "w": "<u>tooth</u>",
+        "h": "<u>fogam</u>",
+        "i": "🦷",
+        "p": "túz"
+      },
+      {
+        "w": "<u>leg</u>",
+        "h": "<u>lábam</u>",
+        "i": "🦵",
+        "p": "leg"
+      },
+      {
+        "w": "<u>arm</u>",
+        "h": "<u>karom</u>",
+        "i": "💪",
+        "p": "árm"
+      },
+      {
+        "w": "<u>eye</u>",
+        "h": "<u>szemem</u>",
+        "i": "👁️",
+        "p": "áj"
+      },
+      {
+        "w": "<u>ear</u>",
+        "h": "<u>fülem</u>",
+        "i": "👂",
+        "p": "ír"
+      },
+      {
+        "w": "<u>chest</u>",
+        "h": "<u>mellkasom</u>",
+        "i": "🫁",
+        "p": "cseszt"
+      },
+      {
+        "w": "<u>hand</u>",
+        "h": "<u>kezem</u>",
+        "i": "✋",
+        "p": "hend"
+      },
+      {
+        "w": "<u>foot</u>",
+        "h": "<u>lábfejem</u>",
+        "i": "👣",
+        "p": "fut"
+      },
+      {
+        "w": "<u>shoulder</u>",
+        "h": "<u>vállam</u>",
+        "i": "🤷",
+        "p": "sóldör"
+      },
+      {
+        "w": "<u>knee</u>",
+        "h": "<u>térdem</u>",
+        "i": "🦵",
+        "p": "ní"
+      },
+      {
+        "w": "<u>heart</u>",
+        "h": "<u>szívem</u>",
+        "i": "❤️",
+        "p": "hárt"
+      },
+      {
+        "w": "<u>skin</u>",
+        "h": "<u>bőröm</u>",
+        "i": "🩹",
+        "p": "szkin"
+      },
+      {
+        "w": "<u>finger</u>",
+        "h": "<u>ujjam</u>",
+        "i": "☝️",
+        "p": "fingör"
+      },
+      {
+        "w": "<u>neck</u>",
+        "h": "<u>nyakam</u>",
+        "i": "🧣",
+        "p": "nek"
+      },
+      {
+        "w": "<u>nose</u>",
+        "h": "<u>orrom</u>",
+        "i": "👃",
+        "p": "nóz"
+      },
+      {
+        "w": "<u>mouth</u>",
+        "h": "<u>szám</u>",
+        "i": "👄",
+        "p": "máu-sz"
+      },
+      {
+        "w": "<u>tongue</u>",
+        "h": "<u>nyelvem</u>",
+        "i": "👅",
+        "p": "tang"
+      },
+      {
+        "w": "<u>bone</u>",
+        "h": "<u>csontom</u>",
+        "i": "🦴",
+        "p": "bón"
+      },
+      {
+        "w": "<u>muscle</u>",
+        "h": "<u>izmom</u>",
+        "i": "💪",
+        "p": "maszel"
+      },
+      {
+        "w": "<u>blood</u>",
+        "h": "<u>vérem</u>",
+        "i": "🩸",
+        "p": "blad"
+      },
+      {
+        "w": "<u>belly</u>",
+        "h": "<u>hasam</u>",
+        "i": "🤰",
+        "p": "beli"
+      },
+      {
+        "w": "<u>elbow</u>",
+        "h": "<u>könyököm</u>",
+        "i": "💪",
+        "p": "elbó"
+      },
+      {
+        "w": "<u>wrist</u>",
+        "h": "<u>csuklóm</u>",
+        "i": "⌚",
+        "p": "riszt"
+      },
+      {
+        "w": "<u>ankle</u>",
+        "h": "<u>bokám</u>",
+        "i": "👞",
+        "p": "enkel"
+      },
+      {
+        "w": "<u>face</u>",
+        "h": "<u>arcom</u>",
+        "i": "😊",
+        "p": "féjsz"
+      },
+      {
+        "w": "<u>toe</u>",
+        "h": "<u>lábujjam</u>",
+        "i": "🦶",
+        "p": "tó"
+      }
+    ]
+  },
+  {
+    "category": "9. Irányok",
+    "title": "Útbaigazítás",
+    "lang": "en-GB",
+    "pattern": "Go [X] at the corner.",
+    "hu": "Menjen [X] a sarkon.",
+    "p_v": "gó ... et dö kornör",
+    "words": [
+      {
+        "w": "<u>left</u>",
+        "h": "<u>balra</u>",
+        "i": "⬅️",
+        "p": "left"
+      },
+      {
+        "w": "<u>right</u>",
+        "h": "<u>jobbra</u>",
+        "i": "➡️",
+        "p": "rájt"
+      },
+      {
+        "w": "<u>straight</u>",
+        "h": "<u>egyenesen</u>",
+        "i": "⬆️",
+        "p": "sztréjt"
+      },
+      {
+        "w": "<u>back</u>",
+        "h": "<u>vissza</u>",
+        "i": "🔙",
+        "p": "bek"
+      },
+      {
+        "w": "<u>slowly</u>",
+        "h": "<u>lassan</u>",
+        "i": "🐢",
+        "p": "szlólí"
+      },
+      {
+        "w": "<u>fast</u>",
+        "h": "<u>gyorsan</u>",
+        "i": "⚡",
+        "p": "fászt"
+      },
+      {
+        "w": "<u>inside</u>",
+        "h": "<u>be</u>",
+        "i": "📥",
+        "p": "inszájd"
+      },
+      {
+        "w": "<u>outside</u>",
+        "h": "<u>ki</u>",
+        "i": "📤",
+        "p": "áutszájd"
+      },
+      {
+        "w": "<u>up</u>",
+        "h": "<u>fel</u>",
+        "i": "🆙",
+        "p": "ap"
+      },
+      {
+        "w": "<u>down</u>",
+        "h": "<u>le</u>",
+        "i": "⬇️",
+        "p": "dáun"
+      },
+      {
+        "w": "<u>north</u>",
+        "h": "<u>északra</u>",
+        "i": "🧭",
+        "p": "norsz"
+      },
+      {
+        "w": "<u>south</u>",
+        "h": "<u>délre</u>",
+        "i": "🧭",
+        "p": "száusz"
+      },
+      {
+        "w": "<u>east</u>",
+        "h": "<u>keletre</u>",
+        "i": "🧭",
+        "p": "íszt"
+      },
+      {
+        "w": "<u>west</u>",
+        "h": "<u>nyugatra</u>",
+        "i": "🧭",
+        "p": "veszt"
+      },
+      {
+        "w": "<u>ahead</u>",
+        "h": "<u>előre</u>",
+        "i": "⏩",
+        "p": "öhed"
+      },
+      {
+        "w": "<u>around</u>",
+        "h": "<u>körbe</u>",
+        "i": "🔄",
+        "p": "öráund"
+      },
+      {
+        "w": "<u>through</u>",
+        "h": "<u>át</u>",
+        "i": "➡️",
+        "p": "szrú"
+      },
+      {
+        "w": "<u>across</u>",
+        "h": "<u>keresztül</u>",
+        "i": "🚶",
+        "p": "ökrósz"
+      },
+      {
+        "w": "<u>over</u>",
+        "h": "<u>át (fölötte)</u>",
+        "i": "✈️",
+        "p": "óvör"
+      },
+      {
+        "w": "<u>under</u>",
+        "h": "<u>alatt</u>",
+        "i": "🚇",
+        "p": "andör"
+      },
+      {
+        "w": "<u>near</u>",
+        "h": "<u>közel</u>",
+        "i": "📍",
+        "p": "nír"
+      },
+      {
+        "w": "<u>far</u>",
+        "h": "<u>messze</u>",
+        "i": "🔭",
+        "p": "fár"
+      },
+      {
+        "w": "<u>past</u>",
+        "h": "<u>el (valami mellett)</u>",
+        "i": "🏃",
+        "p": "pászt"
+      },
+      {
+        "w": "<u>between</u>",
+        "h": "<u>közé</u>",
+        "i": "↔️",
+        "p": "bitvín"
+      },
+      {
+        "w": "<u>towards</u>",
+        "h": "<u>felé</u>",
+        "i": "🎯",
+        "p": "tövórdz"
+      },
+      {
+        "w": "<u>away</u>",
+        "h": "<u>el</u>",
+        "i": "👋",
+        "p": "övéj"
+      },
+      {
+        "w": "<u>sideways</u>",
+        "h": "<u>oldalra</u>",
+        "i": "🦀",
+        "p": "száj dvéjz"
+      },
+      {
+        "w": "<u>upstairs</u>",
+        "h": "<u>fel az emeletre</u>",
+        "i": "🪜",
+        "p": "apszterz"
+      },
+      {
+        "w": "<u>downstairs</u>",
+        "h": "<u>le a földszintre</u>",
+        "i": "⬇️",
+        "p": "dáunszterz"
+      },
+      {
+        "w": "<u>everywhere</u>",
+        "h": "<u>mindenfelé</u>",
+        "i": "🌎",
+        "p": "evrivér"
+      }
+    ]
+  },
+  {
+    "category": "10. Számok 1-30",
+    "title": "Alapszámok",
+    "lang": "en-GB",
+    "pattern": "I have [X] euros.",
+    "hu": "Van [X] euróm.",
+    "p_v": "áj hev ... jurósz",
+    "words": [
+      {
+        "w": "<u>one</u>",
+        "h": "<u>egy</u>",
+        "i": "1️⃣",
+        "p": "ván"
+      },
+      {
+        "w": "<u>two</u>",
+        "h": "<u>kettő</u>",
+        "i": "2️⃣",
+        "p": "tú"
+      },
+      {
+        "w": "<u>three</u>",
+        "h": "<u>három</u>",
+        "i": "3️⃣",
+        "p": "szrí"
+      },
+      {
+        "w": "<u>four</u>",
+        "h": "<u>négy</u>",
+        "i": "4️⃣",
+        "p": "fór"
+      },
+      {
+        "w": "<u>five</u>",
+        "h": "<u>öt</u>",
+        "i": "5️⃣",
+        "p": "fájv"
+      },
+      {
+        "w": "<u>six</u>",
+        "h": "<u>hat</u>",
+        "i": "6️⃣",
+        "p": "sziksz"
+      },
+      {
+        "w": "<u>seven</u>",
+        "h": "<u>hét</u>",
+        "i": "7️⃣",
+        "p": "szeven"
+      },
+      {
+        "w": "<u>eight</u>",
+        "h": "<u>nyolc</u>",
+        "i": "8️⃣",
+        "p": "éjt"
+      },
+      {
+        "w": "<u>nine</u>",
+        "h": "<u>kilenc</u>",
+        "i": "9️⃣",
+        "p": "nájn"
+      },
+      {
+        "w": "<u>ten</u>",
+        "h": "<u>tíz</u>",
+        "i": "🔟",
+        "p": "ten"
+      },
+      {
+        "w": "<u>eleven</u>",
+        "h": "<u>tizenegy</u>",
+        "i": "1️⃣1️⃣",
+        "p": "ileven"
+      },
+      {
+        "w": "<u>twelve</u>",
+        "h": "<u>tizenkettő</u>",
+        "i": "1️⃣2️⃣",
+        "p": "tvelv"
+      },
+      {
+        "w": "<u>thirteen</u>",
+        "h": "<u>tizenhárom</u>",
+        "i": "1️⃣3️⃣",
+        "p": "szörtín"
+      },
+      {
+        "w": "<u>fourteen</u>",
+        "h": "<u>tizennégy</u>",
+        "i": "1️⃣4️⃣",
+        "p": "fórtín"
+      },
+      {
+        "w": "<u>fifteen</u>",
+        "h": "<u>tizenöt</u>",
+        "i": "1️⃣5️⃣",
+        "p": "fiftín"
+      },
+      {
+        "w": "<u>sixteen</u>",
+        "h": "<u>tizenhat</u>",
+        "i": "1️⃣6️⃣",
+        "p": "sziksztín"
+      },
+      {
+        "w": "<u>seventeen</u>",
+        "h": "<u>tizenhét</u>",
+        "i": "1️⃣7️⃣",
+        "p": "szeventín"
+      },
+      {
+        "w": "<u>eighteen</u>",
+        "h": "<u>tizennyolc</u>",
+        "i": "1️⃣8️⃣",
+        "p": "éjtín"
+      },
+      {
+        "w": "<u>nineteen</u>",
+        "h": "<u>tizenkilenc</u>",
+        "i": "1️⃣9️⃣",
+        "p": "nájntín"
+      },
+      {
+        "w": "<u>twenty</u>",
+        "h": "<u>húsz</u>",
+        "i": "2️⃣0️⃣",
+        "p": "tventi"
+      },
+      {
+        "w": "<u>twenty-one</u>",
+        "h": "<u>huszonegy</u>",
+        "i": "2️⃣1️⃣",
+        "p": "tventi-ván"
+      },
+      {
+        "w": "<u>twenty-two</u>",
+        "h": "<u>huszonkettő</u>",
+        "i": "2️⃣2️⃣",
+        "p": "tventi-tú"
+      },
+      {
+        "w": "<u>twenty-three</u>",
+        "h": "<u>huszonhárom</u>",
+        "i": "2️⃣3️⃣",
+        "p": "tventi-szrí"
+      },
+      {
+        "w": "<u>twenty-four</u>",
+        "h": "<u>huszonnégy</u>",
+        "i": "2️⃣4️⃣",
+        "p": "tventi-fór"
+      },
+      {
+        "w": "<u>twenty-five</u>",
+        "h": "<u>huszonöt</u>",
+        "i": "2️⃣5️⃣",
+        "p": "tventi-fájv"
+      },
+      {
+        "w": "<u>twenty-six</u>",
+        "h": "<u>huszonhat</u>",
+        "i": "2️⃣6️⃣",
+        "p": "tventi-sziksz"
+      },
+      {
+        "w": "<u>twenty-seven</u>",
+        "h": "<u>huszonhét</u>",
+        "i": "2️⃣7️⃣",
+        "p": "tventi-szeven"
+      },
+      {
+        "w": "<u>twenty-eight</u>",
+        "h": "<u>huszonnyolc</u>",
+        "i": "2️⃣8️⃣",
+        "p": "tventi-éjt"
+      },
+      {
+        "w": "<u>twenty-nine</u>",
+        "h": "<u>huszonkilenc</u>",
+        "i": "2️⃣9️⃣",
+        "p": "tventi-nájn"
+      },
+      {
+        "w": "<u>thirty</u>",
+        "h": "<u>harminc</u>",
+        "i": "3️⃣0️⃣",
+        "p": "szörti"
+      }
+    ]
+  },
+  {
+    "category": "11. Számok 30-100",
+    "title": "Nagyobb számok",
+    "lang": "en-GB",
+    "pattern": "That costs [X] dollars.",
+    "hu": "Az [X] dollárba kerül.",
+    "p_v": "det kosztsz ... dolörz",
+    "words": [
+      {
+        "w": "<u>forty</u>",
+        "h": "<u>negyven</u>",
+        "i": "4️⃣0️⃣",
+        "p": "fórti"
+      },
+      {
+        "w": "<u>fifty</u>",
+        "h": "<u>ötven</u>",
+        "i": "5️⃣0️⃣",
+        "p": "fifti"
+      },
+      {
+        "w": "<u>sixty</u>",
+        "h": "<u>hatvan</u>",
+        "i": "6️⃣0️⃣",
+        "p": "sziksztí"
+      },
+      {
+        "w": "<u>seventy</u>",
+        "h": "<u>hetven</u>",
+        "i": "7️⃣0️⃣",
+        "p": "szeventí"
+      },
+      {
+        "w": "<u>eighty</u>",
+        "h": "<u>nyolcvan</u>",
+        "i": "8️⃣0️⃣",
+        "p": "éjtí"
+      },
+      {
+        "w": "<u>ninety</u>",
+        "h": "<u>kilencven</u>",
+        "i": "9️⃣0️⃣",
+        "p": "nájntí"
+      },
+      {
+        "w": "<u>a hundred</u>",
+        "h": "<u>száz</u>",
+        "i": "💯",
+        "p": "ö hándred"
+      },
+      {
+        "w": "<u>thirty-five</u>",
+        "h": "<u>harmincöt</u>",
+        "i": "3️⃣5️⃣",
+        "p": "szörti-fájv"
+      },
+      {
+        "w": "<u>forty-two</u>",
+        "h": "<u>negyvenkettő</u>",
+        "i": "4️⃣2️⃣",
+        "p": "fórti-tú"
+      },
+      {
+        "w": "<u>fifty-six</u>",
+        "h": "<u>ötvenhat</u>",
+        "i": "5️⃣6️⃣",
+        "p": "fifti-sziksz"
+      },
+      {
+        "w": "<u>sixty-eight</u>",
+        "h": "<u>hatvannyolc</u>",
+        "i": "6️⃣8️⃣",
+        "p": "sziksztí-éjt"
+      },
+      {
+        "w": "<u>seventy-one</u>",
+        "h": "<u>hetvenegy</u>",
+        "i": "7️⃣1️⃣",
+        "p": "szeventí-ván"
+      },
+      {
+        "w": "<u>eighty-four</u>",
+        "h": "<u>nyolcvan-négy</u>",
+        "i": "8️⃣4️⃣",
+        "p": "éjtí-fór"
+      },
+      {
+        "w": "<u>ninety-nine</u>",
+        "h": "<u>kilencvenkilenc</u>",
+        "i": "9️⃣9️⃣",
+        "p": "nájntí-nájn"
+      },
+      {
+        "w": "<u>ten</u>",
+        "h": "<u>tíz</u>",
+        "i": "🔟",
+        "p": "ten"
+      },
+      {
+        "w": "<u>twenty</u>",
+        "h": "<u>húsz</u>",
+        "i": "2️⃣0️⃣",
+        "p": "tventi"
+      },
+      {
+        "w": "<u>thirty</u>",
+        "h": "<u>harminc</u>",
+        "i": "3️⃣0️⃣",
+        "p": "szörti"
+      },
+      {
+        "w": "<u>zero</u>",
+        "h": "<u>nulla</u>",
+        "i": "0️⃣",
+        "p": "zírő"
+      },
+      {
+        "w": "<u>fifteen</u>",
+        "h": "<u>tizenöt</u>",
+        "i": "1️⃣5️⃣",
+        "p": "fiftín"
+      },
+      {
+        "w": "<u>twenty-five</u>",
+        "h": "<u>huszonöt</u>",
+        "i": "2️⃣5️⃣",
+        "p": "tventi-fájv"
+      },
+      {
+        "w": "<u>seventy-five</u>",
+        "h": "<u>hetvenöt</u>",
+        "i": "7️⃣5️⃣",
+        "p": "szeventí-fájv"
+      },
+      {
+        "w": "<u>forty-four</u>",
+        "h": "<u>negyvennégy</u>",
+        "i": "4️⃣4️⃣",
+        "p": "fórti-fór"
+      },
+      {
+        "w": "<u>fifty-five</u>",
+        "h": "<u>ötvenöt</u>",
+        "i": "5️⃣5️⃣",
+        "p": "fifti-fájv"
+      },
+      {
+        "w": "<u>sixty-six</u>",
+        "h": "<u>hatvanhat</u>",
+        "i": "6️⃣6️⃣",
+        "p": "sziksztí-sziksz"
+      },
+      {
+        "w": "<u>thirty-three</u>",
+        "h": "<u>harminchárom</u>",
+        "i": "3️⃣3️⃣",
+        "p": "szörti-szrí"
+      },
+      {
+        "w": "<u>eighty-eight</u>",
+        "h": "<u>nyolcvannyolc</u>",
+        "i": "8️⃣8️⃣",
+        "p": "éjtí-éjt"
+      },
+      {
+        "w": "<u>ninety-two</u>",
+        "h": "<u>kilencvenkettő</u>",
+        "i": "9️⃣2️⃣",
+        "p": "nájntí-tú"
+      },
+      {
+        "w": "<u>forty-nine</u>",
+        "h": "<u>negyvenkilenc</u>",
+        "i": "4️⃣9️⃣",
+        "p": "fórti-nájn"
+      },
+      {
+        "w": "<u>one hundred</u>",
+        "h": "<u>egyszáz</u>",
+        "i": "💵",
+        "p": "ván hándred"
+      },
+      {
+        "w": "<u>thousands</u>",
+        "h": "<u>ezrek</u>",
+        "i": "💰",
+        "p": "száuzendz"
+      }
+    ]
+  },
+  {
+    "category": "12. Család",
+    "title": "Rokonok",
+    "lang": "en-GB",
+    "pattern": "Where is my [X]?",
+    "hu": "Hol van a(z) [X]-(e)m?",
+    "p_v": "ver iz máj ...",
+    "words": [
+      {
+        "w": "<u>mother</u>",
+        "h": "<u>anyám</u>",
+        "i": "👩",
+        "p": "mádör"
+      },
+      {
+        "w": "<u>father</u>",
+        "h": "<u>apám</u>",
+        "i": "👨",
+        "p": "fádör"
+      },
+      {
+        "w": "<u>sister</u>",
+        "h": "<u>lánytestvérem</u>",
+        "i": "👧",
+        "p": "szisztör"
+      },
+      {
+        "w": "<u>brother</u>",
+        "h": "<u>fiútestvérem</u>",
+        "i": "👦",
+        "p": "brádör"
+      },
+      {
+        "w": "<u>wife</u>",
+        "h": "<u>feleségem</u>",
+        "i": "👰",
+        "p": "vájf"
+      },
+      {
+        "w": "<u>husband</u>",
+        "h": "<u>férjem</u>",
+        "i": "🤵",
+        "p": "hászbend"
+      },
+      {
+        "w": "<u>daughter</u>",
+        "h": "<u>lányom</u>",
+        "i": "👸",
+        "p": "dótör"
+      },
+      {
+        "w": "<u>son</u>",
+        "h": "<u>fiam</u>",
+        "i": "🧒",
+        "p": "szan"
+      },
+      {
+        "w": "<u>grandmother</u>",
+        "h": "<u>nagymamám</u>",
+        "i": "👵",
+        "p": "grenmádör"
+      },
+      {
+        "w": "<u>grandfather</u>",
+        "h": "<u>nagypapám</u>",
+        "i": "👴",
+        "p": "grenfádör"
+      },
+      {
+        "w": "<u>aunt</u>",
+        "h": "<u>nagynéném</u>",
+        "i": "👩‍💼",
+        "p": "ánt"
+      },
+      {
+        "w": "<u>uncle</u>",
+        "h": "<u>nagybátyám</u>",
+        "i": "👨‍💼",
+        "p": "ankel"
+      },
+      {
+        "w": "<u>cousin</u>",
+        "h": "<u>unokatestvérem</u>",
+        "i": "🧑‍🤝‍🧑",
+        "p": "kázin"
+      },
+      {
+        "w": "<u>baby</u>",
+        "h": "<u>kisbabám</u>",
+        "i": "👶",
+        "p": "béjbí"
+      },
+      {
+        "w": "<u>child</u>",
+        "h": "<u>gyermekem</u>",
+        "i": "🧒",
+        "p": "csájld"
+      },
+      {
+        "w": "<u>parents</u>",
+        "h": "<u>szüleim</u>",
+        "i": "👨‍👩‍👧",
+        "p": "perentsz"
+      },
+      {
+        "w": "<u>family</u>",
+        "h": "<u>családom</u>",
+        "i": "🏠",
+        "p": "femili"
+      },
+      {
+        "w": "<u>friend</u>",
+        "h": "<u>barátom</u>",
+        "i": "🤝",
+        "p": "frend"
+      },
+      {
+        "w": "<u>girlfriend</u>",
+        "h": "<u>barátnőm</u>",
+        "i": "❤️",
+        "p": "görlfrend"
+      },
+      {
+        "w": "<u>boyfriend</u>",
+        "h": "<u>barátom (fiú)</u>",
+        "i": "💙",
+        "p": "bojfrend"
+      },
+      {
+        "w": "<u>partner</u>",
+        "h": "<u>párom</u>",
+        "i": "👩‍❤️‍👨",
+        "p": "pártnör"
+      },
+      {
+        "w": "<u>nephew</u>",
+        "h": "<u>unokaöcsém</u>",
+        "i": "👦",
+        "p": "nefjú"
+      },
+      {
+        "w": "<u>niece</u>",
+        "h": "<u>unokahúgom</u>",
+        "i": "👧",
+        "p": "nísz"
+      },
+      {
+        "w": "<u>grandson</u>",
+        "h": "<u>unokám (fiú)</u>",
+        "i": "👦",
+        "p": "grenszan"
+      },
+      {
+        "w": "<u>granddaughter</u>",
+        "h": "<u>unokám (lány)</u>",
+        "i": "👧",
+        "p": "grendótör"
+      },
+      {
+        "w": "<u>twin</u>",
+        "h": "<u>iker</u>",
+        "i": "👯",
+        "p": "tvin"
+      },
+      {
+        "w": "<u>neighbor</u>",
+        "h": "<u>szomszédom</u>",
+        "i": "🏡",
+        "p": "néjbör"
+      },
+      {
+        "w": "<u>boss</u>",
+        "h": "<u>főnököm</u>",
+        "i": "💼",
+        "p": "bosz"
+      },
+      {
+        "w": "<u>colleague</u>",
+        "h": "<u>kollegám</u>",
+        "i": "🏢",
+        "p": "kolíg"
+      },
+      {
+        "w": "<u>relative</u>",
+        "h": "<u>rokonom</u>",
+        "i": "🧬",
+        "p": "reletív"
+      }
+    ]
+  },
+  {
+    "category": "13. Időjárás",
+    "title": "Milyen az idő?",
+    "lang": "en-GB",
+    "pattern": "It is [X] outside.",
+    "hu": "[X] idő van kint.",
+    "p_v": "it iz ... áutszájd",
+    "words": [
+      {
+        "w": "<u>sunny</u>",
+        "h": "<u>napos</u>",
+        "i": "☀️",
+        "p": "száni"
+      },
+      {
+        "w": "<u>rainy</u>",
+        "h": "<u>esős</u>",
+        "i": "🌧️",
+        "p": "réjní"
+      },
+      {
+        "w": "<u>cloudy</u>",
+        "h": "<u>felhős</u>",
+        "i": "☁️",
+        "p": "kláudí"
+      },
+      {
+        "w": "<u>windy</u>",
+        "h": "<u>szeles</u>",
+        "i": "🌬️",
+        "p": "vindí"
+      },
+      {
+        "w": "<u>snowy</u>",
+        "h": "<u>havas</u>",
+        "i": "❄️",
+        "p": "sznóí"
+      },
+      {
+        "w": "<u>hot</u>",
+        "h": "<u>forró</u>",
+        "i": "🔥",
+        "p": "hot"
+      },
+      {
+        "w": "<u>cold</u>",
+        "h": "<u>hideg</u>",
+        "i": "🥶",
+        "p": "kóld"
+      },
+      {
+        "w": "<u>warm</u>",
+        "h": "<u>meleg</u>",
+        "i": "🌡️",
+        "p": "vórm"
+      },
+      {
+        "w": "<u>foggy</u>",
+        "h": "<u>ködös</u>",
+        "i": "🌫️",
+        "p": "fogí"
+      },
+      {
+        "w": "<u>stormy</u>",
+        "h": "<u>viharos</u>",
+        "i": "⛈️",
+        "p": "sztórmí"
+      },
+      {
+        "w": "<u>dry</u>",
+        "h": "<u>száraz</u>",
+        "i": "🌵",
+        "p": "dráj"
+      },
+      {
+        "w": "<u>humid</u>",
+        "h": "<u>párás</u>",
+        "i": "💦",
+        "p": "hjúmid"
+      },
+      {
+        "w": "<u>freezing</u>",
+        "h": "<u>fagyos</u>",
+        "i": "🧊",
+        "p": "frízíing"
+      },
+      {
+        "w": "<u>dark</u>",
+        "h": "<u>sötét</u>",
+        "i": "🌑",
+        "p": "dárk"
+      },
+      {
+        "w": "<u>clear</u>",
+        "h": "<u>tiszta</u>",
+        "i": "🌈",
+        "p": "klír"
+      },
+      {
+        "w": "<u>calm</u>",
+        "h": "<u>szélcsendes</u>",
+        "i": "⛵",
+        "p": "kám"
+      },
+      {
+        "w": "<u>messy</u>",
+        "h": "<u>rossz</u>",
+        "i": "⛈️",
+        "p": "meszí"
+      },
+      {
+        "w": "<u>lovely</u>",
+        "h": "<u>szép</u>",
+        "i": "🌸",
+        "p": "lávlí"
+      },
+      {
+        "w": "<u>awful</u>",
+        "h": "<u>szörnyű</u>",
+        "i": "🤮",
+        "p": "óful"
+      },
+      {
+        "w": "<u>boiling</u>",
+        "h": "<u>nagyon forró</u>",
+        "i": "🌋",
+        "p": "bojlíing"
+      },
+      {
+        "w": "<u>chilly</u>",
+        "h": "<u>hűvös</u>",
+        "i": "🧣",
+        "p": "csilí"
+      },
+      {
+        "w": "<u>drizzling</u>",
+        "h": "<u>szitáló</u>",
+        "i": "🌦️",
+        "p": "drizlíing"
+      },
+      {
+        "w": "<u>pouring</u>",
+        "h": "<u>szakadó</u>",
+        "i": "🌊",
+        "p": "póríing"
+      },
+      {
+        "w": "<u>hailing</u>",
+        "h": "<u>jégesős</u>",
+        "i": "🧊",
+        "p": "héjlíing"
+      },
+      {
+        "w": "<u>thunder</u>",
+        "h": "<u>dörgő</u>",
+        "i": "⚡",
+        "p": "szandör"
+      },
+      {
+        "w": "<u>lightning</u>",
+        "h": "<u>villámló</u>",
+        "i": "🌩️",
+        "p": "lájtníng"
+      },
+      {
+        "w": "<u>rainbow</u>",
+        "h": "<u>szivárványos</u>",
+        "i": "🌈",
+        "p": "réjnbó"
+      },
+      {
+        "w": "<u>frosty</u>",
+        "h": "<u>zúzmarás</u>",
+        "i": "🏔️",
+        "p": "frosztí"
+      },
+      {
+        "w": "<u>misty</u>",
+        "h": "<u>párás/ködös</u>",
+        "i": "🌫️",
+        "p": "misztí"
+      },
+      {
+        "w": "<u>breezy</u>",
+        "h": "<u>szellős</u>",
+        "i": "🍃",
+        "p": "brízí"
+      }
+    ]
+  },
+  {
+    "category": "14. Színek",
+    "title": "Milyen színű?",
+    "lang": "en-GB",
+    "pattern": "I like the [X] one.",
+    "hu": "A(z) [X] színűt szeretem.",
+    "p_v": "áj lájk dö ... ván",
+    "words": [
+      {
+        "w": "<u>red</u>",
+        "h": "<u>piros</u>",
+        "i": "🔴",
+        "p": "red"
+      },
+      {
+        "w": "<u>blue</u>",
+        "h": "<u>kék</u>",
+        "i": "🔵",
+        "p": "blú"
+      },
+      {
+        "w": "<u>green</u>",
+        "h": "<u>zöld</u>",
+        "i": "🟢",
+        "p": "grín"
+      },
+      {
+        "w": "<u>yellow</u>",
+        "h": "<u>sárga</u>",
+        "i": "🟡",
+        "p": "jelő"
+      },
+      {
+        "w": "<u>black</u>",
+        "h": "<u>fekete</u>",
+        "i": "⚫",
+        "p": "blek"
+      },
+      {
+        "w": "<u>white</u>",
+        "h": "<u>fehér</u>",
+        "i": "⚪",
+        "p": "vájt"
+      },
+      {
+        "w": "<u>orange</u>",
+        "h": "<u>narancssárga</u>",
+        "i": "🟠",
+        "p": "orindzs"
+      },
+      {
+        "w": "<u>purple</u>",
+        "h": "<u>lila</u>",
+        "i": "🟣",
+        "p": "pőrpöl"
+      },
+      {
+        "w": "<u>pink</u>",
+        "h": "<u>rózsaszín</u>",
+        "i": "💗",
+        "p": "pink"
+      },
+      {
+        "w": "<u>brown</u>",
+        "h": "<u>barna</u>",
+        "i": "🟤",
+        "p": "bráun"
+      },
+      {
+        "w": "<u>grey</u>",
+        "h": "<u>szürke</u>",
+        "i": "🔘",
+        "p": "gréj"
+      },
+      {
+        "w": "<u>silver</u>",
+        "h": "<u>ezüst</u>",
+        "i": "🥈",
+        "p": "szilvör"
+      },
+      {
+        "w": "<u>gold</u>",
+        "h": "<u>arany</u>",
+        "i": "🥇",
+        "p": "góld"
+      },
+      {
+        "w": "<u>beige</u>",
+        "h": "<u>bézs</u>",
+        "i": "🍦",
+        "p": "bézs"
+      },
+      {
+        "w": "<u>dark blue</u>",
+        "h": "<u>sötétkék</u>",
+        "i": "🟦",
+        "p": "dárk blú"
+      },
+      {
+        "w": "<u>light green</u>",
+        "h": "<u>világoszöld</u>",
+        "i": "🟩",
+        "p": "lájt grín"
+      },
+      {
+        "w": "<u>navy</u>",
+        "h": "<u>tengerészkék</u>",
+        "i": "⚓",
+        "p": "néjví"
+      },
+      {
+        "w": "<u>turquoise</u>",
+        "h": "<u>türkiz</u>",
+        "i": "💎",
+        "p": "tőrkvojz"
+      },
+      {
+        "w": "<u>violet</u>",
+        "h": "<u>ibolyaszín</u>",
+        "i": "🌸",
+        "p": "vájolet"
+      },
+      {
+        "w": "<u>maroon</u>",
+        "h": "<u>gesztenyebarna</u>",
+        "i": "🌰",
+        "p": "marún"
+      },
+      {
+        "w": "<u>indigo</u>",
+        "h": "<u>indigó</u>",
+        "i": "🌌",
+        "p": "indigó"
+      },
+      {
+        "w": "<u>cream</u>",
+        "h": "<u>krémszín</u>",
+        "i": "🥛",
+        "p": "krím"
+      },
+      {
+        "w": "<u>olive</u>",
+        "h": "<u>olivazöld</u>",
+        "i": "🫒",
+        "p": "oliv"
+      },
+      {
+        "w": "<u>peach</u>",
+        "h": "<u>barackszín</u>",
+        "i": "🍑",
+        "p": "pícs"
+      },
+      {
+        "w": "<u>lavender</u>",
+        "h": "<u>levendula</u>",
+        "i": "🪻",
+        "p": "levendör"
+      },
+      {
+        "w": "<u>magenta</u>",
+        "h": "<u>magenta</u>",
+        "i": "🌺",
+        "p": "madzsenta"
+      },
+      {
+        "w": "<u>cyan</u>",
+        "h": "<u>ciánkék</u>",
+        "i": "🧪",
+        "p": "szajen"
+      },
+      {
+        "w": "<u>bronze</u>",
+        "h": "<u>bronz</u>",
+        "i": "🥉",
+        "p": "bronz"
+      },
+      {
+        "w": "<u>transparent</u>",
+        "h": "<u>átlátszó</u>",
+        "i": "🪟",
+        "p": "tránszperent"
+      },
+      {
+        "w": "<u>colorful</u>",
+        "h": "<u>színes</u>",
+        "i": "🎨",
+        "p": "kálörful"
+      }
+    ]
+  },
+  {
+    "category": "15. Ruhatár",
+    "title": "Milyen ruhát viselsz?",
+    "lang": "en-GB",
+    "pattern": "Where is my [X]?",
+    "hu": "Hol van a(z) [X]-(e)m?",
+    "p_v": "ver iz máj ...",
+    "words": [
+      {
+        "w": "<u>shirt</u>",
+        "h": "<u>ingem</u>",
+        "i": "👔",
+        "p": "sőrt"
+      },
+      {
+        "w": "<u>T-shirt</u>",
+        "h": "<u>pólóm</u>",
+        "i": "👕",
+        "p": "tísőrt"
+      },
+      {
+        "w": "<u>trousers</u>",
+        "h": "<u>nadrágom</u>",
+        "i": "👖",
+        "p": "tráuzerz"
+      },
+      {
+        "w": "<u>dress</u>",
+        "h": "<u>ruhám</u>",
+        "i": "👗",
+        "p": "dresz"
+      },
+      {
+        "w": "<u>skirt</u>",
+        "h": "<u>szoknyám</u>",
+        "i": "💃",
+        "p": "szkört"
+      },
+      {
+        "w": "<u>shoes</u>",
+        "h": "<u>cipőm</u>",
+        "i": "👞",
+        "p": "súz"
+      },
+      {
+        "w": "<u>socks</u>",
+        "h": "<u>zoknim</u>",
+        "i": "🧦",
+        "p": "szoksz"
+      },
+      {
+        "w": "<u>jacket</u>",
+        "h": "<u>dzsekim</u>",
+        "i": "🧥",
+        "p": "dzsekit"
+      },
+      {
+        "w": "<u>coat</u>",
+        "h": "<u>kabátom</u>",
+        "i": "🧥",
+        "p": "kóut"
+      },
+      {
+        "w": "<u>hat</u>",
+        "h": "<u>kalapom</u>",
+        "i": "🎩",
+        "p": "het"
+      },
+      {
+        "w": "<u>cap</u>",
+        "h": "<u>sapkám</u>",
+        "i": "🧢",
+        "p": "kep"
+      },
+      {
+        "w": "<u>scarf</u>",
+        "h": "<u>sál</u>",
+        "i": "🧣",
+        "p": "szkárf"
+      },
+      {
+        "w": "<u>gloves</u>",
+        "h": "<u>kesztyűm</u>",
+        "i": "🧤",
+        "p": "glávsz"
+      },
+      {
+        "w": "<u>belt</u>",
+        "h": "<u>övem</u>",
+        "i": "🎋",
+        "p": "belt"
+      },
+      {
+        "w": "<u>tie</u>",
+        "h": "<u>nyakkendőm</u>",
+        "i": "👔",
+        "p": "táj"
+      },
+      {
+        "w": "<u>glasses</u>",
+        "h": "<u>szemüvegem</u>",
+        "i": "👓",
+        "p": "glászesz"
+      },
+      {
+        "w": "<u>sunglasses</u>",
+        "h": "<u>napszemüvegem</u>",
+        "i": "🕶️",
+        "p": "szánglászesz"
+      },
+      {
+        "w": "<u>bag</u>",
+        "h": "<u>táskám</u>",
+        "i": "👜",
+        "p": "beg"
+      },
+      {
+        "w": "<u>watch</u>",
+        "h": "<u>órám</u>",
+        "i": "⌚",
+        "p": "vocs"
+      },
+      {
+        "w": "<u>boots</u>",
+        "h": "<u>csizmám</u>",
+        "i": "👢",
+        "p": "bútsz"
+      },
+      {
+        "w": "<u>sandals</u>",
+        "h": "<u>szandálom</u>",
+        "i": "👡",
+        "p": "szendelsz"
+      },
+      {
+        "w": "<u>suit</u>",
+        "h": "<u>öltönyöm</u>",
+        "i": "💼",
+        "p": "szút"
+      },
+      {
+        "w": "<u>sweater</u>",
+        "h": "<u>pulóverem</u>",
+        "i": "🧶",
+        "p": "szveter"
+      },
+      {
+        "w": "<u>jeans</u>",
+        "h": "<u>farmerom</u>",
+        "i": "👖",
+        "p": "dzsínsz"
+      },
+      {
+        "w": "<u>shorts</u>",
+        "h": "<u>rövidnadrágom</u>",
+        "i": "🩳",
+        "p": "sórtsz"
+      },
+      {
+        "w": "<u>underwear</u>",
+        "h": "<u>alsóneműm</u>",
+        "i": "🩲",
+        "p": "andörver"
+      },
+      {
+        "w": "<u>bra</u>",
+        "h": "<u>melltartóm</u>",
+        "i": "👙",
+        "p": "brá"
+      },
+      {
+        "w": "<u>pyjamas</u>",
+        "h": "<u>pizsamám</u>",
+        "i": "😴",
+        "p": "pizsamasz"
+      },
+      {
+        "w": "<u>swimsuit</u>",
+        "h": "<u>fürdőruhám</u>",
+        "i": "🩱",
+        "p": "szvimszút"
+      },
+      {
+        "w": "<u>umbrella</u>",
+        "h": "<u>ernyőm</u>",
+        "i": "☂️",
+        "p": "ambrellá"
+      }
+    ]
+  },
+  {
+    "category": "16. Érzelmek",
+    "title": "Hogy érzed magad?",
+    "lang": "en-GB",
+    "pattern": "I feel [X] now.",
+    "hu": "[X] érzem magam most.",
+    "p_v": "áj fíl ... náu",
+    "words": [
+      {
+        "w": "<u>happy</u>",
+        "h": "<u>boldognak</u>",
+        "i": "😊",
+        "p": "hepi"
+      },
+      {
+        "w": "<u>sad</u>",
+        "h": "<u>szomorúnak</u>",
+        "i": "😢",
+        "p": "szed"
+      },
+      {
+        "w": "<u>angry</u>",
+        "h": "<u>mérgesnek</u>",
+        "i": "😠",
+        "p": "engri"
+      },
+      {
+        "w": "<u>surprised</u>",
+        "h": "<u>meglepettnek</u>",
+        "i": "😲",
+        "p": "szörprájzd"
+      },
+      {
+        "w": "<u>nervous</u>",
+        "h": "<u>idegesnek</u>",
+        "i": "😟",
+        "p": "nőrvösz"
+      },
+      {
+        "w": "<u>bored</u>",
+        "h": "<u>unottnak</u>",
+        "i": "😑",
+        "p": "bórd"
+      },
+      {
+        "w": "<u>excited</u>",
+        "h": "<u>izgatottnak</u>",
+        "i": "🤩",
+        "p": "ekszájtid"
+      },
+      {
+        "w": "<u>scared</u>",
+        "h": "<u>ijedtnek</u>",
+        "i": "😨",
+        "p": "szkérd"
+      },
+      {
+        "w": "<u>lonely</u>",
+        "h": "<u>magányosnak</u>",
+        "i": "🚶",
+        "p": "lónli"
+      },
+      {
+        "w": "<u>proud</u>",
+        "h": "<u>büszkének</u>",
+        "i": "🦁",
+        "p": "práud"
+      },
+      {
+        "w": "<u>calm</u>",
+        "h": "<u>nyugodtnak</u>",
+        "i": "🧘",
+        "p": "kám"
+      },
+      {
+        "w": "<u>confused</u>",
+        "h": "<u>zavartnak</u>",
+        "i": "🌀",
+        "p": "konfjúzd"
+      },
+      {
+        "w": "<u>guilty</u>",
+        "h": "<u>bűnösnek</u>",
+        "i": "😔",
+        "p": "gilti"
+      },
+      {
+        "w": "<u>jealous</u>",
+        "h": "<u>féltékenynek</u>",
+        "i": "😒",
+        "p": "dzselösz"
+      },
+      {
+        "w": "<u>tired</u>",
+        "h": "<u>fáradtnak</u>",
+        "i": "😴",
+        "p": "tájörd"
+      },
+      {
+        "w": "<u>relaxed</u>",
+        "h": "<u>kipihentnek</u>",
+        "i": "💆",
+        "p": "rilekszt"
+      },
+      {
+        "w": "<u>worried</u>",
+        "h": "<u>aggódónak</u>",
+        "i": "😰",
+        "p": "varid"
+      },
+      {
+        "w": "<u>shy</u>",
+        "h": "<u>félénknek</u>",
+        "i": "😳",
+        "p": "sáj"
+      },
+      {
+        "w": "<u>brave</u>",
+        "h": "<u>bátornak</u>",
+        "i": "🛡️",
+        "p": "bréjv"
+      },
+      {
+        "w": "<u>sleepy</u>",
+        "h": "<u>álmosnak</u>",
+        "i": "🥱",
+        "p": "szlípí"
+      },
+      {
+        "w": "<u>exhausted</u>",
+        "h": "<u>kimerültnek</u>",
+        "i": "😫",
+        "p": "egzosztid"
+      },
+      {
+        "w": "<u>hurt</u>",
+        "h": "<u>megbántottnak</u>",
+        "i": "💔",
+        "p": "hőrt"
+      },
+      {
+        "w": "<u>optimistic</u>",
+        "h": "<u>optimistának</u>",
+        "i": "☀️",
+        "p": "optimisztik"
+      },
+      {
+        "w": "<u>pessimistic</u>",
+        "h": "<u>pesszimistának</u>",
+        "i": "☁️",
+        "p": "pesszimisztik"
+      },
+      {
+        "w": "<u>frustrated</u>",
+        "h": "<u>frusztráltnak</u>",
+        "i": "😤",
+        "p": "frásztréjtid"
+      },
+      {
+        "w": "<u>grateful</u>",
+        "h": "<u>hálásnak</u>",
+        "i": "🙏",
+        "p": "gréjtful"
+      },
+      {
+        "w": "<u>indifferent</u>",
+        "h": "<u>közömbösnek</u>",
+        "i": "😐",
+        "p": "indiferent"
+      },
+      {
+        "w": "<u>shocked</u>",
+        "h": "<u>sokkoltnak</u>",
+        "i": "⚡",
+        "p": "sokk-t"
+      },
+      {
+        "w": "<u>comfortable</u>",
+        "h": "<u>kényelemben</u>",
+        "i": "🛋️",
+        "p": "kámförtöbel"
+      },
+      {
+        "w": "<u>uncomfortable</u>",
+        "h": "<u>kellemetlenül</u>",
+        "i": "😣",
+        "p": "ankámförtöbel"
+      }
+    ]
+  },
+  {
+    "category": "17. Hobbi",
+    "title": "Szabadidő",
+    "lang": "en-GB",
+    "pattern": "I love [X].",
+    "hu": "Szeretek [X].",
+    "p_v": "áj láv ...",
+    "words": [
+      {
+        "w": "<u>reading</u>",
+        "h": "<u>olvasni</u>",
+        "i": "📖",
+        "p": "rídíng"
+      },
+      {
+        "w": "<u>swimming</u>",
+        "h": "<u>úszni</u>",
+        "i": "🏊",
+        "p": "szvimíng"
+      },
+      {
+        "w": "<u>cooking</u>",
+        "h": "<u>főzni</u>",
+        "i": "🍳",
+        "p": "kukíng"
+      },
+      {
+        "w": "<u>dancing</u>",
+        "h": "<u>táncolni</u>",
+        "i": "💃",
+        "p": "denszíng"
+      },
+      {
+        "w": "<u>traveling</u>",
+        "h": "<u>utazni</u>",
+        "i": "✈️",
+        "p": "trevelíng"
+      },
+      {
+        "w": "<u>painting</u>",
+        "h": "<u>festeni</u>",
+        "i": "🎨",
+        "p": "péjntíng"
+      },
+      {
+        "w": "<u>singing</u>",
+        "h": "<u>énekelni</u>",
+        "i": "🎤",
+        "p": "szingíng"
+      },
+      {
+        "w": "<u>running</u>",
+        "h": "<u>futni</u>",
+        "i": "🏃",
+        "p": "raníng"
+      },
+      {
+        "w": "<u>hiking</u>",
+        "h": "<u>túrázni</u>",
+        "i": "🥾",
+        "p": "hájkíng"
+      },
+      {
+        "w": "<u>photography</u>",
+        "h": "<u>fotózni</u>",
+        "i": "📷",
+        "p": "fötógrafi"
+      },
+      {
+        "w": "<u>cycling</u>",
+        "h": "<u>biciklizni</u>",
+        "i": "🚲",
+        "p": "szájklíng"
+      },
+      {
+        "w": "<u>gaming</u>",
+        "h": "<u>játszani</u>",
+        "i": "🎮",
+        "p": "géjmíng"
+      },
+      {
+        "w": "<u>gardening</u>",
+        "h": "<u>kertészkedni</u>",
+        "i": "🌻",
+        "p": "gárdöníng"
+      },
+      {
+        "w": "<u>fishing</u>",
+        "h": "<u>horgászni</u>",
+        "i": "🎣",
+        "p": "fisíng"
+      },
+      {
+        "w": "<u>knitting</u>",
+        "h": "<u>kötni</u>",
+        "i": "🧶",
+        "p": "nitíng"
+      },
+      {
+        "w": "<u>writing</u>",
+        "h": "<u>írni</u>",
+        "i": "✍️",
+        "p": "rájtíng"
+      },
+      {
+        "w": "<u>yoga</u>",
+        "h": "<u>jógázni</u>",
+        "i": "🧘",
+        "p": "jógá"
+      },
+      {
+        "w": "<u>watching movies</u>",
+        "h": "<u>filmet nézni</u>",
+        "i": "🎬",
+        "p": "vocsíng múvíz"
+      },
+      {
+        "w": "<u>listening to music</u>",
+        "h": "<u>zenét hallgatni</u>",
+        "i": "🎧",
+        "p": "liszníng tu mjúzik"
+      },
+      {
+        "w": "<u>shopping</u>",
+        "h": "<u>vásárolni</u>",
+        "i": "🛍️",
+        "p": "sopíng"
+      },
+      {
+        "w": "<u>sleeping</u>",
+        "h": "<u>aludni</u>",
+        "i": "💤",
+        "p": "szlípíng"
+      },
+      {
+        "w": "<u>surfing</u>",
+        "h": "<u>szörfözni</u>",
+        "i": "🏄",
+        "p": "szőrfíng"
+      },
+      {
+        "w": "<u>skiing</u>",
+        "h": "<u>síelni</u>",
+        "i": "🎿",
+        "p": "skííng"
+      },
+      {
+        "w": "<u>camping</u>",
+        "h": "<u>kempingezni</u>",
+        "i": "⛺",
+        "p": "kempíng"
+      },
+      {
+        "w": "<u>drawing</u>",
+        "h": "<u>rajzolni</u>",
+        "i": "✏️",
+        "p": "dróíng"
+      },
+      {
+        "w": "<u>chess</u>",
+        "h": "<u>sakkozni</u>",
+        "i": "♟️",
+        "p": "csesz"
+      },
+      {
+        "w": "<u>blogging</u>",
+        "h": "<u>blogolni</u>",
+        "i": "💻",
+        "p": "blogíng"
+      },
+      {
+        "w": "<u>volunteering</u>",
+        "h": "<u>önkénteskedni</u>",
+        "i": "🤝",
+        "p": "volantíríng"
+      },
+      {
+        "w": "<u>collecting things</u>",
+        "h": "<u>gyűjteni dolgokat</u>",
+        "i": "🏺",
+        "p": "kolektíng szingz"
+      },
+      {
+        "w": "<u>learning languages</u>",
+        "h": "<u>nyelvet tanulni</u>",
+        "i": "🌍",
+        "p": "lőrníng lengvidzsiz"
+      }
+    ]
+  },
+  {
+    "category": "18. Városnézés",
+    "title": "Turista látványosságok",
+    "lang": "en-GB",
+    "pattern": "I want to visit [X].",
+    "hu": "Szeretném meglátogatni [X].",
+    "p_v": "áj vont tu vizit ...",
+    "words": [
+      {
+        "w": "<u>the museum</u>",
+        "h": "<u>a múzeumot</u>",
+        "i": "🏛️",
+        "p": "dö mjúzium"
+      },
+      {
+        "w": "<u>the castle</u>",
+        "h": "<u>a kastélyt</u>",
+        "i": "🏰",
+        "p": "dö kászül"
+      },
+      {
+        "w": "<u>the church</u>",
+        "h": "<u>a templomot</u>",
+        "i": "⛪",
+        "p": "dö csőrcs"
+      },
+      {
+        "w": "<u>the park</u>",
+        "h": "<u>a parkot</u>",
+        "i": "🌳",
+        "p": "dö párk"
+      },
+      {
+        "w": "<u>the bridge</u>",
+        "h": "<u>a hidat</u>",
+        "i": "🌉",
+        "p": "dö bridzs"
+      },
+      {
+        "w": "<u>the zoo</u>",
+        "h": "<u>az állatkertet</u>",
+        "i": "🦁",
+        "p": "dö zú"
+      },
+      {
+        "w": "<u>the gallery</u>",
+        "h": "<u>a galériát</u>",
+        "i": "🖼️",
+        "p": "dö geleri"
+      },
+      {
+        "w": "<u>the theater</u>",
+        "h": "<u>a színházat</u>",
+        "i": "🎭",
+        "p": "dö szíétör"
+      },
+      {
+        "w": "<u>the tower</u>",
+        "h": "<u>a tornyot</u>",
+        "i": "🗼",
+        "p": "dö tauör"
+      },
+      {
+        "w": "<u>the square</u>",
+        "h": "<u>a teret</u>",
+        "i": "🏙️",
+        "p": "dö szkver"
+      },
+      {
+        "w": "<u>the statue</u>",
+        "h": "<u>a szobrot</u>",
+        "i": "🗿",
+        "p": "dö sztetyú"
+      },
+      {
+        "w": "<u>the cathedral</u>",
+        "h": "<u>a székesegyházat</u>",
+        "i": "⛪",
+        "p": "dö köszídröl"
+      },
+      {
+        "w": "<u>the palace</u>",
+        "h": "<u>a palotát</u>",
+        "i": "🏰",
+        "p": "dö pelisz"
+      },
+      {
+        "w": "<u>the fountain</u>",
+        "h": "<u>a szökőkutat</u>",
+        "i": "⛲",
+        "p": "dö fáuntin"
+      },
+      {
+        "w": "<u>the market</u>",
+        "h": "<u>a piacot</u>",
+        "i": "🍎",
+        "p": "dö márkit"
+      },
+      {
+        "w": "<u>the harbor</u>",
+        "h": "<u>a kikötőt</u>",
+        "i": "⚓",
+        "p": "dö hárbör"
+      },
+      {
+        "w": "<u>the beach</u>",
+        "h": "<u>a tengerpartot</u>",
+        "i": "🏖️",
+        "p": "dö bics"
+      },
+      {
+        "w": "<u>the ruins</u>",
+        "h": "<u>a romokat</u>",
+        "i": "🏛️",
+        "p": "dö rúinz"
+      },
+      {
+        "w": "<u>the monument</u>",
+        "h": "<u>az emlékművet</u>",
+        "i": "🗿",
+        "p": "dö monjument"
+      },
+      {
+        "w": "<u>the library</u>",
+        "h": "<u>a könyvtárat</u>",
+        "i": "📚",
+        "p": "dö lájbreri"
+      },
+      {
+        "w": "<u>the viewpoint</u>",
+        "h": "<u>a kilátót</u>",
+        "i": "🔭",
+        "p": "dö vjúpójnt"
+      },
+      {
+        "w": "<u>the aquarium</u>",
+        "h": "<u>az akváriumot</u>",
+        "i": "🐟",
+        "p": "di akvárium"
+      },
+      {
+        "w": "<u>the stadium</u>",
+        "h": "<u>a stadiont</u>",
+        "i": "🏟️",
+        "p": "dö sztédium"
+      },
+      {
+        "w": "<u>the garden</u>",
+        "h": "<u>a kertet</u>",
+        "i": "🌻",
+        "p": "dö gárdön"
+      },
+      {
+        "w": "<u>the old town</u>",
+        "h": "<u>az óvárost</u>",
+        "i": "🏘️",
+        "p": "di óld táun"
+      },
+      {
+        "w": "<u>the university</u>",
+        "h": "<u>az egyetemet</u>",
+        "i": "🎓",
+        "p": "djúnívőrsziti"
+      },
+      {
+        "w": "<u>the shopping mall</u>",
+        "h": "<u>a plázát</u>",
+        "i": "🛍️",
+        "p": "dö sopíng mól"
+      },
+      {
+        "w": "<u>the city hall</u>",
+        "h": "<u>a városházát</u>",
+        "i": "🏢",
+        "p": "dö sziti hól"
+      },
+      {
+        "w": "<u>the opera house</u>",
+        "h": "<u>az operát</u>",
+        "i": "🎼",
+        "p": "di operá háusz"
+      },
+      {
+        "w": "<u>everything</u>",
+        "h": "<u>mindent</u>",
+        "i": "🗺️",
+        "p": "evriszing"
+      }
+    ]
+  },
+  {
+    "category": "19. Posta & Bank",
+    "title": "Hivatalos ügyek",
+    "lang": "en-GB",
+    "pattern": "I need to [X].",
+    "hu": "[X] kell.",
+    "p_v": "áj níd tu ...",
+    "words": [
+      {
+        "w": "<u>exchange money</u>",
+        "h": "<u>pénzt váltanom</u>",
+        "i": "💱",
+        "p": "ekszcséndzs mání"
+      },
+      {
+        "w": "<u>withdraw cash</u>",
+        "h": "<u>készpénzt felvennem</u>",
+        "i": "🏧",
+        "p": "vizdró kes"
+      },
+      {
+        "w": "<u>send a postcard</u>",
+        "h": "<u>képeslapot küldenem</u>",
+        "i": "✉️",
+        "p": "szend ö pósz-tkárd"
+      },
+      {
+        "w": "<u>buy stamps</u>",
+        "h": "<u>bélyeget vennem</u>",
+        "i": "🏷️",
+        "p": "báj sztempsz"
+      },
+      {
+        "w": "<u>open an account</u>",
+        "h": "<u>számlát nyitnom</u>",
+        "i": "💳",
+        "p": "ópen en akáunt"
+      },
+      {
+        "w": "<u>pay the bill</u>",
+        "h": "<u>kifizetnem a számlát</u>",
+        "i": "🧾",
+        "p": "péj dö bil"
+      },
+      {
+        "w": "<u>change my PIN</u>",
+        "h": "<u>megváltoztatnom a PIN-t</u>",
+        "i": "🔢",
+        "p": "cséndzs máj pin"
+      },
+      {
+        "w": "<u>send a parcel</u>",
+        "h": "<u>csomagot küldenem</u>",
+        "i": "📦",
+        "p": "szend ö párszel"
+      },
+      {
+        "w": "<u>transfer money</u>",
+        "h": "<u>pénzt utalnom</u>",
+        "i": "💸",
+        "p": "tránszfer mání"
+      },
+      {
+        "w": "<u>block my card</u>",
+        "h": "<u>letiltanom a kártyám</u>",
+        "i": "🚫",
+        "p": "blok máj kárd"
+      },
+      {
+        "w": "<u>sign this</u>",
+        "h": "<u>ezt aláírnom</u>",
+        "i": "✍️",
+        "p": "szájn disz"
+      },
+      {
+        "w": "<u>wait in line</u>",
+        "h": "<u>sorban állnom</u>",
+        "i": "🚶",
+        "p": "véjt in lájn"
+      },
+      {
+        "w": "<u>speak to the manager</u>",
+        "h": "<u>beszélnem a főnökkel</u>",
+        "i": "👔",
+        "p": "szpík tu dö menidzsör"
+      },
+      {
+        "w": "<u>deposit money</u>",
+        "h": "<u>pénzt befizetnem</u>",
+        "i": "💰",
+        "p": "dipozit mání"
+      },
+      {
+        "w": "<u>get a receipt</u>",
+        "h": "<u>blokkot kérnem</u>",
+        "i": "🧾",
+        "p": "get ö ríszít"
+      },
+      {
+        "w": "<u>check my balance</u>",
+        "h": "<u>egyenleget néznem</u>",
+        "i": "📱",
+        "p": "csekk máj belensz"
+      },
+      {
+        "w": "<u>use the ATM</u>",
+        "h": "<u>használnom az ATM-et</u>",
+        "i": "🏧",
+        "p": "júz di éjtíem"
+      },
+      {
+        "w": "<u>find the post office</u>",
+        "h": "<u>megtalálnom a postát</u>",
+        "i": "📯",
+        "p": "fájnd dö pószt ofisz"
+      },
+      {
+        "w": "<u>fill out a form</u>",
+        "h": "<u>kitöltenem egy nyomtatványt</u>",
+        "i": "📝",
+        "p": "fil áut ö fórm"
+      },
+      {
+        "w": "<u>show my ID</u>",
+        "h": "<u>megmutatnom a személyim</u>",
+        "i": "🆔",
+        "p": "szó máj ájdí"
+      },
+      {
+        "w": "<u>pay in cash</u>",
+        "h": "<u>készpénzzel fizetnem</u>",
+        "i": "💵",
+        "p": "péj in kes"
+      },
+      {
+        "w": "<u>pay by card</u>",
+        "h": "<u>kártyával fizetnem</u>",
+        "i": "💳",
+        "p": "péj báj kárd"
+      },
+      {
+        "w": "<u>get insurance</u>",
+        "h": "<u>biztosítást kötnöm</u>",
+        "i": "🛡️",
+        "p": "get insúransz"
+      },
+      {
+        "w": "<u>cancel a service</u>",
+        "h": "<u>lemondanom a szolgáltatást</u>",
+        "i": "❌",
+        "p": "kenszel ö szervisz"
+      },
+      {
+        "w": "<u>apply for a loan</u>",
+        "h": "<u>hitelt igényelnem</u>",
+        "i": "🏠",
+        "p": "epláj fór ö lón"
+      },
+      {
+        "w": "<u>update my data</u>",
+        "h": "<u>frissítenem az adataim</u>",
+        "i": "🔄",
+        "p": "apdéjt máj détá"
+      },
+      {
+        "w": "<u>register</u>",
+        "h": "<u>regisztrálnom</u>",
+        "i": "👤",
+        "p": "redzsiztör"
+      },
+      {
+        "w": "<u>ask a question</u>",
+        "h": "<u>feltennem egy kérdést</u>",
+        "i": "❓",
+        "p": "ászk ö kvesztcsön"
+      },
+      {
+        "w": "<u>borrow a pen</u>",
+        "h": "<u>kérnem egy tollat</u>",
+        "i": "🖊️",
+        "p": "boró ö pen"
+      },
+      {
+        "w": "<u>go home</u>",
+        "h": "<u>hazamennem</u>",
+        "i": "🏠",
+        "p": "gó hóm"
+      }
+    ]
+  },
+  {
+    "category": "20. Segítségkérés",
+    "title": "Vészhelyzetek",
+    "lang": "en-GB",
+    "pattern": "Please [X]!",
+    "hu": "Kérem, [X]!",
+    "p_v": "plíz ...",
+    "words": [
+      {
+        "w": "<u>help me</u>",
+        "h": "<u>segítsen</u>",
+        "i": "🆘",
+        "p": "help mí"
+      },
+      {
+        "w": "<u>call a doctor</u>",
+        "h": "<u>hívjon orvost</u>",
+        "i": "👨‍⚕️",
+        "p": "kól ö doktör"
+      },
+      {
+        "w": "<u>call the police</u>",
+        "h": "<u>hívja a rendőrséget</u>",
+        "i": "🚓",
+        "p": "kól dö polísz"
+      },
+      {
+        "w": "<u>stop</u>",
+        "h": "<u>álljon meg</u>",
+        "i": "🛑",
+        "p": "sztop"
+      },
+      {
+        "w": "<u>hurry</u>",
+        "h": "<u>siessen</u>",
+        "i": "🏃",
+        "p": "hari"
+      },
+      {
+        "w": "<u>wait</u>",
+        "h": "<u>várjon</u>",
+        "i": "⏳",
+        "p": "véjt"
+      },
+      {
+        "w": "<u>call an ambulance</u>",
+        "h": "<u>hívjon mentőt</u>",
+        "i": "🚑",
+        "p": "kól en embjulensz"
+      },
+      {
+        "w": "<u>look</u>",
+        "h": "<u>nézze</u>",
+        "i": "👀",
+        "p": "luk"
+      },
+      {
+        "w": "<u>listen</u>",
+        "h": "<u>figyeljen</u>",
+        "i": "👂",
+        "p": "liszön"
+      },
+      {
+        "w": "<u>be careful</u>",
+        "h": "<u>legyen óvatos</u>",
+        "i": "⚠️",
+        "p": "bí kerful"
+      },
+      {
+        "w": "<u>don't move</u>",
+        "h": "<u>ne mozogjon</u>",
+        "i": "🚫",
+        "p": "dónt múv"
+      },
+      {
+        "w": "<u>give me your hand</u>",
+        "h": "<u>adja a kezét</u>",
+        "i": "🤝",
+        "p": "giv mí jór hend"
+      },
+      {
+        "w": "<u>stay here</u>",
+        "h": "<u>maradjon itt</u>",
+        "i": "📍",
+        "p": "sztéj hír"
+      },
+      {
+        "w": "<u>follow me</u>",
+        "h": "<u>kövessen</u>",
+        "i": "🚶",
+        "p": "foló mí"
+      },
+      {
+        "w": "<u>repeat</u>",
+        "h": "<u>ismételje meg</u>",
+        "i": "🔄",
+        "p": "ripít"
+      },
+      {
+        "w": "<u>speak slowly</u>",
+        "h": "<u>beszéljen lassan</u>",
+        "i": "🐢",
+        "p": "szpík szlólí"
+      },
+      {
+        "w": "<u>write it down</u>",
+        "h": "<u>írja le</u>",
+        "i": "📝",
+        "p": "rájt it dáun"
+      },
+      {
+        "w": "<u>show me</u>",
+        "h": "<u>mutassa meg</u>",
+        "i": "👉",
+        "p": "szó mí"
+      },
+      {
+        "w": "<u>explain</u>",
+        "h": "<u>magyarázza el</u>",
+        "i": "🧐",
+        "p": "ekszpléjn"
+      },
+      {
+        "w": "<u>help my friend</u>",
+        "h": "<u>segítsen a barátomnak</u>",
+        "i": "🧑‍🤝‍🧑",
+        "p": "help máj frend"
+      },
+      {
+        "w": "<u>call my family</u>",
+        "h": "<u>hívja a családomat</u>",
+        "i": "🏠",
+        "p": "kól máj femili"
+      },
+      {
+        "w": "<u>take me there</u>",
+        "h": "<u>vigyen el oda</u>",
+        "i": "🚕",
+        "p": "téjk mí der"
+      },
+      {
+        "w": "<u>open the door</u>",
+        "h": "<u>nyissa ki az ajtót</u>",
+        "i": "🚪",
+        "p": "ópen dö dór"
+      },
+      {
+        "w": "<u>get some water</u>",
+        "h": "<u>hozzon vizet</u>",
+        "i": "💧",
+        "p": "get szám vótör"
+      },
+      {
+        "w": "<u>sit down</u>",
+        "h": "<u>üljön le</u>",
+        "i": "🪑",
+        "p": "szit dáun"
+      },
+      {
+        "w": "<u>breathe</u>",
+        "h": "<u>lélegezzen</u>",
+        "i": "🫁",
+        "p": "brísz"
+      },
+      {
+        "w": "<u>don't worry</u>",
+        "h": "<u>ne aggódjon</u>",
+        "i": "😌",
+        "p": "dónt varí"
+      },
+      {
+        "w": "<u>be quiet</u>",
+        "h": "<u>legyen csendben</u>",
+        "i": "🤫",
+        "p": "bí kvájet"
+      },
+      {
+        "w": "<u>stand up</u>",
+        "h": "<u>álljon fel</u>",
+        "i": "🕴️",
+        "p": "sztend ap"
+      },
+      {
+        "w": "<u>go away</u>",
+        "h": "<u>menjen el</u>",
+        "i": "👋",
+        "p": "gó övéj"
+      }
+    ]
+  },
+  {
+    "category": "16. Érzelmek",
+    "title": "Hogy érzed magad?",
+    "lang": "en-GB",
+    "pattern": "I feel [X] now.",
+    "hu": "[X] érzem magam most.",
+    "p_v": "áj fíl ... náu",
+    "words": [
+      {
+        "w": "<u>happy</u>",
+        "h": "<u>boldognak</u>",
+        "i": "😊",
+        "p": "hepi"
+      },
+      {
+        "w": "<u>sad</u>",
+        "h": "<u>szomorúnak</u>",
+        "i": "😢",
+        "p": "szed"
+      },
+      {
+        "w": "<u>angry</u>",
+        "h": "<u>mérgesnek</u>",
+        "i": "😠",
+        "p": "engri"
+      },
+      {
+        "w": "<u>surprised</u>",
+        "h": "<u>meglepettnek</u>",
+        "i": "😲",
+        "p": "szörprájzd"
+      },
+      {
+        "w": "<u>nervous</u>",
+        "h": "<u>idegesnek</u>",
+        "i": "😟",
+        "p": "nőrvösz"
+      },
+      {
+        "w": "<u>bored</u>",
+        "h": "<u>unottnak</u>",
+        "i": "😑",
+        "p": "bórd"
+      },
+      {
+        "w": "<u>excited</u>",
+        "h": "<u>izgatottnak</u>",
+        "i": "🤩",
+        "p": "ekszájtid"
+      },
+      {
+        "w": "<u>scared</u>",
+        "h": "<u>ijedtnek</u>",
+        "i": "😨",
+        "p": "szkérd"
+      },
+      {
+        "w": "<u>lonely</u>",
+        "h": "<u>magányosnak</u>",
+        "i": "🚶",
+        "p": "lónli"
+      },
+      {
+        "w": "<u>proud</u>",
+        "h": "<u>büszkének</u>",
+        "i": "🦁",
+        "p": "práud"
+      },
+      {
+        "w": "<u>calm</u>",
+        "h": "<u>nyugodtnak</u>",
+        "i": "🧘",
+        "p": "kám"
+      },
+      {
+        "w": "<u>confused</u>",
+        "h": "<u>zavartnak</u>",
+        "i": "🌀",
+        "p": "konfjúzd"
+      },
+      {
+        "w": "<u>guilty</u>",
+        "h": "<u>bűnösnek</u>",
+        "i": "😔",
+        "p": "gilti"
+      },
+      {
+        "w": "<u>jealous</u>",
+        "h": "<u>féltékenynek</u>",
+        "i": "😒",
+        "p": "dzselösz"
+      },
+      {
+        "w": "<u>tired</u>",
+        "h": "<u>fáradtnak</u>",
+        "i": "😴",
+        "p": "tájörd"
+      },
+      {
+        "w": "<u>relaxed</u>",
+        "h": "<u>kipihentnek</u>",
+        "i": "💆",
+        "p": "rilekszt"
+      },
+      {
+        "w": "<u>worried</u>",
+        "h": "<u>aggódónak</u>",
+        "i": "😰",
+        "p": "varid"
+      },
+      {
+        "w": "<u>shy</u>",
+        "h": "<u>félénknek</u>",
+        "i": "😳",
+        "p": "sáj"
+      },
+      {
+        "w": "<u>brave</u>",
+        "h": "<u>bátornak</u>",
+        "i": "🛡️",
+        "p": "bréjv"
+      },
+      {
+        "w": "<u>sleepy</u>",
+        "h": "<u>álmosnak</u>",
+        "i": "🥱",
+        "p": "szlípí"
+      },
+      {
+        "w": "<u>exhausted</u>",
+        "h": "<u>kimerültnek</u>",
+        "i": "😫",
+        "p": "egzosztid"
+      },
+      {
+        "w": "<u>hurt</u>",
+        "h": "<u>megbántottnak</u>",
+        "i": "💔",
+        "p": "hőrt"
+      },
+      {
+        "w": "<u>optimistic</u>",
+        "h": "<u>optimistának</u>",
+        "i": "☀️",
+        "p": "optimisztik"
+      },
+      {
+        "w": "<u>pessimistic</u>",
+        "h": "<u>pesszimistának</u>",
+        "i": "☁️",
+        "p": "pesszimisztik"
+      },
+      {
+        "w": "<u>frustrated</u>",
+        "h": "<u>frusztráltnak</u>",
+        "i": "😤",
+        "p": "frásztréjtid"
+      },
+      {
+        "w": "<u>grateful</u>",
+        "h": "<u>hálásnak</u>",
+        "i": "🙏",
+        "p": "gréjtful"
+      },
+      {
+        "w": "<u>indifferent</u>",
+        "h": "<u>közömbösnek</u>",
+        "i": "😐",
+        "p": "indiferent"
+      },
+      {
+        "w": "<u>shocked</u>",
+        "h": "<u>sokkoltnak</u>",
+        "i": "⚡",
+        "p": "sokk-t"
+      },
+      {
+        "w": "<u>comfortable</u>",
+        "h": "<u>kényelemben</u>",
+        "i": "🛋️",
+        "p": "kámförtöbel"
+      },
+      {
+        "w": "<u>uncomfortable</u>",
+        "h": "<u>kellemetlenül</u>",
+        "i": "😣",
+        "p": "ankámförtöbel"
+      }
+    ]
+  },
+  {
+    "category": "17. Hobbi",
+    "title": "Szabadidő",
+    "lang": "en-GB",
+    "pattern": "I love [X].",
+    "hu": "Szeretek [X].",
+    "p_v": "áj láv ...",
+    "words": [
+      {
+        "w": "<u>reading</u>",
+        "h": "<u>olvasni</u>",
+        "i": "📖",
+        "p": "rídíng"
+      },
+      {
+        "w": "<u>swimming</u>",
+        "h": "<u>úszni</u>",
+        "i": "🏊",
+        "p": "szvimíng"
+      },
+      {
+        "w": "<u>cooking</u>",
+        "h": "<u>főzni</u>",
+        "i": "🍳",
+        "p": "kukíng"
+      },
+      {
+        "w": "<u>dancing</u>",
+        "h": "<u>táncolni</u>",
+        "i": "💃",
+        "p": "denszíng"
+      },
+      {
+        "w": "<u>traveling</u>",
+        "h": "<u>utazni</u>",
+        "i": "✈️",
+        "p": "trevelíng"
+      },
+      {
+        "w": "<u>painting</u>",
+        "h": "<u>festeni</u>",
+        "i": "🎨",
+        "p": "péjntíng"
+      },
+      {
+        "w": "<u>singing</u>",
+        "h": "<u>énekelni</u>",
+        "i": "🎤",
+        "p": "szingíng"
+      },
+      {
+        "w": "<u>running</u>",
+        "h": "<u>futni</u>",
+        "i": "🏃",
+        "p": "raníng"
+      },
+      {
+        "w": "<u>hiking</u>",
+        "h": "<u>túrázni</u>",
+        "i": "🥾",
+        "p": "hájkíng"
+      },
+      {
+        "w": "<u>photography</u>",
+        "h": "<u>fotózni</u>",
+        "i": "📷",
+        "p": "fötógrafi"
+      },
+      {
+        "w": "<u>cycling</u>",
+        "h": "<u>biciklizni</u>",
+        "i": "🚲",
+        "p": "szájklíng"
+      },
+      {
+        "w": "<u>gaming</u>",
+        "h": "<u>játszani</u>",
+        "i": "🎮",
+        "p": "géjmíng"
+      },
+      {
+        "w": "<u>gardening</u>",
+        "h": "<u>kertészkedni</u>",
+        "i": "🌻",
+        "p": "gárdöníng"
+      },
+      {
+        "w": "<u>fishing</u>",
+        "h": "<u>horgászni</u>",
+        "i": "🎣",
+        "p": "fisíng"
+      },
+      {
+        "w": "<u>knitting</u>",
+        "h": "<u>kötni</u>",
+        "i": "🧶",
+        "p": "nitíng"
+      },
+      {
+        "w": "<u>writing</u>",
+        "h": "<u>írni</u>",
+        "i": "✍️",
+        "p": "rájtíng"
+      },
+      {
+        "w": "<u>yoga</u>",
+        "h": "<u>jógázni</u>",
+        "i": "🧘",
+        "p": "jógá"
+      },
+      {
+        "w": "<u>watching movies</u>",
+        "h": "<u>filmet nézni</u>",
+        "i": "🎬",
+        "p": "vocsíng múvíz"
+      },
+      {
+        "w": "<u>listening to music</u>",
+        "h": "<u>zenét hallgatni</u>",
+        "i": "🎧",
+        "p": "liszníng tu mjúzik"
+      },
+      {
+        "w": "<u>shopping</u>",
+        "h": "<u>vásárolni</u>",
+        "i": "🛍️",
+        "p": "sopíng"
+      },
+      {
+        "w": "<u>sleeping</u>",
+        "h": "<u>aludni</u>",
+        "i": "💤",
+        "p": "szlípíng"
+      },
+      {
+        "w": "<u>surfing</u>",
+        "h": "<u>szörfözni</u>",
+        "i": "🏄",
+        "p": "szőrfíng"
+      },
+      {
+        "w": "<u>skiing</u>",
+        "h": "<u>síelni</u>",
+        "i": "🎿",
+        "p": "skííng"
+      },
+      {
+        "w": "<u>camping</u>",
+        "h": "<u>kempingezni</u>",
+        "i": "⛺",
+        "p": "kempíng"
+      },
+      {
+        "w": "<u>drawing</u>",
+        "h": "<u>rajzolni</u>",
+        "i": "✏️",
+        "p": "dróíng"
+      },
+      {
+        "w": "<u>chess</u>",
+        "h": "<u>sakkozni</u>",
+        "i": "♟️",
+        "p": "csesz"
+      },
+      {
+        "w": "<u>blogging</u>",
+        "h": "<u>blogolni</u>",
+        "i": "💻",
+        "p": "blogíng"
+      },
+      {
+        "w": "<u>volunteering</u>",
+        "h": "<u>önkénteskedni</u>",
+        "i": "🤝",
+        "p": "volantíríng"
+      },
+      {
+        "w": "<u>collecting things</u>",
+        "h": "<u>gyűjteni dolgokat</u>",
+        "i": "🏺",
+        "p": "kolektíng szingz"
+      },
+      {
+        "w": "<u>learning languages</u>",
+        "h": "<u>nyelvet tanulni</u>",
+        "i": "🌍",
+        "p": "lőrníng lengvidzsiz"
+      }
+    ]
+  },
+  {
+    "category": "18. Városnézés",
+    "title": "Turista látványosságok",
+    "lang": "en-GB",
+    "pattern": "I want to visit [X].",
+    "hu": "Szeretném meglátogatni [X].",
+    "p_v": "áj vont tu vizit ...",
+    "words": [
+      {
+        "w": "<u>the museum</u>",
+        "h": "<u>a múzeumot</u>",
+        "i": "🏛️",
+        "p": "dö mjúzium"
+      },
+      {
+        "w": "<u>the castle</u>",
+        "h": "<u>a kastélyt</u>",
+        "i": "🏰",
+        "p": "dö kászül"
+      },
+      {
+        "w": "<u>the church</u>",
+        "h": "<u>a templomot</u>",
+        "i": "⛪",
+        "p": "dö csőrcs"
+      },
+      {
+        "w": "<u>the park</u>",
+        "h": "<u>a parkot</u>",
+        "i": "🌳",
+        "p": "dö párk"
+      },
+      {
+        "w": "<u>the bridge</u>",
+        "h": "<u>a hidat</u>",
+        "i": "🌉",
+        "p": "dö bridzs"
+      },
+      {
+        "w": "<u>the zoo</u>",
+        "h": "<u>az állatkertet</u>",
+        "i": "🦁",
+        "p": "dö zú"
+      },
+      {
+        "w": "<u>the gallery</u>",
+        "h": "<u>a galériát</u>",
+        "i": "🖼️",
+        "p": "dö geleri"
+      },
+      {
+        "w": "<u>the theater</u>",
+        "h": "<u>a színházat</u>",
+        "i": "🎭",
+        "p": "dö szíétör"
+      },
+      {
+        "w": "<u>the tower</u>",
+        "h": "<u>a tornyot</u>",
+        "i": "🗼",
+        "p": "dö tauör"
+      },
+      {
+        "w": "<u>the square</u>",
+        "h": "<u>a teret</u>",
+        "i": "🏙️",
+        "p": "dö szkver"
+      },
+      {
+        "w": "<u>the statue</u>",
+        "h": "<u>a szobrot</u>",
+        "i": "🗿",
+        "p": "dö sztetyú"
+      },
+      {
+        "w": "<u>the cathedral</u>",
+        "h": "<u>a székesegyházat</u>",
+        "i": "⛪",
+        "p": "dö köszídröl"
+      },
+      {
+        "w": "<u>the palace</u>",
+        "h": "<u>a palotát</u>",
+        "i": "🏰",
+        "p": "dö pelisz"
+      },
+      {
+        "w": "<u>the fountain</u>",
+        "h": "<u>a szökőkutat</u>",
+        "i": "⛲",
+        "p": "dö fáuntin"
+      },
+      {
+        "w": "<u>the market</u>",
+        "h": "<u>a piacot</u>",
+        "i": "🍎",
+        "p": "dö márkit"
+      },
+      {
+        "w": "<u>the harbor</u>",
+        "h": "<u>a kikötőt</u>",
+        "i": "⚓",
+        "p": "dö hárbör"
+      },
+      {
+        "w": "<u>the beach</u>",
+        "h": "<u>a tengerpartot</u>",
+        "i": "🏖️",
+        "p": "dö bics"
+      },
+      {
+        "w": "<u>the ruins</u>",
+        "h": "<u>a romokat</u>",
+        "i": "🏛️",
+        "p": "dö rúinz"
+      },
+      {
+        "w": "<u>the monument</u>",
+        "h": "<u>az emlékművet</u>",
+        "i": "🗿",
+        "p": "dö monjument"
+      },
+      {
+        "w": "<u>the library</u>",
+        "h": "<u>a könyvtárat</u>",
+        "i": "📚",
+        "p": "dö lájbreri"
+      },
+      {
+        "w": "<u>the viewpoint</u>",
+        "h": "<u>a kilátót</u>",
+        "i": "🔭",
+        "p": "dö vjúpójnt"
+      },
+      {
+        "w": "<u>the aquarium</u>",
+        "h": "<u>az akváriumot</u>",
+        "i": "🐟",
+        "p": "di akvárium"
+      },
+      {
+        "w": "<u>the stadium</u>",
+        "h": "<u>a stadiont</u>",
+        "i": "🏟️",
+        "p": "dö sztédium"
+      },
+      {
+        "w": "<u>the garden</u>",
+        "h": "<u>a kertet</u>",
+        "i": "🌻",
+        "p": "dö gárdön"
+      },
+      {
+        "w": "<u>the old town</u>",
+        "h": "<u>az óvárost</u>",
+        "i": "🏘️",
+        "p": "di óld táun"
+      },
+      {
+        "w": "<u>the university</u>",
+        "h": "<u>az egyetemet</u>",
+        "i": "🎓",
+        "p": "djúnívőrsziti"
+      },
+      {
+        "w": "<u>the shopping mall</u>",
+        "h": "<u>a plázát</u>",
+        "i": "🛍️",
+        "p": "dö sopíng mól"
+      },
+      {
+        "w": "<u>the city hall</u>",
+        "h": "<u>a városházát</u>",
+        "i": "🏢",
+        "p": "dö sziti hól"
+      },
+      {
+        "w": "<u>the opera house</u>",
+        "h": "<u>az operát</u>",
+        "i": "🎼",
+        "p": "di operá háusz"
+      },
+      {
+        "w": "<u>everything</u>",
+        "h": "<u>mindent</u>",
+        "i": "🗺️",
+        "p": "evriszing"
+      }
+    ]
+  },
+  {
+    "category": "19. Posta & Bank",
+    "title": "Hivatalos ügyek",
+    "lang": "en-GB",
+    "pattern": "I need to [X].",
+    "hu": "[X] kell.",
+    "p_v": "áj níd tu ...",
+    "words": [
+      {
+        "w": "<u>exchange money</u>",
+        "h": "<u>pénzt váltanom</u>",
+        "i": "💱",
+        "p": "ekszcséndzs mání"
+      },
+      {
+        "w": "<u>withdraw cash</u>",
+        "h": "<u>készpénzt felvennem</u>",
+        "i": "🏧",
+        "p": "vizdró kes"
+      },
+      {
+        "w": "<u>send a postcard</u>",
+        "h": "<u>képeslapot küldenem</u>",
+        "i": "✉️",
+        "p": "szend ö pósz-tkárd"
+      },
+      {
+        "w": "<u>buy stamps</u>",
+        "h": "<u>bélyeget vennem</u>",
+        "i": "🏷️",
+        "p": "báj sztempsz"
+      },
+      {
+        "w": "<u>open an account</u>",
+        "h": "<u>számlát nyitnom</u>",
+        "i": "💳",
+        "p": "ópen en akáunt"
+      },
+      {
+        "w": "<u>pay the bill</u>",
+        "h": "<u>kifizetnem a számlát</u>",
+        "i": "🧾",
+        "p": "péj dö bil"
+      },
+      {
+        "w": "<u>change my PIN</u>",
+        "h": "<u>megváltoztatnom a PIN-t</u>",
+        "i": "🔢",
+        "p": "cséndzs máj pin"
+      },
+      {
+        "w": "<u>send a parcel</u>",
+        "h": "<u>csomagot küldenem</u>",
+        "i": "📦",
+        "p": "szend ö párszel"
+      },
+      {
+        "w": "<u>transfer money</u>",
+        "h": "<u>pénzt utalnom</u>",
+        "i": "💸",
+        "p": "tránszfer mání"
+      },
+      {
+        "w": "<u>block my card</u>",
+        "h": "<u>letiltanom a kártyám</u>",
+        "i": "🚫",
+        "p": "blok máj kárd"
+      },
+      {
+        "w": "<u>sign this</u>",
+        "h": "<u>ezt aláírnom</u>",
+        "i": "✍️",
+        "p": "szájn disz"
+      },
+      {
+        "w": "<u>wait in line</u>",
+        "h": "<u>sorban állnom</u>",
+        "i": "🚶",
+        "p": "véjt in lájn"
+      },
+      {
+        "w": "<u>speak to the manager</u>",
+        "h": "<u>beszélnem a főnökkel</u>",
+        "i": "👔",
+        "p": "szpík tu dö menidzsör"
+      },
+      {
+        "w": "<u>deposit money</u>",
+        "h": "<u>pénzt befizetnem</u>",
+        "i": "💰",
+        "p": "dipozit mání"
+      },
+      {
+        "w": "<u>get a receipt</u>",
+        "h": "<u>blokkot kérnem</u>",
+        "i": "🧾",
+        "p": "get ö ríszít"
+      },
+      {
+        "w": "<u>check my balance</u>",
+        "h": "<u>egyenleget néznem</u>",
+        "i": "📱",
+        "p": "csekk máj belensz"
+      },
+      {
+        "w": "<u>use the ATM</u>",
+        "h": "<u>használnom az ATM-et</u>",
+        "i": "🏧",
+        "p": "júz di éjtíem"
+      },
+      {
+        "w": "<u>find the post office</u>",
+        "h": "<u>megtalálnom a postát</u>",
+        "i": "📯",
+        "p": "fájnd dö pószt ofisz"
+      },
+      {
+        "w": "<u>fill out a form</u>",
+        "h": "<u>kitöltenem egy nyomtatványt</u>",
+        "i": "📝",
+        "p": "fil áut ö fórm"
+      },
+      {
+        "w": "<u>show my ID</u>",
+        "h": "<u>megmutatnom a személyim</u>",
+        "i": "🆔",
+        "p": "szó máj ájdí"
+      },
+      {
+        "w": "<u>pay in cash</u>",
+        "h": "<u>készpénzzel fizetnem</u>",
+        "i": "💵",
+        "p": "péj in kes"
+      },
+      {
+        "w": "<u>pay by card</u>",
+        "h": "<u>kártyával fizetnem</u>",
+        "i": "💳",
+        "p": "péj báj kárd"
+      },
+      {
+        "w": "<u>get insurance</u>",
+        "h": "<u>biztosítást kötnöm</u>",
+        "i": "🛡️",
+        "p": "get insúransz"
+      },
+      {
+        "w": "<u>cancel a service</u>",
+        "h": "<u>lemondanom a szolgáltatást</u>",
+        "i": "❌",
+        "p": "kenszel ö szervisz"
+      },
+      {
+        "w": "<u>apply for a loan</u>",
+        "h": "<u>hitelt igényelnem</u>",
+        "i": "🏠",
+        "p": "epláj fór ö lón"
+      },
+      {
+        "w": "<u>update my data</u>",
+        "h": "<u>frissítenem az adataim</u>",
+        "i": "🔄",
+        "p": "apdéjt máj détá"
+      },
+      {
+        "w": "<u>register</u>",
+        "h": "<u>regisztrálnom</u>",
+        "i": "👤",
+        "p": "redzsiztör"
+      },
+      {
+        "w": "<u>ask a question</u>",
+        "h": "<u>feltennem egy kérdést</u>",
+        "i": "❓",
+        "p": "ászk ö kvesztcsön"
+      },
+      {
+        "w": "<u>borrow a pen</u>",
+        "h": "<u>kérnem egy tollat</u>",
+        "i": "🖊️",
+        "p": "boró ö pen"
+      },
+      {
+        "w": "<u>go home</u>",
+        "h": "<u>hazamennem</u>",
+        "i": "🏠",
+        "p": "gó hóm"
+      }
+    ]
+  },
+  {
+    "category": "20. Segítségkérés",
+    "title": "Vészhelyzetek",
+    "lang": "en-GB",
+    "pattern": "Please [X]!",
+    "hu": "Kérem, [X]!",
+    "p_v": "plíz ...",
+    "words": [
+      {
+        "w": "<u>help me</u>",
+        "h": "<u>segítsen</u>",
+        "i": "🆘",
+        "p": "help mí"
+      },
+      {
+        "w": "<u>call a doctor</u>",
+        "h": "<u>hívjon orvost</u>",
+        "i": "👨‍⚕️",
+        "p": "kól ö doktör"
+      },
+      {
+        "w": "<u>call the police</u>",
+        "h": "<u>hívja a rendőrséget</u>",
+        "i": "🚓",
+        "p": "kól dö polísz"
+      },
+      {
+        "w": "<u>stop</u>",
+        "h": "<u>álljon meg</u>",
+        "i": "🛑",
+        "p": "sztop"
+      },
+      {
+        "w": "<u>hurry</u>",
+        "h": "<u>siessen</u>",
+        "i": "🏃",
+        "p": "hari"
+      },
+      {
+        "w": "<u>wait</u>",
+        "h": "<u>várjon</u>",
+        "i": "⏳",
+        "p": "véjt"
+      },
+      {
+        "w": "<u>call an ambulance</u>",
+        "h": "<u>hívjon mentőt</u>",
+        "i": "🚑",
+        "p": "kól en embjulensz"
+      },
+      {
+        "w": "<u>look</u>",
+        "h": "<u>nézze</u>",
+        "i": "👀",
+        "p": "luk"
+      },
+      {
+        "w": "<u>listen</u>",
+        "h": "<u>figyeljen</u>",
+        "i": "👂",
+        "p": "liszön"
+      },
+      {
+        "w": "<u>be careful</u>",
+        "h": "<u>legyen óvatos</u>",
+        "i": "⚠️",
+        "p": "bí kerful"
+      },
+      {
+        "w": "<u>don't move</u>",
+        "h": "<u>ne mozogjon</u>",
+        "i": "🚫",
+        "p": "dónt múv"
+      },
+      {
+        "w": "<u>give me your hand</u>",
+        "h": "<u>adja a kezét</u>",
+        "i": "🤝",
+        "p": "giv mí jór hend"
+      },
+      {
+        "w": "<u>stay here</u>",
+        "h": "<u>maradjon itt</u>",
+        "i": "📍",
+        "p": "sztéj hír"
+      },
+      {
+        "w": "<u>follow me</u>",
+        "h": "<u>kövessen</u>",
+        "i": "🚶",
+        "p": "foló mí"
+      },
+      {
+        "w": "<u>repeat</u>",
+        "h": "<u>ismételje meg</u>",
+        "i": "🔄",
+        "p": "ripít"
+      },
+      {
+        "w": "<u>speak slowly</u>",
+        "h": "<u>beszéljen lassan</u>",
+        "i": "🐢",
+        "p": "szpík szlólí"
+      },
+      {
+        "w": "<u>write it down</u>",
+        "h": "<u>írja le</u>",
+        "i": "📝",
+        "p": "rájt it dáun"
+      },
+      {
+        "w": "<u>show me</u>",
+        "h": "<u>mutassa meg</u>",
+        "i": "👉",
+        "p": "szó mí"
+      },
+      {
+        "w": "<u>explain</u>",
+        "h": "<u>magyarázza el</u>",
+        "i": "🧐",
+        "p": "ekszpléjn"
+      },
+      {
+        "w": "<u>help my friend</u>",
+        "h": "<u>segítsen a barátomnak</u>",
+        "i": "🧑‍🤝‍🧑",
+        "p": "help máj frend"
+      },
+      {
+        "w": "<u>call my family</u>",
+        "h": "<u>hívja a családomat</u>",
+        "i": "🏠",
+        "p": "kól máj femili"
+      },
+      {
+        "w": "<u>take me there</u>",
+        "h": "<u>vigyen el oda</u>",
+        "i": "🚕",
+        "p": "téjk mí der"
+      },
+      {
+        "w": "<u>open the door</u>",
+        "h": "<u>nyissa ki az ajtót</u>",
+        "i": "🚪",
+        "p": "ópen dö dór"
+      },
+      {
+        "w": "<u>get some water</u>",
+        "h": "<u>hozzon vizet</u>",
+        "i": "💧",
+        "p": "get szám vótör"
+      },
+      {
+        "w": "<u>sit down</u>",
+        "h": "<u>üljön le</u>",
+        "i": "🪑",
+        "p": "szit dáun"
+      },
+      {
+        "w": "<u>breathe</u>",
+        "h": "<u>lélegezzen</u>",
+        "i": "🫁",
+        "p": "brísz"
+      },
+      {
+        "w": "<u>don't worry</u>",
+        "h": "<u>ne aggódjon</u>",
+        "i": "😌",
+        "p": "dónt varí"
+      },
+      {
+        "w": "<u>be quiet</u>",
+        "h": "<u>legyen csendben</u>",
+        "i": "🤫",
+        "p": "bí kvájet"
+      },
+      {
+        "w": "<u>stand up</u>",
+        "h": "<u>álljon fel</u>",
+        "i": "🕴️",
+        "p": "sztend ap"
+      },
+      {
+        "w": "<u>go away</u>",
+        "h": "<u>menjen el</u>",
+        "i": "👋",
+        "p": "gó övéj"
+      }
+    ]
+  },
+  {
+    "category": "21. Élelmiszerek",
+    "title": "A boltban",
+    "lang": "en-GB",
+    "pattern": "I need some [X].",
+    "hu": "Szükségem van egy kis [X]-(re).",
+    "p_v": "áj níd szám ...",
+    "words": [
+      {
+        "w": "<u>apple</u>",
+        "h": "<u>almára</u>",
+        "i": "🍎",
+        "p": "epel"
+      },
+      {
+        "w": "<u>banana</u>",
+        "h": "<u>banánra</u>",
+        "i": "🍌",
+        "p": "banáná"
+      },
+      {
+        "w": "<u>bread</u>",
+        "h": "<u>kenyérre</u>",
+        "i": "🍞",
+        "p": "bred"
+      },
+      {
+        "w": "<u>cheese</u>",
+        "h": "<u>sajtra</u>",
+        "i": "🧀",
+        "p": "csíz"
+      },
+      {
+        "w": "<u>egg</u>",
+        "h": "<u>tojásra</u>",
+        "i": "🥚",
+        "p": "eg"
+      },
+      {
+        "w": "<u>meat</u>",
+        "h": "<u>húsra</u>",
+        "i": "🥩",
+        "p": "mít"
+      },
+      {
+        "w": "<u>sugar</u>",
+        "h": "<u>cukorra</u>",
+        "i": "🍬",
+        "p": "sugör"
+      },
+      {
+        "w": "<u>salt</u>",
+        "h": "<u>sóra</u>",
+        "i": "🧂",
+        "p": "szolt"
+      },
+      {
+        "w": "<u>milk</u>",
+        "h": "<u>tejre</u>",
+        "i": "🥛",
+        "p": "milk"
+      },
+      {
+        "w": "<u>butter</u>",
+        "h": "<u>vajra</u>",
+        "i": "🧈",
+        "p": "batör"
+      },
+      {
+        "w": "<u>potato</u>",
+        "h": "<u>krumplira</u>",
+        "i": "🥔",
+        "p": "pötétó"
+      },
+      {
+        "w": "<u>tomato</u>",
+        "h": "<u>paradicsomra</u>",
+        "i": "🍅",
+        "p": "tömátó"
+      },
+      {
+        "w": "<u>onion</u>",
+        "h": "<u>hagymára</u>",
+        "i": "🧅",
+        "p": "anjön"
+      },
+      {
+        "w": "<u>rice</u>",
+        "h": "<u>rizsre</u>",
+        "i": "🍚",
+        "p": "rájsz"
+      },
+      {
+        "w": "<u>pasta</u>",
+        "h": "<u>tésztára</u>",
+        "i": "🍝",
+        "p": "pászta"
+      },
+      {
+        "w": "<u>oil</u>",
+        "h": "<u>olajra</u>",
+        "i": "🍾",
+        "p": "ojl"
+      },
+      {
+        "w": "<u>flour</u>",
+        "h": "<u>lisztre</u>",
+        "i": "🌾",
+        "p": "fláuör"
+      },
+      {
+        "w": "<u>honey</u>",
+        "h": "<u>mézre</u>",
+        "i": "🍯",
+        "p": "hani"
+      },
+      {
+        "w": "<u>chocolate</u>",
+        "h": "<u>csokira</u>",
+        "i": "🍫",
+        "p": "csoklit"
+      },
+      {
+        "w": "<u>yogurt</u>",
+        "h": "<u>joghurtra</u>",
+        "i": "🍦",
+        "p": "jogurt"
+      },
+      {
+        "w": "<u>chicken</u>",
+        "h": "<u>csirkére</u>",
+        "i": "🍗",
+        "p": "csikin"
+      },
+      {
+        "w": "<u>beef</u>",
+        "h": "<u>marhahúsra</u>",
+        "i": "🥩",
+        "p": "bíf"
+      },
+      {
+        "w": "<u>pork</u>",
+        "h": "<u>sertéshúsra</u>",
+        "i": "🥓",
+        "p": "pórk"
+      },
+      {
+        "w": "<u>garlic</u>",
+        "h": "<u>fokhagymára</u>",
+        "i": "🧄",
+        "p": "gárlik"
+      },
+      {
+        "w": "<u>lemon</u>",
+        "h": "<u>citromra</u>",
+        "i": "🍋",
+        "p": "lemön"
+      },
+      {
+        "w": "<u>orange</u>",
+        "h": "<u>narancsra</u>",
+        "i": "🍊",
+        "p": "orindzs"
+      },
+      {
+        "w": "<u>cucumber</u>",
+        "h": "<u>uborkára</u>",
+        "i": "🥒",
+        "p": "kjúkambör"
+      },
+      {
+        "w": "<u>strawberry</u>",
+        "h": "<u>eperre</u>",
+        "i": "🍓",
+        "p": "sztróberí"
+      },
+      {
+        "w": "<u>ham</u>",
+        "h": "<u>sonkára</u>",
+        "i": "🍖",
+        "p": "hem"
+      },
+      {
+        "w": "<u>soup</u>",
+        "h": "<u>levesre</u>",
+        "i": "🥣",
+        "p": "szúp"
+      }
+    ]
+  },
+  {
+    "category": "22. Italok",
+    "title": "Frissítők",
+    "lang": "en-GB",
+    "pattern": "Do you have [X]?",
+    "hu": "Van [X]-(ük)?",
+    "p_v": "dú jú hev ...",
+    "words": [
+      {
+        "w": "<u>water</u>",
+        "h": "<u>vizük</u>",
+        "i": "💧",
+        "p": "vótör"
+      },
+      {
+        "w": "<u>sparkling water</u>",
+        "h": "<u>szénsavas vizük</u>",
+        "i": "🫧",
+        "p": "szpárklíng vótör"
+      },
+      {
+        "w": "<u>still water</u>",
+        "h": "<u>mentes vizük</u>",
+        "i": "💧",
+        "p": "sztil vótör"
+      },
+      {
+        "w": "<u>orange juice</u>",
+        "h": "<u>narancslevük</u>",
+        "i": "🍊",
+        "p": "orindzs dzsúsz"
+      },
+      {
+        "w": "<u>apple juice</u>",
+        "h": "<u>almalevük</u>",
+        "i": "🧃",
+        "p": "epel dzsúsz"
+      },
+      {
+        "w": "<u>coke</u>",
+        "h": "<u>kólájuk</u>",
+        "i": "🥤",
+        "p": "kóuk"
+      },
+      {
+        "w": "<u>lemonade</u>",
+        "h": "<u>limonádéjuk</u>",
+        "i": "🍋",
+        "p": "lemonéjd"
+      },
+      {
+        "w": "<u>beer</u>",
+        "h": "<u>sörük</u>",
+        "i": "🍺",
+        "p": "bír"
+      },
+      {
+        "w": "<u>red wine</u>",
+        "h": "<u>vörösboruk</u>",
+        "i": "🍷",
+        "p": "red vájn"
+      },
+      {
+        "w": "<u>white wine</u>",
+        "h": "<u>fehérboruk</u>",
+        "i": "🥂",
+        "p": "vájt vájn"
+      },
+      {
+        "w": "<u>coffee</u>",
+        "h": "<u>kávéjuk</u>",
+        "i": "☕",
+        "p": "kofi"
+      },
+      {
+        "w": "<u>tea</u>",
+        "h": "<u>teájuk</u>",
+        "i": "🍵",
+        "p": "tí"
+      },
+      {
+        "w": "<u>hot chocolate</u>",
+        "h": "<u>forró csokijuk</u>",
+        "i": "☕",
+        "p": "hot csoklit"
+      },
+      {
+        "w": "<u>iced tea</u>",
+        "h": "<u>jeges teájuk</u>",
+        "i": "🧊",
+        "p": "ájSzt tí"
+      },
+      {
+        "w": "<u>milkshake</u>",
+        "h": "<u>turmixuk</u>",
+        "i": "🥤",
+        "p": "milkséjk"
+      },
+      {
+        "w": "<u>smoothie</u>",
+        "h": "<u>smoothie-juk</u>",
+        "i": "🍹",
+        "p": "szmúzí"
+      },
+      {
+        "w": "<u>cocktail</u>",
+        "h": "<u>koktéljuk</u>",
+        "i": "🍸",
+        "p": "koktéjl"
+      },
+      {
+        "w": "<u>whiskey</u>",
+        "h": "<u>whiskey-jük</u>",
+        "i": "🥃",
+        "p": "viszkí"
+      },
+      {
+        "w": "<u>vodka</u>",
+        "h": "<u>vodkájuk</u>",
+        "i": "🍸",
+        "p": "vodká"
+      },
+      {
+        "w": "<u>champagne</u>",
+        "h": "<u>pezsgőjük</u>",
+        "i": "🍾",
+        "p": "sampéjn"
+      },
+      {
+        "w": "<u>soda</u>",
+        "h": "<u>szódájuk</u>",
+        "i": "🥤",
+        "p": "szódá"
+      },
+      {
+        "w": "<u>tonic</u>",
+        "h": "<u>tonikjuk</u>",
+        "i": "🍸",
+        "p": "tonik"
+      },
+      {
+        "w": "<u>gin</u>",
+        "h": "<u>ginjük</u>",
+        "i": "🍸",
+        "p": "dzsin"
+      },
+      {
+        "w": "<u>rum</u>",
+        "h": "<u>rumjuk</u>",
+        "i": "🥃",
+        "p": "ram"
+      },
+      {
+        "w": "<u>tequila</u>",
+        "h": "<u>tequilájuk</u>",
+        "i": "🥃",
+        "p": "tekílá"
+      },
+      {
+        "w": "<u>brandy</u>",
+        "h": "<u>brandy-jük</u>",
+        "i": "🥃",
+        "p": "brendí"
+      },
+      {
+        "w": "<u>cider</u>",
+        "h": "<u>almaboruk</u>",
+        "i": "🍺",
+        "p": "szájdör"
+      },
+      {
+        "w": "<u>energy drink</u>",
+        "h": "<u>energiaitaluk</u>",
+        "i": "⚡",
+        "p": "enerdzsí drink"
+      },
+      {
+        "w": "<u>tap water</u>",
+        "h": "<u>csapvizük</u>",
+        "i": "🚰",
+        "p": "tep vótör"
+      },
+      {
+        "w": "<u>nothing else</u>",
+        "h": "<u>semmi másuk</u>",
+        "i": "❌",
+        "p": "nászing elsz"
+      }
+    ]
+  },
+  {
+    "category": "23. Konyha",
+    "title": "Eszközök",
+    "lang": "en-GB",
+    "pattern": "Where is the [X]?",
+    "hu": "Hol van a(z) [X]?",
+    "p_v": "ver iz dö ...",
+    "words": [
+      {
+        "w": "<u>pan</u>",
+        "h": "<u>serpenyő</u>",
+        "i": "🍳",
+        "p": "pen"
+      },
+      {
+        "w": "<u>pot</u>",
+        "h": "<u>fazék</u>",
+        "i": "🍲",
+        "p": "pot"
+      },
+      {
+        "w": "<u>oven</u>",
+        "h": "<u>sütő</u>",
+        "i": "🔥",
+        "p": "aven"
+      },
+      {
+        "w": "<u>microwave</u>",
+        "h": "<u>mikró</u>",
+        "i": "📟",
+        "p": "májkrovéjv"
+      },
+      {
+        "w": "<u>dishwasher</u>",
+        "h": "<u>mosogatógép</u>",
+        "i": "🧼",
+        "p": "disvósör"
+      },
+      {
+        "w": "<u>sink</u>",
+        "h": "<u>mosogató</u>",
+        "i": "🚰",
+        "p": "szink"
+      },
+      {
+        "w": "<u>toaster</u>",
+        "h": "<u>pirító</u>",
+        "i": "🍞",
+        "p": "tósztör"
+      },
+      {
+        "w": "<u>blender</u>",
+        "h": "<u>turmixgép</u>",
+        "i": "🌪️",
+        "p": "blendör"
+      },
+      {
+        "w": "<u>scale</u>",
+        "h": "<u>mérleg</u>",
+        "i": "⚖️",
+        "p": "szkéjl"
+      },
+      {
+        "w": "<u>timer</u>",
+        "h": "<u>időzítő</u>",
+        "i": "⏲️",
+        "p": "tájmör"
+      },
+      {
+        "w": "<u>opener</u>",
+        "h": "<u>nyitó</u>",
+        "i": "🍾",
+        "p": "ópenör"
+      },
+      {
+        "w": "<u>grater</u>",
+        "h": "<u>reszelő</u>",
+        "i": "🧀",
+        "p": "gréjtör"
+      },
+      {
+        "w": "<u>board</u>",
+        "h": "<u>vágódeszka</u>",
+        "i": "🪵",
+        "p": "bórd"
+      },
+      {
+        "w": "<u>cloth</u>",
+        "h": "<u>konyharuha</u>",
+        "i": "🧹",
+        "p": "klosz"
+      },
+      {
+        "w": "<u>sponge</u>",
+        "h": "<u>szivacs</u>",
+        "i": "🧼",
+        "p": "szpandzs"
+      },
+      {
+        "w": "<u>bin</u>",
+        "h": "<u>kuka</u>",
+        "i": "🗑️",
+        "p": "bin"
+      },
+      {
+        "w": "<u>fridge</u>",
+        "h": "<u>hűtő</u>",
+        "i": "🧊",
+        "p": "fridzs"
+      },
+      {
+        "w": "<u>freezer</u>",
+        "h": "<u>fagyasztó</u>",
+        "i": "❄️",
+        "p": "frízör"
+      },
+      {
+        "w": "<u>drawer</u>",
+        "h": "<u>fiók</u>",
+        "i": "📂",
+        "p": "dróer"
+      },
+      {
+        "w": "<u>shelf</u>",
+        "h": "<u>polc</u>",
+        "i": "🪜",
+        "p": "self"
+      },
+      {
+        "w": "<u>cabinet</u>",
+        "h": "<u>szekrény</u>",
+        "i": "🗄️",
+        "p": "kebinet"
+      },
+      {
+        "w": "<u>apron</u>",
+        "h": "<u>kötény</u>",
+        "i": "🎽",
+        "p": "éjprön"
+      },
+      {
+        "w": "<u>whisk</u>",
+        "h": "<u>habverő</u>",
+        "i": "🥚",
+        "p": "viszk"
+      },
+      {
+        "w": "<u>ladle</u>",
+        "h": "<u>merőkanál</u>",
+        "i": "🥣",
+        "p": "lédel"
+      },
+      {
+        "w": "<u>peeler</u>",
+        "h": "<u>hámozó</u>",
+        "i": "🥔",
+        "p": "pílör"
+      },
+      {
+        "w": "<u>corkscrew</u>",
+        "h": "<u>dugóhúzó</u>",
+        "i": "🍷",
+        "p": "korkszkrú"
+      },
+      {
+        "w": "<u>kettle</u>",
+        "h": "<u>vízforraló</u>",
+        "i": "🫖",
+        "p": "ketel"
+      },
+      {
+        "w": "<u>tray</u>",
+        "h": "<u>tálca</u>",
+        "i": "🍱",
+        "p": "tréj"
+      },
+      {
+        "w": "<u>lid</u>",
+        "h": "<u>fedő</u>",
+        "i": "🥘",
+        "p": "lid"
+      },
+      {
+        "w": "<u>kitchen</u>",
+        "h": "<u>konyha</u>",
+        "i": "🏠",
+        "p": "kicsen"
+      }
+    ]
+  },
+  {
+    "category": "24. Jövő idő",
+    "title": "Tervek (Will)",
+    "lang": "en-GB",
+    "pattern": "I will [X] tomorrow.",
+    "hu": "Holnap [X]. (fogok)",
+    "p_v": "áj vil ... tumoró",
+    "words": [
+      {
+        "w": "<u>arrive</u>",
+        "h": "<u>megérkezem</u>",
+        "i": "🛬",
+        "p": "örájv"
+      },
+      {
+        "w": "<u>call</u>",
+        "h": "<u>telefonálok</u>",
+        "i": "📞",
+        "p": "kól"
+      },
+      {
+        "w": "<u>pay</u>",
+        "h": "<u>fizetek</u>",
+        "i": "💳",
+        "p": "péj"
+      },
+      {
+        "w": "<u>wait</u>",
+        "h": "<u>várok</u>",
+        "i": "⏳",
+        "p": "véjt"
+      },
+      {
+        "w": "<u>start</u>",
+        "h": "<u>kezdek</u>",
+        "i": "🏁",
+        "p": "sztárt"
+      },
+      {
+        "w": "<u>finish</u>",
+        "h": "<u>befejezem</u>",
+        "i": "🔚",
+        "p": "finis"
+      },
+      {
+        "w": "<u>go</u>",
+        "h": "<u>megyek</u>",
+        "i": "🚶",
+        "p": "gó"
+      },
+      {
+        "w": "<u>stay</u>",
+        "h": "<u>maradok</u>",
+        "i": "📍",
+        "p": "sztéj"
+      },
+      {
+        "w": "<u>help</u>",
+        "h": "<u>segítek</u>",
+        "i": "🤝",
+        "p": "help"
+      },
+      {
+        "w": "<u>work</u>",
+        "h": "<u>dolgozom</u>",
+        "i": "💻",
+        "p": "vőrk"
+      },
+      {
+        "w": "<u>buy</u>",
+        "h": "<u>veszek (valamit)</u>",
+        "i": "🛍️",
+        "p": "báj"
+      },
+      {
+        "w": "<u>send</u>",
+        "h": "<u>küldök</u>",
+        "i": "✉️",
+        "p": "szend"
+      },
+      {
+        "w": "<u>meet</u>",
+        "h": "<u>találkozom</u>",
+        "i": "🤝",
+        "p": "mít"
+      },
+      {
+        "w": "<u>write</u>",
+        "h": "<u>írok</u>",
+        "i": "✍️",
+        "p": "rájt"
+      },
+      {
+        "w": "<u>read</u>",
+        "h": "<u>olvasok</u>",
+        "i": "📖",
+        "p": "ríd"
+      },
+      {
+        "w": "<u>eat</u>",
+        "h": "<u>eszem</u>",
+        "i": "🍕",
+        "p": "ít"
+      },
+      {
+        "w": "<u>drink</u>",
+        "h": "<u>iszom</u>",
+        "i": "🥤",
+        "p": "drink"
+      },
+      {
+        "w": "<u>see</u>",
+        "h": "<u>látok</u>",
+        "i": "👁️",
+        "p": "szí"
+      },
+      {
+        "w": "<u>listen</u>",
+        "h": "<u>hallgatok</u>",
+        "i": "👂",
+        "p": "liszön"
+      },
+      {
+        "w": "<u>travel</u>",
+        "h": "<u>utazom</u>",
+        "i": "✈️",
+        "p": "trevel"
+      },
+      {
+        "w": "<u>speak</u>",
+        "h": "<u>beszélek</u>",
+        "i": "🗣️",
+        "p": "szpík"
+      },
+      {
+        "w": "<u>learn</u>",
+        "h": "<u>tanulok</u>",
+        "i": "🎓",
+        "p": "lőrn"
+      },
+      {
+        "w": "<u>sleep</u>",
+        "h": "<u>alszom</u>",
+        "i": "💤",
+        "p": "szlíp"
+      },
+      {
+        "w": "<u>drive</u>",
+        "h": "<u>vezetek</u>",
+        "i": "🚗",
+        "p": "drájv"
+      },
+      {
+        "w": "<u>fly</u>",
+        "h": "<u>repülök</u>",
+        "i": "✈️",
+        "p": "fláj"
+      },
+      {
+        "w": "<u>cook</u>",
+        "h": "<u>főzök</u>",
+        "i": "🍳",
+        "p": "kuk"
+      },
+      {
+        "w": "<u>clean</u>",
+        "h": "<u>takarítok</u>",
+        "i": "✨",
+        "p": "klín"
+      },
+      {
+        "w": "<u>open</u>",
+        "h": "<u>nyitok</u>",
+        "i": "🔓",
+        "p": "ópen"
+      },
+      {
+        "w": "<u>close</u>",
+        "h": "<u>zárok</u>",
+        "i": "🔒",
+        "p": "klóz"
+      },
+      {
+        "w": "<u>stop</u>",
+        "h": "<u>megállok</u>",
+        "i": "🛑",
+        "p": "sztop"
+      }
+    ]
+  },
+  {
+    "category": "25. Múlt idő",
+    "title": "Történések (Was/Were)",
+    "lang": "en-GB",
+    "pattern": "[X] here yesterday.",
+    "hu": "[X] itt tegnap.",
+    "p_v": "... hír jeszterdéj",
+    "words": [
+      {
+        "w": "<u>I was</u>",
+        "h": "<u>Én voltam</u>",
+        "i": "🙋",
+        "p": "áj voz"
+      },
+      {
+        "w": "<u>You were</u>",
+        "h": "<u>Te voltál</u>",
+        "i": "🫵",
+        "p": "jú vőr"
+      },
+      {
+        "w": "<u>He was</u>",
+        "h": "<u>Ő (férfi) volt</u>",
+        "i": "👨",
+        "p": "hí voz"
+      },
+      {
+        "w": "<u>She was</u>",
+        "h": "<u>Ő (nő) volt</u>",
+        "i": "👩",
+        "p": "sí voz"
+      },
+      {
+        "w": "<u>It was</u>",
+        "h": "<u>Ez volt</u>",
+        "i": "📦",
+        "p": "it voz"
+      },
+      {
+        "w": "<u>We were</u>",
+        "h": "<u>Mi voltunk</u>",
+        "i": "👥",
+        "p": "ví vőr"
+      },
+      {
+        "w": "<u>They were</u>",
+        "h": "<u>Ők voltak</u>",
+        "i": "👫",
+        "p": "déj vőr"
+      },
+      {
+        "w": "<u>Everything was</u>",
+        "h": "<u>Minden volt</u>",
+        "i": "🌍",
+        "p": "evriszing voz"
+      },
+      {
+        "w": "<u>Nothing was</u>",
+        "h": "<u>Semmi nem volt</u>",
+        "i": "❌",
+        "p": "nászing voz"
+      },
+      {
+        "w": "<u>Everyone was</u>",
+        "h": "<u>Mindenki volt</u>",
+        "i": "👨‍👩‍👧",
+        "p": "evriván voz"
+      },
+      {
+        "w": "<u>The food was</u>",
+        "h": "<u>Az étel volt</u>",
+        "i": "🍕",
+        "p": "dö fúd voz"
+      },
+      {
+        "w": "<u>The room was</u>",
+        "h": "<u>A szoba volt</u>",
+        "i": "🏨",
+        "p": "dö rúm voz"
+      },
+      {
+        "w": "<u>The weather was</u>",
+        "h": "<u>Az idő volt</u>",
+        "i": "🌤️",
+        "p": "dö vedör voz"
+      },
+      {
+        "w": "<u>The flight was</u>",
+        "h": "<u>A repülés volt</u>",
+        "i": "✈️",
+        "p": "dö flájt voz"
+      },
+      {
+        "w": "<u>The price was</u>",
+        "h": "<u>Az ár volt</u>",
+        "i": "🏷️",
+        "p": "dö prájsz voz"
+      },
+      {
+        "w": "<u>It was good</u>",
+        "h": "<u>Jó volt</u>",
+        "i": "✅",
+        "p": "it voz gud"
+      },
+      {
+        "w": "<u>It was bad</u>",
+        "h": "<u>Rossz volt</u>",
+        "i": "❌",
+        "p": "it voz bed"
+      },
+      {
+        "w": "<u>I was happy</u>",
+        "h": "<u>Boldog voltam</u>",
+        "i": "😊",
+        "p": "áj voz hepi"
+      },
+      {
+        "w": "<u>I was tired</u>",
+        "h": "<u>Fáradt voltam</u>",
+        "i": "😴",
+        "p": "áj voz tájörd"
+      },
+      {
+        "w": "<u>We were late</u>",
+        "h": "<u>Késtünk</u>",
+        "i": "⏰",
+        "p": "ví vőr léjt"
+      },
+      {
+        "w": "<u>You were fast</u>",
+        "h": "<u>Gyors voltál</u>",
+        "i": "⚡",
+        "p": "jú vőr fászt"
+      },
+      {
+        "w": "<u>They were kind</u>",
+        "h": "<u>Kedvesek voltak</u>",
+        "i": "😇",
+        "p": "déj vőr kájnd"
+      },
+      {
+        "w": "<u>It was free</u>",
+        "h": "<u>Ingyenes volt</u>",
+        "i": "🎁",
+        "p": "it voz frí"
+      },
+      {
+        "w": "<u>She was busy</u>",
+        "h": "<u>Elfoglalt volt</u>",
+        "i": "💼",
+        "p": "sí voz bizi"
+      },
+      {
+        "w": "<u>He was alone</u>",
+        "h": "<u>Egyedül volt</u>",
+        "i": "👤",
+        "p": "hí voz alón"
+      },
+      {
+        "w": "<u>It was cold</u>",
+        "h": "<u>Hideg volt</u>",
+        "i": "❄️",
+        "p": "it voz kóld"
+      },
+      {
+        "w": "<u>It was hot</u>",
+        "h": "<u>Meleg volt</u>",
+        "i": "🔥",
+        "p": "it voz hot"
+      },
+      {
+        "w": "<u>We were safe</u>",
+        "h": "<u>Biztonságban voltunk</u>",
+        "i": "🛡️",
+        "p": "ví vőr széjf"
+      },
+      {
+        "w": "<u>The hotel was</u>",
+        "h": "<u>A hotel volt</u>",
+        "i": "🏨",
+        "p": "dö hotel voz"
+      },
+      {
+        "w": "<u>The bus was</u>",
+        "h": "<u>A busz volt</u>",
+        "i": "🚌",
+        "p": "dö bász voz"
+      }
+    ]
+  }
+]

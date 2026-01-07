@@ -859,6 +859,7 @@
         }
 
         // --- MONDATÉPÍTŐ LOGIKA (V7.3) ---
+        // --- MONDATÉPÍTŐ LOGIKA (JAVÍTOTT: Magyar mondat kezelése) ---
         function startBuilderGame(sentence, wordObj) {
             // UI VÁLTÁS
             document.getElementById('standard-mode-elements').classList.add('hidden');
@@ -870,10 +871,19 @@
 
             // ADATOK BEÁLLÍTÁSA
             lastSentence = sentence;
-            builderTargetAudioText = sentence; // Súgóhoz elmentjük
+            builderTargetAudioText = sentence;
 
-            const huSentence = currentCat.hu.replace("[X]", wordObj.h.replace(/<[^>]*>/g, ""));
+            // --- ITT A JAVÍTÁS ---
+            // Megnézzük, van-e egyedi magyar mondat ("hs") a JSON-ben
+            let huSentence;
+            if (wordObj.hs) {
+                huSentence = wordObj.hs; // Ha van, ezt használjuk (pl. "A belépés teljesen ingyenes")
+            } else {
+                // Ha nincs, marad a régi sablonos megoldás
+                huSentence = currentCat.hu.replace("[X]", wordObj.h.replace(/<[^>]*>/g, ""));
+            }
             document.getElementById('builder-target-hu').innerText = huSentence;
+            // ---------------------
 
             // SZAVAKRA BONTÁS
             let cleanSentence = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
@@ -894,7 +904,7 @@
                 scrambleZone.appendChild(chip);
             });
 
-            // AUTOMATA FELOLVASÁS AZ ELEJÉN
+            // AUTOMATA FELOLVASÁS
             playBuilderHint();
         }
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 6.3</title>
+    <title>TravelTalk Pro 6.4</title>
 
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e40af">
@@ -35,7 +35,6 @@
             user-select: none;
         }
 
-        /* Közös üveg-hatás stílus */
         .glass-panel {
             background: rgba(30, 41, 59, 0.45);
             backdrop-filter: blur(12px);
@@ -106,7 +105,6 @@
             font-size: 1rem;
         }
 
-        /* Gombok és Kártyák */
         .pattern-btn {
             padding: 15px;
             margin-bottom: 10px;
@@ -148,7 +146,7 @@
             box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
         }
 
-        /* Szótár specifikus stílusok */
+        /* Szótár */
         .dict-btn {
             background: var(--primary);
             color: white;
@@ -163,6 +161,7 @@
             justify-content: center;
             gap: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
         }
 
         .search-box {
@@ -172,9 +171,16 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(0, 0, 0, 0.3);
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             box-sizing: border-box;
             font-size: 1rem;
+        }
+
+        .dict-info-bar {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            padding-left: 5px;
         }
 
         .dict-item {
@@ -210,7 +216,7 @@
             text-align: center;
         }
 
-        /* Egyéb UI elemek */
+        /* Egyéb */
         #sentence-preview {
             font-size: 1.4rem;
             margin: 15px 0;
@@ -340,7 +346,7 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 6.3</h2>
+        <h2 style="margin:0">TravelTalk Pro 6.4</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
             <div class="spinner"></div> Betöltés...
         </div>
@@ -361,15 +367,15 @@
                     <option value="fr.json">Francia 🇫🇷</option>
                 </select>
             </div>
-            <!-- ÚJ: Szótár gomb -->
-            <button onclick="openDictionary()" class="dict-btn">
-                📖 Teljes Szótár (ABC)
+            <!-- ÚJ: Szótár gomb ID-val -->
+            <button id="dict-btn" onclick="openDictionary()" class="dict-btn">
+                📖 Szótár betöltése...
             </button>
         </div>
         <div id="pattern-list" style="margin-top:15px; padding-bottom: 20px;"></div>
     </div>
 
-    <!-- SZÓTÁR KÉPERNYŐ (ÚJ) -->
+    <!-- SZÓTÁR KÉPERNYŐ -->
     <div id="dictionary-screen" class="screen hidden">
         <div style="margin-bottom: 15px;">
             <button onclick="closeDictionary()" class="back-btn">← VISSZA</button>
@@ -377,6 +383,9 @@
 
         <input type="text" id="dict-search" class="search-box" placeholder="🔍 Keresés (magyar vagy idegen szó)..."
             onkeyup="filterDictionary()">
+
+        <!-- Találatok száma kereséskor -->
+        <div id="dict-count-display" class="dict-info-bar"></div>
 
         <div id="dictionary-list" style="padding-bottom: 20px;">
             <!-- Itt lesznek a szavak -->
@@ -425,7 +434,7 @@
     <script>
         // --- KONFIGURÁCIÓ & VÁLTOZÓK ---
         let categories = [];
-        let dictionaryData = []; // Az összes szó egyben
+        let dictionaryData = [];
         let stats = JSON.parse(localStorage.getItem('tt_stats')) || { learned: {}, quizPoints: {} };
         let currentCat = null;
         let isQuiz = false;
@@ -443,7 +452,6 @@
             speechRate = parseFloat(e.target.value);
         });
 
-        // iOS hang feloldás
         document.body.addEventListener('click', function unlockAudio() {
             const u = new SpeechSynthesisUtterance("");
             window.speechSynthesis.speak(u);
@@ -452,7 +460,6 @@
             document.body.removeEventListener('click', unlockAudio);
         }, { once: true });
 
-        // SW regisztráció
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(() => { });
         }
@@ -476,7 +483,7 @@
                 if (!res.ok) throw new Error("Hiba");
                 categories = await res.json();
                 renderList();
-                buildDictionaryData(); // Szótár adatbázis frissítése
+                buildDictionaryData(); // Itt frissítjük a gomb szövegét is
             } catch (err) {
                 console.error("Betöltési hiba:", err);
                 dirDiv.innerHTML = "⚠️ Hiba a betöltéskor!";
@@ -530,24 +537,29 @@
             dictionaryData = [];
             categories.forEach(cat => {
                 cat.words.forEach(word => {
-                    // Elkerüljük a duplikációkat (ha ugyanaz a szó többször szerepelne)
                     if (!dictionaryData.some(item => item.w === word.w)) {
                         dictionaryData.push(word);
                     }
                 });
             });
 
-            // ABC sorrendbe rendezés a tiszta szöveg alapján (HTML tegek nélkül)
             dictionaryData.sort((a, b) => {
                 const textA = a.w.replace(/<[^>]*>/g, "").toLowerCase();
                 const textB = b.w.replace(/<[^>]*>/g, "").toLowerCase();
                 return textA.localeCompare(textB);
             });
+
+            // FRISSÍTÉS: Kiírjuk a darabszámot a gombra
+            const btn = document.getElementById('dict-btn');
+            if (btn) {
+                btn.innerHTML = `📖 Teljes Szótár <span style="font-size:0.9em; opacity:0.8; margin-left:8px;">(${dictionaryData.length} szó)</span>`;
+            }
         }
 
         function openDictionary() {
             document.getElementById('selector-screen').classList.add('hidden');
             document.getElementById('dictionary-screen').classList.remove('hidden');
+            document.getElementById('dict-search').value = ""; // Kereső törlése
             renderDictionary(dictionaryData);
         }
 
@@ -558,7 +570,13 @@
 
         function renderDictionary(data) {
             const list = document.getElementById('dictionary-list');
+            const info = document.getElementById('dict-count-display');
             list.innerHTML = "";
+
+            // Kijelezzük, hány találat van (ha keresés történik, vagy összesen)
+            if (info) {
+                info.innerText = `Összesen: ${data.length} szó`;
+            }
 
             if (data.length === 0) {
                 list.innerHTML = "<div style='text-align:center; padding:20px; opacity:0.6'>Nincs találat.</div>";
@@ -569,7 +587,6 @@
                 const item = document.createElement('div');
                 item.className = "dict-item glass-panel";
 
-                // HTML tegek eltávolítása a megjelenítéshez
                 const cleanW = word.w.replace(/<[^>]*>/g, "");
                 const cleanH = word.h.replace(/<[^>]*>/g, "");
 

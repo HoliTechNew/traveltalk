@@ -449,10 +449,11 @@
         let currentFile = 'en.json';
         let speechRate = 0.9;
 
-        // Hangok
-        const audioCorrect = new Audio('https://actions.google.com/sounds/v1/cartoon/pop.ogg');
-        const audioWrong = new Audio('https://actions.google.com/sounds/v1/cartoon/clank_car_crash.ogg');
-        const audioWin = new Audio('https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg');
+        // --- HANGOK JAVÍTVA (ÚJ LINKJEK) ---
+        // A Google linkek helyett stabil Wikimedia Commons linkek
+        const audioCorrect = new Audio('https://upload.wikimedia.org/wikipedia/commons/3/30/Correct_answer.ogg');
+        const audioWrong = new Audio('https://upload.wikimedia.org/wikipedia/commons/5/5f/Wrong_answer_sound_effect.ogg');
+        const audioWin = new Audio('https://upload.wikimedia.org/wikipedia/commons/c/c2/Ta-da_sound.ogg');
 
         // Eseménykezelők
         document.getElementById('speech-rate').addEventListener('input', (e) => speechRate = parseFloat(e.target.value));
@@ -460,8 +461,7 @@
         // Mondatépítő kapcsoló
         document.getElementById('builder-mode-toggle').addEventListener('change', (e) => {
             builderMode = e.target.checked;
-            console.log("Mondatépítő mód:", builderMode);
-            // Ha váltunk, frissítsük a felületet
+            // Ha váltunk, azonnal újratöltjük a kategóriát a helyes nézethez
             if (currentCat) openCat(currentCat.index);
         });
 
@@ -469,8 +469,8 @@
         document.body.addEventListener('click', function unlockAudio() {
             const u = new SpeechSynthesisUtterance("");
             window.speechSynthesis.speak(u);
-            audioCorrect.play().catch(() => { });
-            audioCorrect.pause();
+            // Üres lejátszás a hangszóró felébresztéséhez
+            audioCorrect.play().then(() => audioCorrect.pause()).catch(() => { });
             document.body.removeEventListener('click', unlockAudio);
         }, { once: true });
 
@@ -479,7 +479,6 @@
 
         // --- ADATKEZELÉS ---
         async function changeLanguage(fileName) {
-            console.log("Nyelv váltása erre:", fileName);
             currentFile = fileName;
             if (fileName === 'en.json') appLang = 'en-GB';
             else if (fileName === 'it.json') appLang = 'it-IT';
@@ -493,11 +492,10 @@
             dirDiv.innerHTML = '<div class="spinner"></div> Betöltés...';
             try {
                 const res = await fetch(currentFile + '?v=' + new Date().getTime());
-                if (!res.ok) throw new Error("Hiba a JSON betöltésekor");
+                if (!res.ok) throw new Error("Hiba");
                 categories = await res.json();
                 renderList();
                 buildDictionaryData();
-                console.log("Adatok betöltve:", categories.length, "kategória");
             } catch (err) {
                 console.error("Betöltési hiba:", err);
                 dirDiv.innerHTML = "⚠️ Hiba a betöltéskor!";
@@ -518,12 +516,12 @@
                 const learnedCount = (stats.learned[idx] || []).length;
                 const totalCount = cat.words.length;
                 const percent = Math.round((learnedCount / totalCount) * 100);
+
                 const item = document.createElement('div');
                 item.className = "pattern-btn glass-panel";
                 item.onclick = () => openCat(idx);
 
-                // Hibatűrés, ha nincs ikon
-                const icon = (cat.words && cat.words[0] && cat.words[0].i) ? cat.words[0].i : "📚";
+                const icon = (cat.words && cat.words[0]) ? cat.words[0].i : "📚";
                 let progressColor = percent === 100 ? 'var(--done)' : 'var(--primary)';
 
                 item.innerHTML = `
@@ -602,9 +600,8 @@
             renderDictionary(filtered);
         }
 
-        // --- HANG LEJÁTSZÁS (DEBUG VERZIÓ) ---
+        // --- HANG LEJÁTSZÁS ---
         function playWord(text) {
-            console.log("🔊 playWord hívás:", text);
             window.speechSynthesis.cancel();
             const u = new SpeechSynthesisUtterance(text);
             u.lang = appLang;
@@ -613,20 +610,12 @@
         }
 
         function playCurrent() {
-            if (!lastSentence) {
-                console.warn("Nincs mit mondani (lastSentence üres)");
-                return;
-            }
-            console.log("🔊 playCurrent hívás:", lastSentence);
-
+            if (!lastSentence) return;
             window.speechSynthesis.cancel();
             let m = new SpeechSynthesisUtterance(lastSentence);
             m.lang = (currentCat && currentCat.lang) ? currentCat.lang : appLang;
             m.rate = speechRate;
-
             m.onerror = (e) => console.error("Beszéd hiba:", e);
-            m.onstart = () => console.log("Beszéd elindult...");
-
             window.speechSynthesis.speak(m);
         }
 
@@ -647,7 +636,7 @@
 
             // Módok közötti váltás
             if (builderMode) {
-                document.getElementById('builder-game-area').classList.add('hidden'); // Reset
+                document.getElementById('builder-game-area').classList.add('hidden'); // Reset állapot
                 document.getElementById('standard-mode-elements').classList.add('hidden');
                 document.getElementById('word-options').classList.remove('hidden');
                 document.getElementById('quiz-status').innerText = "🧩 MONDATÉPÍTŐ";
@@ -678,25 +667,39 @@
         }
 
         function handleInput(word, element) {
-            console.log("Kattintás:", word.w);
-
             let cleanWord = word.w.replace(/<[^>]*>/g, "");
-            let sentence = (word.s) ? word.s : currentCat.pattern.replace("[X]", cleanWord);
+            // MONDAT KIVÁLASZTÁSA (Egyedi "s" vagy Sablon "pattern")
+            let sentence;
+            if (word.s) {
+                sentence = word.s;
+            } else {
+                sentence = currentCat.pattern.replace("[X]", cleanWord);
+            }
             sentence = sentence.replace(/\s+/g, ' ').replace(/' /g, "'").trim();
 
-            // A) KVÍZ
+            // A) KVÍZ MÓD
             if (isQuiz) {
                 if (element.classList.contains('animate-correct') || element.classList.contains('animate-wrong')) return;
                 if (word.w === quizTarget.w) {
                     element.classList.add('animate-correct');
                     audioCorrect.currentTime = 0; audioCorrect.play();
+
                     document.getElementById('sentence-preview').innerHTML = sentence;
-                    document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent); font-weight:bold;">HELYES!</span> ${currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""))}`;
+                    let fullHu = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
+                    document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent); font-weight:bold;">HELYES!</span> ${fullHu}`;
+
                     window.speechSynthesis.cancel();
                     let targetMsg = new SpeechSynthesisUtterance(sentence);
-                    targetMsg.lang = currentCat.lang; targetMsg.rate = speechRate;
-                    targetMsg.onend = () => { setTimeout(() => { element.classList.remove('animate-correct'); if (quizQueue.length === 0) showFinalCongratulation(); else nextQuizStep(); }, 500); };
+                    targetMsg.lang = (currentCat && currentCat.lang) ? currentCat.lang : appLang;
+                    targetMsg.rate = speechRate;
+                    targetMsg.onend = () => {
+                        setTimeout(() => {
+                            element.classList.remove('animate-correct');
+                            if (quizQueue.length === 0) showFinalCongratulation(); else nextQuizStep();
+                        }, 500);
+                    };
                     window.speechSynthesis.speak(targetMsg);
+
                     if (!stats.quizPoints[currentCat.index]) stats.quizPoints[currentCat.index] = 0;
                     stats.quizPoints[currentCat.index]++;
                     save();
@@ -709,14 +712,13 @@
                 return;
             }
 
-            // B) MONDATÉPÍTŐ
+            // B) MONDATÉPÍTŐ MÓD
             if (builderMode) {
-                console.log("Mondatépítő indítása ezzel:", sentence);
                 startBuilderGame(sentence, word);
                 return;
             }
 
-            // C) TANULÓ MÓD
+            // C) NORMÁL TANULÓ MÓD
             document.getElementById('sentence-preview').innerHTML = sentence;
             document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
 
@@ -728,7 +730,7 @@
             document.getElementById('speak-btn').style.visibility = "visible";
 
             lastSentence = sentence;
-            playCurrent(); // <--- ITT HÍVJA A BESZÉDET
+            playCurrent(); // Hang lejátszása
 
             if (!stats.learned[currentCat.index]) stats.learned[currentCat.index] = [];
             if (!stats.learned[currentCat.index].includes(word.w)) {
@@ -782,7 +784,7 @@
                 currentBuilderIndex++;
 
                 if (currentBuilderIndex === currentBuilderSentence.length) {
-                    audioWin.play();
+                    audioWin.currentTime = 0; audioWin.play();
                     setTimeout(() => {
                         playCurrent();
                         setTimeout(() => {
@@ -807,8 +809,12 @@
             document.getElementById('quiz-toggle-btn').style.display = "none";
             document.getElementById('main-card').classList.add('quiz-active-card');
             document.getElementById('quiz-status').style.color = "var(--done)";
-            document.getElementById('standard-mode-elements').classList.remove('hidden');
+
+            // Ha véletlenül builder módból jöttünk, zárjuk be a builder UI-t
             document.getElementById('builder-game-area').classList.add('hidden');
+            document.getElementById('standard-mode-elements').classList.remove('hidden');
+            document.getElementById('word-options').classList.remove('hidden');
+
             window.speechSynthesis.cancel();
             let startMsg = new SpeechSynthesisUtterance("Kezdjük!");
             startMsg.lang = "hu-HU";

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 7.2</title>
+    <title>TravelTalk Pro 7.3</title>
 
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e40af">
@@ -306,7 +306,7 @@
 
         .word-chip {
             background: #334155;
-            padding: 8px 14px;
+            padding: 10px 16px;
             border-radius: 20px;
             color: white;
             font-weight: bold;
@@ -314,7 +314,7 @@
             border: 1px solid var(--primary);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: all 0.2s;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         .word-chip:active {
@@ -456,7 +456,7 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 7.2</h2>
+        <h2 style="margin:0">TravelTalk Pro 7.3</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
             <div class="spinner"></div> Betöltés...
         </div>
@@ -536,12 +536,24 @@
                 <div id="translation-preview">Fordítás...</div>
             </div>
 
-            <!-- MONDATÉPÍTŐ MÓD ELEMEI -->
+            <!-- MONDATÉPÍTŐ MÓD ELEMEI (FRISSÍTVE: SÚGÓ ÉS VISSZAJELZÉS) -->
             <div id="builder-game-area" class="hidden">
                 <div id="builder-instruction" style="color:var(--accent); font-weight:bold; margin-bottom:5px;">Rakd
                     össze a mondatot!</div>
-                <div id="builder-target-hu" style="font-size:1.1rem; margin-bottom:15px; color:#cbd5e1;">Magyar mondat
-                    helye</div>
+
+                <!-- MAGYAR SZÖVEG + SÚGÓ GOMB -->
+                <div
+                    style="display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:15px; background:rgba(0,0,0,0.2); padding:10px; border-radius:10px;">
+                    <div id="builder-target-hu" style="font-size:1.2rem; color:#fff; font-weight:bold;">...</div>
+                    <button onclick="playBuilderHint()"
+                        style="background:var(--primary); border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:1.2rem; box-shadow:0 2px 5px black;">👂</button>
+                </div>
+
+                <!-- VISSZAJELZÉS SÁV -->
+                <div id="builder-feedback"
+                    style="height:25px; font-weight:bold; margin-bottom:10px; color:var(--text); text-shadow: 0 1px 3px black;">
+                </div>
+
                 <div id="builder-drop-zone" class="builder-area"></div>
                 <div id="builder-scramble-zone" class="scramble-container"></div>
             </div>
@@ -568,8 +580,11 @@
         let currentCat = null;
         let isQuiz = false;
         let builderMode = false;
+
+        // Builder változók
         let currentBuilderSentence = [];
         let currentBuilderIndex = 0;
+        let builderTargetAudioText = ""; // Mit kell felolvasni a súgóban
 
         let quizQueue = [];
         let quizTarget = null;
@@ -578,7 +593,7 @@
         let currentFile = 'en.json';
         let speechRate = 0.9;
 
-        // JAVÍTOTT HANGOK (Wikimedia Commons - Stabilak)
+        // JAVÍTOTT HANGOK
         const audioCorrect = new Audio('https://upload.wikimedia.org/wikipedia/commons/3/30/Correct_answer.ogg');
         const audioWrong = new Audio('https://upload.wikimedia.org/wikipedia/commons/5/5f/Wrong_answer_sound_effect.ogg');
         const audioWin = new Audio('https://upload.wikimedia.org/wikipedia/commons/c/c2/Ta-da_sound.ogg');
@@ -843,18 +858,24 @@
             }
         }
 
-        // --- MONDATÉPÍTŐ ---
+        // --- MONDATÉPÍTŐ LOGIKA (V7.3) ---
         function startBuilderGame(sentence, wordObj) {
+            // UI VÁLTÁS
             document.getElementById('standard-mode-elements').classList.add('hidden');
             document.getElementById('word-options').classList.add('hidden');
             document.getElementById('builder-game-area').classList.remove('hidden');
             document.getElementById('speak-btn').style.visibility = "hidden";
             document.getElementById('quiz-toggle-btn').style.display = "none";
+            document.getElementById('builder-feedback').innerText = "";
 
+            // ADATOK BEÁLLÍTÁSA
             lastSentence = sentence;
+            builderTargetAudioText = sentence; // Súgóhoz elmentjük
+
             const huSentence = currentCat.hu.replace("[X]", wordObj.h.replace(/<[^>]*>/g, ""));
             document.getElementById('builder-target-hu').innerText = huSentence;
 
+            // SZAVAKRA BONTÁS
             let cleanSentence = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
             currentBuilderSentence = cleanSentence.split(/\s+/);
             let shuffled = [...currentBuilderSentence].sort(() => Math.random() - 0.5);
@@ -872,13 +893,30 @@
                 chip.onclick = () => checkBuilderWord(word, chip);
                 scrambleZone.appendChild(chip);
             });
+
+            // AUTOMATA FELOLVASÁS AZ ELEJÉN
+            playBuilderHint();
+        }
+
+        function playBuilderHint() {
+            window.speechSynthesis.cancel();
+            let u = new SpeechSynthesisUtterance(builderTargetAudioText);
+            u.lang = (currentCat && currentCat.lang) ? currentCat.lang : appLang;
+            u.rate = 0.8; // Kicsit lassabban a súgónál
+            window.speechSynthesis.speak(u);
         }
 
         function checkBuilderWord(clickedWord, chipElement) {
             const correctWord = currentBuilderSentence[currentBuilderIndex];
+            const feedbackEl = document.getElementById('builder-feedback');
+
             if (clickedWord.toLowerCase() === correctWord.toLowerCase()) {
+                // HELYES
                 audioCorrect.currentTime = 0; audioCorrect.play();
                 chipElement.classList.add('used');
+                feedbackEl.innerText = "👍 Helyes!";
+                feedbackEl.style.color = "var(--accent)";
+
                 const placedChip = document.createElement('div');
                 placedChip.className = "word-chip";
                 placedChip.style.background = "var(--done)";
@@ -889,6 +927,7 @@
 
                 if (currentBuilderIndex === currentBuilderSentence.length) {
                     audioWin.currentTime = 0; audioWin.play();
+                    feedbackEl.innerText = "🏆 SIKERÜLT!";
                     setTimeout(() => {
                         playCurrent();
                         setTimeout(() => {
@@ -900,9 +939,15 @@
                     }, 500);
                 }
             } else {
+                // HIBÁS
                 audioWrong.currentTime = 0; audioWrong.play();
                 chipElement.style.background = "var(--wrong)";
-                setTimeout(() => chipElement.style.background = "#334155", 500);
+                feedbackEl.innerText = "❌ Nem jó sorrend!";
+                feedbackEl.style.color = "var(--wrong)";
+                setTimeout(() => {
+                    chipElement.style.background = "#334155";
+                    feedbackEl.innerText = "";
+                }, 800);
             }
         }
 
@@ -913,8 +958,11 @@
             document.getElementById('quiz-toggle-btn').style.display = "none";
             document.getElementById('main-card').classList.add('quiz-active-card');
             document.getElementById('quiz-status').style.color = "var(--done)";
-            document.getElementById('standard-mode-elements').classList.remove('hidden');
+
             document.getElementById('builder-game-area').classList.add('hidden');
+            document.getElementById('standard-mode-elements').classList.remove('hidden');
+            document.getElementById('word-options').classList.remove('hidden');
+
             window.speechSynthesis.cancel();
             let startMsg = new SpeechSynthesisUtterance("Kezdjük!");
             startMsg.lang = "hu-HU";

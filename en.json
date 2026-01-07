@@ -1,41 +1,1172 @@
 [
     {
-        "name": "Alapok (Basics)",
-        "pattern": "[X] today.", 
-        "hu": "[X] ma.",
+        "category": "1. Alapok",
+        "title": "Lenni (Állapotok)",
         "lang": "en-GB",
-        "p_v": "...",
+        "pattern": "[X] today.",
+        "hu": "[X] ma.",
+        "p_v": "... tudéj",
         "words": [
-            { "w": "I am hungry", "h": "Éhes vagyok", "i": "😋", "p": "áj em hángri", "s": "I am very hungry today." },
-            { "w": "I am tired", "h": "Fáradt vagyok", "i": "😴", "p": "áj em tájörd", "s": "I feel so tired right now." },
-            { "w": "It is cold", "h": "Hideg van", "i": "❄️", "p": "it iz kóld", "s": "It is freezing cold outside." },
-            { "w": "You are right", "h": "Igazad van", "i": "✅", "p": "jú ár rájt", "s": "You are absolutely right." },
-            { "w": "It is free", "h": "Ingyenes", "i": "🎁", "p": "it iz frí", "s": "The entrance is totally free." }
+            {
+                "w": "I am hungry",
+                "h": "Éhes vagyok",
+                "i": "😋",
+                "p": "áj em hángri",
+                "s": "I am really hungry right now.",
+                "hs": "Tényleg éhes vagyok most."
+            },
+            {
+                "w": "I am tired",
+                "h": "Fáradt vagyok",
+                "i": "😴",
+                "p": "áj em tájörd",
+                "s": "I am too tired to walk.",
+                "hs": "Túl fáradt vagyok a sétához."
+            },
+            {
+                "w": "It is cold",
+                "h": "Hideg van",
+                "i": "❄️",
+                "p": "it iz kóld",
+                "s": "It is very cold outside.",
+                "hs": "Nagyon hideg van kint."
+            },
+            {
+                "w": "You are right",
+                "h": "Igazad van",
+                "i": "✅",
+                "p": "jú ár rájt",
+                "s": "I think you are right.",
+                "hs": "Szerintem igazad van."
+            },
+            {
+                "w": "We are late",
+                "h": "Késtünk",
+                "i": "⏰",
+                "p": "ví ár léjt",
+                "s": "We are late for the train.",
+                "hs": "Elkéstünk a vonatról."
+            },
+            {
+                "w": "It is free",
+                "h": "Ingyenes",
+                "i": "🎁",
+                "p": "it iz frí",
+                "s": "The Wi-Fi is free here.",
+                "hs": "A Wi-Fi itt ingyenes."
+            },
+            {
+                "w": "They are ready",
+                "h": "Készen vannak",
+                "i": "🆗",
+                "p": "déj ár redi",
+                "s": "They are ready to go.",
+                "hs": "Ők készen állnak az indulásra."
+            },
+            {
+                "w": "I am lost",
+                "h": "Eltévedtem",
+                "i": "📍",
+                "p": "áj em loszt",
+                "s": "Help me I am lost.",
+                "hs": "Segítsen, eltévedtem."
+            }
         ]
     },
     {
-        "name": "Kérések (Requests)",
+        "category": "2. Túlélés",
+        "title": "Kérések (Udvarias)",
+        "lang": "en-GB",
         "pattern": "I'd like [X], please.",
         "hu": "Szeretnék [X], kérem.",
-        "lang": "en-GB",
-        "p_v": "...",
+        "p_v": "ájd lájk ... plíz",
         "words": [
-            { "w": "a coffee", "h": "egy kávét", "i": "☕", "p": "ö kofi", "s": "I would like a hot coffee please." },
-            { "w": "the bill", "h": "a számlát", "i": "🧾", "p": "dö bil", "s": "Can I have the bill please?" },
-            { "w": "a taxi", "h": "egy taxit", "i": "🚕", "p": "ö takszi", "s": "I need a taxi to the airport." },
-            { "w": "some water", "h": "vizet", "i": "💧", "p": "szám vótör", "s": "Could you bring me some water?" }
+            {
+                "w": "a coffee",
+                "h": "egy kávét",
+                "i": "☕",
+                "p": "ö kofi",
+                "s": "I'd like a black coffee please.",
+                "hs": "Szeretnék egy feketekávét kérem."
+            },
+            {
+                "w": "the bill",
+                "h": "a számlát",
+                "i": "🧾",
+                "p": "dö bil",
+                "s": "Could I have the bill please?",
+                "hs": "Megkaphatnám a számlát kérem?"
+            },
+            {
+                "w": "a taxi",
+                "h": "egy taxit",
+                "i": "🚕",
+                "p": "ö takszi",
+                "s": "I'd like a taxi to the hotel.",
+                "hs": "Szeretnék egy taxit a hotelhez."
+            },
+            {
+                "w": "some water",
+                "h": "vizet",
+                "i": "💧",
+                "p": "szám vótör",
+                "s": "I'd like some mineral water.",
+                "hs": "Szeretnék egy kis ásványvizet."
+            },
+            {
+                "w": "a room",
+                "h": "egy szobát",
+                "i": "🛌",
+                "p": "ö rúm",
+                "s": "I'd like a double room please.",
+                "hs": "Szeretnék egy franciaágyas szobát."
+            },
+            {
+                "w": "help",
+                "h": "segítséget",
+                "i": "🆘",
+                "p": "help",
+                "s": "I'd like some help over here.",
+                "hs": "Szeretnék egy kis segítséget ide."
+            },
+            {
+                "w": "a map",
+                "h": "egy térképet",
+                "i": "🗺️",
+                "p": "ö mep",
+                "s": "I'd like a map of the city.",
+                "hs": "Szeretnék egy térképet a városról."
+            }
         ]
     },
     {
-        "name": "Hol van? (Location)",
+        "category": "3. Közlekedés",
+        "title": "Hol van...?",
+        "lang": "en-GB",
         "pattern": "Where is [X]?",
         "hu": "Hol van [X]?",
-        "lang": "en-GB",
-        "p_v": "...",
+        "p_v": "ver iz ...",
         "words": [
-            { "w": "the toilet", "h": "a mosdó", "i": "🚽", "p": "dö tojlet", "s": "Excuse me where is the toilet?" },
-            { "w": "the airport", "h": "a reptér", "i": "✈️", "p": "di erport", "s": "How do I get to the airport?" },
-            { "w": "the station", "h": "az állomás", "i": "🚉", "p": "dö sztéjsön", "s": "Is the train station far from here?" }
+            {
+                "w": "the toilet",
+                "h": "a mosdó",
+                "i": "🚽",
+                "p": "dö tojlet",
+                "s": "Excuse me where is the toilet?",
+                "hs": "Elnézést, hol van a mosdó?"
+            },
+            {
+                "w": "the airport",
+                "h": "a reptér",
+                "i": "✈️",
+                "p": "di erport",
+                "s": "Where is the main airport?",
+                "hs": "Hol van a fő repülőtér?"
+            },
+            {
+                "w": "the bus stop",
+                "h": "a buszmegálló",
+                "i": "🚏",
+                "p": "dö bász sztop",
+                "s": "Where is the nearest bus stop?",
+                "hs": "Hol van a legközelebbi buszmegálló?"
+            },
+            {
+                "w": "the station",
+                "h": "az állomás",
+                "i": "🚉",
+                "p": "dö sztéjsön",
+                "s": "Where is the central station?",
+                "hs": "Hol van a központi állomás?"
+            },
+            {
+                "w": "the exit",
+                "h": "a kijárat",
+                "i": "🚪",
+                "p": "di egzitt",
+                "s": "I cannot find the exit.",
+                "hs": "Nem találom a kijáratot."
+            },
+            {
+                "w": "the pharmacy",
+                "h": "a gyógyszertár",
+                "i": "➕",
+                "p": "dö fármászi",
+                "s": "Where is a pharmacy near here?",
+                "hs": "Hol van egy gyógyszertár a közelben?"
+            }
+        ]
+    },
+    {
+        "category": "4. Vásárlás",
+        "title": "Árak és Fizetés",
+        "lang": "en-GB",
+        "pattern": "Is [X] expensive?",
+        "hu": "[X] drága?",
+        "p_v": "iz ... ekszpenzív",
+        "words": [
+            {
+                "w": "this",
+                "h": "ez",
+                "i": "👉",
+                "p": "disz",
+                "s": "Is this too expensive?",
+                "hs": "Ez túl drága?"
+            },
+            {
+                "w": "the ticket",
+                "h": "a jegy",
+                "i": "🎫",
+                "p": "dö tikit",
+                "s": "Is the train ticket expensive?",
+                "hs": "A vonatjegy drága?"
+            },
+            {
+                "w": "the hotel",
+                "h": "a hotel",
+                "i": "🏨",
+                "p": "dö hotel",
+                "s": "Is that hotel expensive?",
+                "hs": "Az a hotel drága?"
+            },
+            {
+                "w": "everything",
+                "h": "minden",
+                "i": "🌍",
+                "p": "evriding",
+                "s": "Everything is expensive here.",
+                "hs": "Itt minden drága."
+            }
+        ]
+    },
+    {
+        "category": "5. Idő",
+        "title": "Mikor?",
+        "lang": "en-GB",
+        "pattern": "When is [X]?",
+        "hu": "Mikor van [X]?",
+        "p_v": "ven iz ...",
+        "words": [
+            {
+                "w": "the flight",
+                "h": "a repülő",
+                "i": "🛫",
+                "p": "dö flájt",
+                "s": "When is the flight to London?",
+                "hs": "Mikor van a járat Londonba?"
+            },
+            {
+                "w": "breakfast",
+                "h": "a reggeli",
+                "i": "🍳",
+                "p": "brekfászt",
+                "s": "When is breakfast served?",
+                "hs": "Mikor szolgálják fel a reggelit?"
+            },
+            {
+                "w": "dinner",
+                "h": "a vacsora",
+                "i": "🍲",
+                "p": "dinör",
+                "s": "When is dinner ready?",
+                "hs": "Mikor van kész a vacsora?"
+            },
+            {
+                "w": "the meeting",
+                "h": "a találkozó",
+                "i": "🤝",
+                "p": "dö míting",
+                "s": "When is the meeting starting?",
+                "hs": "Mikor kezdődik a találkozó?"
+            },
+            {
+                "w": "check-out",
+                "h": "a kijelentkezés",
+                "i": "🔑",
+                "p": "csekk-áut",
+                "s": "When is the check-out time?",
+                "hs": "Mikor van a kijelentkezési idő?"
+            }
+        ]
+    },
+    {
+        "category": "6. Étterem",
+        "title": "Rendelés és panasz",
+        "lang": "en-GB",
+        "pattern": "This [X] is not good.",
+        "hu": "Ez a(z) [X] nem jó.",
+        "p_v": "disz ... iz not gud",
+        "words": [
+            {
+                "w": "soup",
+                "h": "leves",
+                "i": "🥣",
+                "p": "szúp",
+                "s": "This soup is cold.",
+                "hs": "Ez a leves hideg."
+            },
+            {
+                "w": "meat",
+                "h": "hús",
+                "i": "🥩",
+                "p": "mít",
+                "s": "This meat is not cooked well.",
+                "hs": "Ez a hús nincs jól megsütve."
+            },
+            {
+                "w": "fish",
+                "h": "hal",
+                "i": "🐟",
+                "p": "fis",
+                "s": "This fish smells bad.",
+                "hs": "Ennek a halnak rossz szaga van."
+            },
+            {
+                "w": "wine",
+                "h": "bor",
+                "i": "🍷",
+                "p": "vájn",
+                "s": "This wine is not good.",
+                "hs": "Ez a bor nem jó."
+            },
+            {
+                "w": "beer",
+                "h": "sör",
+                "i": "🍺",
+                "p": "bír",
+                "s": "This beer is warm.",
+                "hs": "Ez a sör meleg."
+            }
+        ]
+    },
+    {
+        "category": "7. Szálloda",
+        "title": "Szoba és kényelem",
+        "lang": "en-GB",
+        "pattern": "Does the room have [X]?",
+        "hu": "Van a szobában [X]?",
+        "p_v": "dáz dö rúm hev ...",
+        "words": [
+            {
+                "w": "Wi-Fi",
+                "h": "Wi-Fi",
+                "i": "📶",
+                "p": "vájfáj",
+                "s": "Does the room have free Wi-Fi?",
+                "hs": "Van a szobában ingyen Wi-Fi?"
+            },
+            {
+                "w": "AC",
+                "h": "klíma",
+                "i": "❄️",
+                "p": "éjszí",
+                "s": "Does the room have AC?",
+                "hs": "Van a szobában klíma?"
+            },
+            {
+                "w": "TV",
+                "h": "tévé",
+                "i": "📺",
+                "p": "tíví",
+                "s": "Does the room have a TV?",
+                "hs": "Van a szobában tévé?"
+            },
+            {
+                "w": "a balcony",
+                "h": "erkély",
+                "i": "🌅",
+                "p": "ö belkoni",
+                "s": "Does the room have a balcony?",
+                "hs": "Van a szobához erkély?"
+            },
+            {
+                "w": "a shower",
+                "h": "zuhany",
+                "i": "🚿",
+                "p": "ö sáuör",
+                "s": "Does the bathroom have a shower?",
+                "hs": "Van a fürdőben zuhany?"
+            },
+            {
+                "w": "a bath",
+                "h": "fürdőkád",
+                "i": "🛀",
+                "p": "ö bász",
+                "s": "Does the room have a bath?",
+                "hs": "Van a szobában fürdőkád?"
+            }
+        ]
+    },
+    {
+        "category": "8. Egészség",
+        "title": "Fájdalom és tünetek",
+        "lang": "en-GB",
+        "pattern": "My [X] hurts.",
+        "hu": "Fáj a(z) [X]-(e)m.",
+        "p_v": "máj ... hörtsz",
+        "words": [
+            {
+                "w": "head",
+                "h": "fejem",
+                "i": "💆",
+                "p": "hed",
+                "s": "My head hurts so much.",
+                "hs": "Nagyon fáj a fejem."
+            },
+            {
+                "w": "stomach",
+                "h": "gyomrom",
+                "i": "🤢",
+                "p": "sztámák",
+                "s": "My stomach hurts badly.",
+                "hs": "Rosszul fáj a gyomrom."
+            },
+            {
+                "w": "back",
+                "h": "hátam",
+                "i": "🦴",
+                "p": "bek",
+                "s": "My back hurts when I walk.",
+                "hs": "Fáj a hátam, amikor sétálok."
+            },
+            {
+                "w": "throat",
+                "h": "torkom",
+                "i": "😫",
+                "p": "szrót",
+                "s": "My throat hurts and is dry.",
+                "hs": "Fáj a torkom és száraz."
+            },
+            {
+                "w": "tooth",
+                "h": "fogam",
+                "i": "🦷",
+                "p": "túz",
+                "s": "My tooth hurts since yesterday.",
+                "hs": "Tegnap óta fáj a fogam."
+            },
+            {
+                "w": "leg",
+                "h": "lábam",
+                "i": "🦵",
+                "p": "leg",
+                "s": "My leg hurts a lot.",
+                "hs": "Nagyon fáj a lábam."
+            }
+        ]
+    },
+    {
+        "category": "9. Irányok",
+        "title": "Útbaigazítás",
+        "lang": "en-GB",
+        "pattern": "Go [X] at the corner.",
+        "hu": "Menjen [X] a sarkon.",
+        "p_v": "gó ... et dö kornör",
+        "words": [
+            {
+                "w": "left",
+                "h": "balra",
+                "i": "⬅️",
+                "p": "left",
+                "s": "Go left at the next corner.",
+                "hs": "Menjen balra a következő sarkon."
+            },
+            {
+                "w": "right",
+                "h": "jobbra",
+                "i": "➡️",
+                "p": "rájt",
+                "s": "Turn right at the traffic lights.",
+                "hs": "Forduljon jobbra a lámpánál."
+            },
+            {
+                "w": "straight",
+                "h": "egyenesen",
+                "i": "⬆️",
+                "p": "sztréjt",
+                "s": "Go straight ahead on this road.",
+                "hs": "Menjen egyenesen előre ezen az úton."
+            },
+            {
+                "w": "back",
+                "h": "vissza",
+                "i": "🔙",
+                "p": "bek",
+                "s": "You need to go back.",
+                "hs": "Vissza kell mennie."
+            }
+        ]
+    },
+    {
+        "category": "10. Számok",
+        "title": "Alapszámok",
+        "lang": "en-GB",
+        "pattern": "I have [X] euros.",
+        "hu": "Van [X] euróm.",
+        "p_v": "áj hev ... jurósz",
+        "words": [
+            {
+                "w": "one",
+                "h": "egy",
+                "i": "1️⃣",
+                "p": "ván",
+                "s": "I have only one euro.",
+                "hs": "Csak egy euróm van."
+            },
+            {
+                "w": "two",
+                "h": "kettő",
+                "i": "2️⃣",
+                "p": "tú",
+                "s": "I need two tickets.",
+                "hs": "Két jegyre van szükségem."
+            },
+            {
+                "w": "three",
+                "h": "három",
+                "i": "3️⃣",
+                "p": "szrí",
+                "s": "We are three people.",
+                "hs": "Mi hárman vagyunk."
+            },
+            {
+                "w": "four",
+                "h": "négy",
+                "i": "4️⃣",
+                "p": "fór",
+                "s": "Table for four please.",
+                "hs": "Egy asztalt négy főre, kérem."
+            },
+            {
+                "w": "five",
+                "h": "öt",
+                "i": "5️⃣",
+                "p": "fájv",
+                "s": "It costs five dollars.",
+                "hs": "Öt dollárba kerül."
+            },
+            {
+                "w": "ten",
+                "h": "tíz",
+                "i": "🔟",
+                "p": "ten",
+                "s": "It is ten minutes away.",
+                "hs": "Tíz percre van."
+            }
+        ]
+    },
+    {
+        "category": "11. Nagy számok",
+        "title": "Nagyobb számok",
+        "lang": "en-GB",
+        "pattern": "That costs [X] dollars.",
+        "hu": "Az [X] dollárba kerül.",
+        "p_v": "det kosztsz ... dolörz",
+        "words": [
+            {
+                "w": "twenty",
+                "h": "húsz",
+                "i": "2️⃣0️⃣",
+                "p": "tventi",
+                "s": "That costs twenty dollars.",
+                "hs": "Az húsz dollárba kerül."
+            },
+            {
+                "w": "fifty",
+                "h": "ötven",
+                "i": "5️⃣0️⃣",
+                "p": "fifti",
+                "s": "It is fifty miles away.",
+                "hs": "Ötven mérföldre van."
+            },
+            {
+                "w": "a hundred",
+                "h": "száz",
+                "i": "💯",
+                "p": "ö hándred",
+                "s": "I have a hundred questions.",
+                "hs": "Száz kérdésem van."
+            }
+        ]
+    },
+    {
+        "category": "12. Család",
+        "title": "Rokonok",
+        "lang": "en-GB",
+        "pattern": "Where is my [X]?",
+        "hu": "Hol van a(z) [X]-(e)m?",
+        "p_v": "ver iz máj ...",
+        "words": [
+            {
+                "w": "mother",
+                "h": "anyám",
+                "i": "👩",
+                "p": "mádör",
+                "s": "Where is my mother?",
+                "hs": "Hol van az anyám?"
+            },
+            {
+                "w": "father",
+                "h": "apám",
+                "i": "👨",
+                "p": "fádör",
+                "s": "My father is at home.",
+                "hs": "Apám otthon van."
+            },
+            {
+                "w": "sister",
+                "h": "lánytestvérem",
+                "i": "👧",
+                "p": "szisztör",
+                "s": "My sister lives in London.",
+                "hs": "A nővérem Londonban él."
+            },
+            {
+                "w": "brother",
+                "h": "fiútestvérem",
+                "i": "👦",
+                "p": "brádör",
+                "s": "My brother is tall.",
+                "hs": "A bátyám magas."
+            },
+            {
+                "w": "wife",
+                "h": "feleségem",
+                "i": "👰",
+                "p": "vájf",
+                "s": "This is my wife.",
+                "hs": "Ez a feleségem."
+            },
+            {
+                "w": "husband",
+                "h": "férjem",
+                "i": "🤵",
+                "p": "hászbend",
+                "s": "My husband is working.",
+                "hs": "A férjem dolgozik."
+            }
+        ]
+    },
+    {
+        "category": "13. Időjárás",
+        "title": "Milyen az idő?",
+        "lang": "en-GB",
+        "pattern": "It is [X] outside.",
+        "hu": "[X] idő van kint.",
+        "p_v": "it iz ... áutszájd",
+        "words": [
+            {
+                "w": "sunny",
+                "h": "napos",
+                "i": "☀️",
+                "p": "száni",
+                "s": "It is sunny outside.",
+                "hs": "Napos idő van kint."
+            },
+            {
+                "w": "rainy",
+                "h": "esős",
+                "i": "🌧️",
+                "p": "réjní",
+                "s": "It is rainy today.",
+                "hs": "Ma esős az idő."
+            },
+            {
+                "w": "cloudy",
+                "h": "felhős",
+                "i": "☁️",
+                "p": "kláudí",
+                "s": "It is cloudy and dark.",
+                "hs": "Felhős és sötét van."
+            },
+            {
+                "w": "windy",
+                "h": "szeles",
+                "i": "🌬️",
+                "p": "vindí",
+                "s": "It is very windy here.",
+                "hs": "Itt nagyon szeles az idő."
+            },
+            {
+                "w": "snowy",
+                "h": "havas",
+                "i": "❄️",
+                "p": "sznóí",
+                "s": "The weather is snowy.",
+                "hs": "Havas az időjárás."
+            },
+            {
+                "w": "hot",
+                "h": "forró",
+                "i": "🔥",
+                "p": "hot",
+                "s": "It is too hot outside.",
+                "hs": "Túl forró a levegő kint."
+            }
+        ]
+    },
+    {
+        "category": "14. Színek",
+        "title": "Milyen színű?",
+        "lang": "en-GB",
+        "pattern": "I like the [X] one.",
+        "hu": "A(z) [X] színűt szeretem.",
+        "p_v": "áj lájk dö ... ván",
+        "words": [
+            {
+                "w": "red",
+                "h": "piros",
+                "i": "🔴",
+                "p": "red",
+                "s": "I like the red shirt.",
+                "hs": "Szeretem a piros inget."
+            },
+            {
+                "w": "blue",
+                "h": "kék",
+                "i": "🔵",
+                "p": "blú",
+                "s": "The sky is blue.",
+                "hs": "Az ég kék."
+            },
+            {
+                "w": "green",
+                "h": "zöld",
+                "i": "🟢",
+                "p": "grín",
+                "s": "The grass is green.",
+                "hs": "A fű zöld."
+            },
+            {
+                "w": "yellow",
+                "h": "sárga",
+                "i": "🟡",
+                "p": "jelő",
+                "s": "I want the yellow bag.",
+                "hs": "A sárga táskát akarom."
+            },
+            {
+                "w": "black",
+                "h": "fekete",
+                "i": "⚫",
+                "p": "blek",
+                "s": "I drink black coffee.",
+                "hs": "Feketekávét iszom."
+            },
+            {
+                "w": "white",
+                "h": "fehér",
+                "i": "⚪",
+                "p": "vájt",
+                "s": "The walls are white.",
+                "hs": "A falak fehérek."
+            }
+        ]
+    },
+    {
+        "category": "15. Ruhatár",
+        "title": "Milyen ruhát viselsz?",
+        "lang": "en-GB",
+        "pattern": "Where is my [X]?",
+        "hu": "Hol van a(z) [X]-(e)m?",
+        "p_v": "ver iz máj ...",
+        "words": [
+            {
+                "w": "shirt",
+                "h": "ingem",
+                "i": "👔",
+                "p": "sőrt",
+                "s": "Where is my clean shirt?",
+                "hs": "Hol van a tiszta ingem?"
+            },
+            {
+                "w": "shoes",
+                "h": "cipőm",
+                "i": "👞",
+                "p": "súz",
+                "s": "I cannot find my shoes.",
+                "hs": "Nem találom a cipőmet."
+            },
+            {
+                "w": "coat",
+                "h": "kabátom",
+                "i": "🧥",
+                "p": "kóut",
+                "s": "I need my warm coat.",
+                "hs": "Szükségem van a meleg kabátomra."
+            },
+            {
+                "w": "hat",
+                "h": "kalapom",
+                "i": "🎩",
+                "p": "het",
+                "s": "I lost my hat.",
+                "hs": "Elvesztettem a kalapomat."
+            }
+        ]
+    },
+    {
+        "category": "16. Érzelmek",
+        "title": "Hogy érzed magad?",
+        "lang": "en-GB",
+        "pattern": "I feel [X] now.",
+        "hu": "[X] érzem magam most.",
+        "p_v": "áj fíl ... náu",
+        "words": [
+            {
+                "w": "happy",
+                "h": "boldognak",
+                "i": "😊",
+                "p": "hepi",
+                "s": "I feel very happy today.",
+                "hs": "Nagyon boldognak érzem magam ma."
+            },
+            {
+                "w": "sad",
+                "h": "szomorúnak",
+                "i": "😢",
+                "p": "szed",
+                "s": "Why are you sad?",
+                "hs": "Miért vagy szomorú?"
+            },
+            {
+                "w": "angry",
+                "h": "mérgesnek",
+                "i": "😠",
+                "p": "engri",
+                "s": "Do not be angry.",
+                "hs": "Ne legyél mérges."
+            },
+            {
+                "w": "nervous",
+                "h": "idegesnek",
+                "i": "😟",
+                "p": "nőrvösz",
+                "s": "I feel nervous about this.",
+                "hs": "Ideges vagyok emiatt."
+            }
+        ]
+    },
+    {
+        "category": "17. Hobbi",
+        "title": "Szabadidő",
+        "lang": "en-GB",
+        "pattern": "I love [X].",
+        "hu": "Szeretek [X].",
+        "p_v": "áj láv ...",
+        "words": [
+            {
+                "w": "reading",
+                "h": "olvasni",
+                "i": "📖",
+                "p": "rídíng",
+                "s": "I love reading books.",
+                "hs": "Szeretek könyveket olvasni."
+            },
+            {
+                "w": "swimming",
+                "h": "úszni",
+                "i": "🏊",
+                "p": "szvimíng",
+                "s": "I like swimming in the sea.",
+                "hs": "Szeretek a tengerben úszni."
+            },
+            {
+                "w": "cooking",
+                "h": "főzni",
+                "i": "🍳",
+                "p": "kukíng",
+                "s": "Cooking is my hobby.",
+                "hs": "A főzés a hobbim."
+            },
+            {
+                "w": "traveling",
+                "h": "utazni",
+                "i": "✈️",
+                "p": "trevelíng",
+                "s": "I enjoy traveling alone.",
+                "hs": "Élvezem az egyedül utazást."
+            }
+        ]
+    },
+    {
+        "category": "18. Városnézés",
+        "title": "Turista látványosságok",
+        "lang": "en-GB",
+        "pattern": "I want to visit [X].",
+        "hu": "Szeretném meglátogatni [X].",
+        "p_v": "áj vont tu vizit ...",
+        "words": [
+            {
+                "w": "the museum",
+                "h": "a múzeumot",
+                "i": "🏛️",
+                "p": "dö mjúzium",
+                "s": "I want to visit the museum.",
+                "hs": "Meg akarom látogatni a múzeumot."
+            },
+            {
+                "w": "the castle",
+                "h": "a kastélyt",
+                "i": "🏰",
+                "p": "dö kászül",
+                "s": "The castle is very old.",
+                "hs": "A kastély nagyon régi."
+            },
+            {
+                "w": "the church",
+                "h": "a templomot",
+                "i": "⛪",
+                "p": "dö csőrcs",
+                "s": "Where is the old church?",
+                "hs": "Hol van a régi templom?"
+            },
+            {
+                "w": "the park",
+                "h": "a parkot",
+                "i": "🌳",
+                "p": "dö párk",
+                "s": "Let's walk in the park.",
+                "hs": "Sétáljunk a parkban."
+            }
+        ]
+    },
+    {
+        "category": "19. Bank és Posta",
+        "title": "Hivatalos ügyek",
+        "lang": "en-GB",
+        "pattern": "I need to [X].",
+        "hu": "[X] kell.",
+        "p_v": "áj níd tu ...",
+        "words": [
+            {
+                "w": "exchange money",
+                "h": "pénzt váltanom",
+                "i": "💱",
+                "p": "ekszcséndzs mání",
+                "s": "I need to exchange money.",
+                "hs": "Pénzt kell váltanom."
+            },
+            {
+                "w": "withdraw cash",
+                "h": "készpénzt felvennem",
+                "i": "🏧",
+                "p": "vizdró kes",
+                "s": "Where can I withdraw cash?",
+                "hs": "Hol tudok készpénzt felvenni?"
+            },
+            {
+                "w": "buy stamps",
+                "h": "bélyeget vennem",
+                "i": "🏷️",
+                "p": "báj sztempsz",
+                "s": "I want to buy stamps.",
+                "hs": "Bélyegeket akarok venni."
+            }
+        ]
+    },
+    {
+        "category": "20. Segítségkérés",
+        "title": "Vészhelyzetek",
+        "lang": "en-GB",
+        "pattern": "Please [X]!",
+        "hu": "Kérem, [X]!",
+        "p_v": "plíz ...",
+        "words": [
+            {
+                "w": "help me",
+                "h": "segítsen",
+                "i": "🆘",
+                "p": "help mí",
+                "s": "Please help me now!",
+                "hs": "Kérem, segítsen most!"
+            },
+            {
+                "w": "call a doctor",
+                "h": "hívjon orvost",
+                "i": "👨‍⚕️",
+                "p": "kól ö doktör",
+                "s": "Please call a doctor quickly.",
+                "hs": "Kérem, hívjon gyorsan egy orvost."
+            },
+            {
+                "w": "call the police",
+                "h": "hívja a rendőrséget",
+                "i": "🚓",
+                "p": "kól dö polísz",
+                "s": "Call the police immediately.",
+                "hs": "Hívja a rendőrséget azonnal."
+            }
+        ]
+    },
+    {
+        "category": "21. Élelmiszerek",
+        "title": "A boltban",
+        "lang": "en-GB",
+        "pattern": "I need some [X].",
+        "hu": "Szükségem van egy kis [X]-(re).",
+        "p_v": "áj níd szám ...",
+        "words": [
+            {
+                "w": "bread",
+                "h": "kenyérre",
+                "i": "🍞",
+                "p": "bred",
+                "s": "I need to buy some bread.",
+                "hs": "Vennem kell egy kis kenyeret."
+            },
+            {
+                "w": "milk",
+                "h": "tejre",
+                "i": "🥛",
+                "p": "milk",
+                "s": "Do you have fresh milk?",
+                "hs": "Van friss tejük?"
+            },
+            {
+                "w": "fruit",
+                "h": "gyümölcsre",
+                "i": "🍎",
+                "p": "frút",
+                "s": "I love fresh fruit.",
+                "hs": "Imádom a friss gyümölcsöt."
+            }
+        ]
+    },
+    {
+        "category": "22. Italok",
+        "title": "Frissítők",
+        "lang": "en-GB",
+        "pattern": "Do you have [X]?",
+        "hu": "Van [X]-(ük)?",
+        "p_v": "dú jú hev ...",
+        "words": [
+            {
+                "w": "water",
+                "h": "vizük",
+                "i": "💧",
+                "p": "vótör",
+                "s": "Do you have bottled water?",
+                "hs": "Van palackozott vizük?"
+            },
+            {
+                "w": "beer",
+                "h": "sörük",
+                "i": "🍺",
+                "p": "bír",
+                "s": "One beer please.",
+                "hs": "Egy sört kérek."
+            },
+            {
+                "w": "wine",
+                "h": "boruk",
+                "i": "🍷",
+                "p": "vájn",
+                "s": "I would like red wine.",
+                "hs": "Vörösbort szeretnék."
+            }
+        ]
+    },
+    {
+        "category": "23. Konyha",
+        "title": "Eszközök",
+        "lang": "en-GB",
+        "pattern": "Where is the [X]?",
+        "hu": "Hol van a(z) [X]?",
+        "p_v": "ver iz dö ...",
+        "words": [
+            {
+                "w": "spoon",
+                "h": "kanál",
+                "i": "🥄",
+                "p": "szpún",
+                "s": "I need a spoon for the soup.",
+                "hs": "Kell egy kanál a leveshez."
+            },
+            {
+                "w": "knife",
+                "h": "kés",
+                "i": "🔪",
+                "p": "nájf",
+                "s": "This knife is not sharp.",
+                "hs": "Ez a kés nem éles."
+            },
+            {
+                "w": "glass",
+                "h": "pohár",
+                "i": "🥛",
+                "p": "glász",
+                "s": "Can I have a clean glass?",
+                "hs": "Kaphatok egy tiszta poharat?"
+            }
+        ]
+    },
+    {
+        "category": "24. Jövő idő",
+        "title": "Tervek (Will)",
+        "lang": "en-GB",
+        "pattern": "I will [X] tomorrow.",
+        "hu": "Holnap [X]. (fogok)",
+        "p_v": "áj vil ... tumoró",
+        "words": [
+            {
+                "w": "call",
+                "h": "telefonálok",
+                "i": "📞",
+                "p": "kól",
+                "s": "I will call you tomorrow.",
+                "hs": "Holnap felhívlak."
+            },
+            {
+                "w": "pay",
+                "h": "fizetek",
+                "i": "💳",
+                "p": "péj",
+                "s": "I will pay with cash.",
+                "hs": "Készpénzzel fogok fizetni."
+            },
+            {
+                "w": "go",
+                "h": "megyek",
+                "i": "🚶",
+                "p": "gó",
+                "s": "I will go to the city.",
+                "hs": "Bemegyek a városba."
+            }
+        ]
+    },
+    {
+        "category": "25. Múlt idő",
+        "title": "Történések (Was/Were)",
+        "lang": "en-GB",
+        "pattern": "[X] here yesterday.",
+        "hu": "[X] itt tegnap.",
+        "p_v": "... hír jeszterdéj",
+        "words": [
+            {
+                "w": "I was",
+                "h": "Én voltam",
+                "i": "🙋",
+                "p": "áj voz",
+                "s": "I was here yesterday.",
+                "hs": "Tegnap itt voltam."
+            },
+            {
+                "w": "It was",
+                "h": "Ez volt",
+                "i": "📦",
+                "p": "it voz",
+                "s": "It was very good.",
+                "hs": "Nagyon jó volt."
+            },
+            {
+                "w": "We were",
+                "h": "Mi voltunk",
+                "i": "👥",
+                "p": "ví vőr",
+                "s": "We were late for dinner.",
+                "hs": "Elkéstünk a vacsoráról."
+            }
         ]
     }
 ]

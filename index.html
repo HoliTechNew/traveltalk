@@ -663,26 +663,47 @@
         }
 
         function handleInput(word, element) {
+            // 1. Szó megtisztítása a HTML kódoktól (pl. <u>)
             let cleanWord = word.w.replace(/<[^>]*>/g, "");
-            let sentence = currentCat.pattern.replace("[X]", cleanWord);
+
+            // 2. MONDAT KIVÁLASZTÁSA
+            // Ha a JSON-ban van egyedi mondat ("s"), azt használjuk.
+            // Ha nincs, akkor a sablonba ("pattern") illesztjük a szót.
+            let sentence;
+            if (word.s) {
+                sentence = word.s;
+            } else {
+                sentence = currentCat.pattern.replace("[X]", cleanWord);
+            }
+
+            // 3. Formázás (felesleges szóközök törlése)
             sentence = sentence.replace(/\s+/g, ' ').replace(/' /g, "'").trim();
 
+            // --- A) KVÍZ MÓD LOGIKA ---
             if (isQuiz) {
+                // Ha már kattintottunk rá (zöld vagy piros), ne csináljon semmit
                 if (element.classList.contains('animate-correct') || element.classList.contains('animate-wrong')) return;
 
                 if (word.w === quizTarget.w) {
+                    // HELYES VÁLASZ
                     element.classList.add('animate-correct');
-                    audioCorrect.currentTime = 0; audioCorrect.play();
+                    audioCorrect.currentTime = 0;
+                    audioCorrect.play();
 
+                    // Kijelezzük a mondatot és a dicséretet
                     document.getElementById('sentence-preview').innerHTML = sentence;
+
+                    // Magyar fordítás összerakása
                     let fullHu = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
                     document.getElementById('translation-preview').innerHTML = `<span style="color:var(--accent); font-weight:bold;">HELYES!</span> ${fullHu}`;
 
+                    // Beszéd megszakítása és az új mondat felolvasása
                     window.speechSynthesis.cancel();
                     let targetMsg = new SpeechSynthesisUtterance(sentence);
                     targetMsg.lang = currentCat.lang;
                     targetMsg.rate = speechRate;
 
+                    // Ha végzett a beszéddel, jöhet a következő lépés
                     targetMsg.onend = () => {
                         setTimeout(() => {
                             element.classList.remove('animate-correct');
@@ -692,33 +713,55 @@
                     };
                     window.speechSynthesis.speak(targetMsg);
 
+                    // Pontszerzés
                     if (!stats.quizPoints[currentCat.index]) stats.quizPoints[currentCat.index] = 0;
                     stats.quizPoints[currentCat.index]++;
                     save();
                 } else {
+                    // ROSSZ VÁLASZ
                     element.classList.add('animate-wrong');
-                    audioWrong.currentTime = 0; audioWrong.play();
-                    if (navigator.vibrate) navigator.vibrate(200);
+                    audioWrong.currentTime = 0;
+                    audioWrong.play();
+
+                    if (navigator.vibrate) navigator.vibrate(200); // Rezgés mobilon
+
                     setTimeout(() => element.classList.remove('animate-wrong'), 600);
                 }
                 return;
             }
 
+            // --- B) MONDATÉPÍTŐ (BUILDER) MÓD ---
+            // Ha be van kapcsolva a kapcsoló, indítjuk a játékot
+            if (builderMode) {
+                startBuilderGame(sentence, word);
+                return;
+            }
+
+            // --- C) NORMÁL TANULÓ MÓD (Alapértelmezett) ---
             document.getElementById('sentence-preview').innerHTML = sentence;
+
+            // Magyar fordítás megjelenítése
             document.getElementById('translation-preview').innerText = currentCat.hu.replace("[X]", word.h.replace(/<[^>]*>/g, ""));
-            document.getElementById('phonetic-preview').innerText = "[ " + currentCat.p_v.replace("...", word.p) + " ]";
+
+            // Fonetikus írás (ha a sablonban van ..., akkor cserélünk, ha nincs, csak a szóét írjuk ki)
+            if (currentCat.p_v.includes("...")) {
+                document.getElementById('phonetic-preview').innerText = "[ " + currentCat.p_v.replace("...", word.p) + " ]";
+            } else {
+                document.getElementById('phonetic-preview').innerText = "[ " + word.p + " ]";
+            }
+
             document.getElementById('speak-btn').style.visibility = "visible";
 
             lastSentence = sentence;
             playCurrent();
 
+            // Statisztika mentése (hogy tanultuk a szót)
             if (!stats.learned[currentCat.index]) stats.learned[currentCat.index] = [];
             if (!stats.learned[currentCat.index].includes(word.w)) {
                 stats.learned[currentCat.index].push(word.w);
                 save();
             }
         }
-
         function startQuiz() {
             isQuiz = true;
             quizQueue = [...currentCat.words].sort(() => Math.random() - 0.5);

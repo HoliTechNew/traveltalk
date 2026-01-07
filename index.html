@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelTalk Pro 7.6</title>
+    <title>TravelTalk Pro 7.7</title>
 
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e40af">
@@ -467,7 +467,7 @@
 <body>
 
     <header>
-        <h2 style="margin:0">TravelTalk Pro 7.6</h2>
+        <h2 style="margin:0">TravelTalk Pro 7.7</h2>
         <div id="lang-direction" style="font-size: 0.9rem; margin: 5px 0; color: #cbd5e1; font-weight: bold;">
             <div class="spinner"></div> Betöltés...
         </div>
@@ -878,7 +878,19 @@
 
         function handleInput(word, element) {
             let cleanWord = word.w.replace(/<[^>]*>/g, "");
-            let sentence = (word.s) ? word.s : currentCat.pattern.replace("[X]", cleanWord);
+            let sentence;
+
+            // JAVÍTÁS: Kvíz módban MINDIG a sablont használjuk, hogy egyezzen a kérdéssel
+            if (isQuiz) {
+                sentence = currentCat.pattern.replace("[X]", cleanWord);
+            } else {
+                // Builder vagy Sima tanuló mód: Használjuk az egyedi mondatot ha van
+                if (word.s) {
+                    sentence = word.s;
+                } else {
+                    sentence = currentCat.pattern.replace("[X]", cleanWord);
+                }
+            }
             sentence = sentence.replace(/\s+/g, ' ').replace(/' /g, "'").trim();
 
             if (isQuiz) {
@@ -977,15 +989,13 @@
                 let trans = "";
                 if (showWordHints) {
                     const clean = word.toLowerCase().replace(/[^a-zà-ú]/g, "");
-                    // JAVÍTÁS: Fordított sorrend (Mini szótár -> Fő szótár)
-
-                    // 1. Mini szótár (PRIORITÁS)
+                    // JAVÍTÁS: Először a Mini Szótárban keresünk (hogy a névelők pontosak legyenek)
                     const langCode = currentFile.substring(0, 2);
                     if (commonWords[langCode] && commonWords[langCode][clean]) {
                         trans = commonWords[langCode][clean];
                     }
 
-                    // 2. Fő szótár (Fallback)
+                    // Ha nincs, akkor a Fő szótárban
                     if (!trans) {
                         let found = dictionaryData.find(d => d.w.toLowerCase().includes(clean));
                         if (found) trans = found.h.replace(/<[^>]*>/g, "");
